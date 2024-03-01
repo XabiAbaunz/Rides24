@@ -64,6 +64,9 @@ public class LoginGUI extends JFrame {
 		
 		facade = MainGUI.getBusinessLogic();
 		
+		facade.register("xabid", "xabi", "1234", 0.0, "Driver");
+		facade.register("xabit", "xabi", "1234", 0.0, "Traveler");
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -87,11 +90,12 @@ public class LoginGUI extends JFrame {
 					u = facade.isLogged(user, password);
 					if(u != null) {
 						if(u instanceof Driver) {
+							textArea.setText("");
 							Driver d = (Driver) u;
 							JFrame a = new DriverMainGUI(d);
 							a.setVisible(true);
 						} else if(u instanceof Traveler) {
-							
+							textArea.setText("");
 						}
 					} else {
 						textArea.setText(ResourceBundle.getBundle("Etiquetas").getString("LoginGUI.WrongUserPass"));

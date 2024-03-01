@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import domain.Driver;
+import domain.User;
 
 import java.awt.GridLayout;
 import java.util.ResourceBundle;
@@ -14,6 +15,8 @@ import java.util.ResourceBundle;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class DriverMainGUI extends JFrame {
 
@@ -24,6 +27,7 @@ public class DriverMainGUI extends JFrame {
 	private JButton jButtonAcceptReservation = new JButton(ResourceBundle.getBundle("Etiquetas").getString("DriverMainGUI.AcceptReservation"));
 
 	private Driver driver;
+	private final JButton jButtonDiruaSartu = new JButton(ResourceBundle.getBundle("Etiquetas").getString("DriverMainGUI.diruaSartuAtera"));
 	/**
 	 * Launch the application.
 	 */
@@ -54,14 +58,28 @@ public class DriverMainGUI extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
-		contentPane.setLayout(new GridLayout(3, 1, 0, 0));
+		contentPane.setLayout(new GridLayout(4, 1, 0, 0));
 		
 		jLabelSelectOption.setHorizontalAlignment(SwingConstants.CENTER);
 		contentPane.add(jLabelSelectOption);
+		jButtonCreateRide.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JFrame a = new CreateRideGUI(d);
+				a.setVisible(true);
+			}
+		});
 		
 		contentPane.add(jButtonCreateRide);
 		
 		contentPane.add(jButtonAcceptReservation);
+		jButtonDiruaSartu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JFrame a = new DiruaSartuGUI((User)d);
+				a.setVisible(true);
+			}
+		});
+		
+		contentPane.add(jButtonDiruaSartu);
 	}
 
 }

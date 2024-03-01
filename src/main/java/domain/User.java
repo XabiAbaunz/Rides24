@@ -76,6 +76,10 @@ public abstract class User {
 				&& Objects.equals(name, other.name) && Objects.equals(password, other.password);
 	}
 	
+	public void updateMoney(Double money) {
+		this.cash=this.cash+money;
+	}
+	
 	
 	
 	

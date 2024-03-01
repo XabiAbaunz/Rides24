@@ -146,4 +146,12 @@ public class BLFacadeImplementation  implements BLFacade {
     		return null;
     	}
     }
+    
+    public User updateMoneyByEmail(String email, double cash) {
+        dbManager.open();
+        User u = dbManager.updateMoneyByEmail(email, cash);
+        dbManager.close();
+        return u;
+    }
+ 
 }
