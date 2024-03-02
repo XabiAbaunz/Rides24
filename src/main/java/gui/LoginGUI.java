@@ -33,13 +33,14 @@ public class LoginGUI extends JFrame {
 	private final JLabel JLabelLogin = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("LoginGUI.Login"));
 	private JPasswordField passwordField;
 	private JTextArea textArea;
-	
+	private final JButton btnExit = new JButton(ResourceBundle.getBundle("Etiquetas").getString("LoginGUI.Irten"));
+
 	String user;
 	String password;
 	User u;
 
 	private BLFacade facade;
-
+	
 	
 	/**
 	 * Launch the application.
@@ -63,6 +64,8 @@ public class LoginGUI extends JFrame {
 	public LoginGUI() {
 		
 		facade = MainGUI.getBusinessLogic();
+		facade.register("xabid", "xabi", "1234", 0, "Driver");
+		facade.register("xabit", "xabi", "1234", 0, "Traveler");
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -117,11 +120,22 @@ public class LoginGUI extends JFrame {
 		contentPane.add(passwordField);
 		
 		textArea = new JTextArea();
-		textArea.setBounds(93, 216, 255, 22);
+		textArea.setBounds(23, 216, 255, 22);
 		contentPane.add(textArea);
 		JLabelLogin.setBounds(155, 23, 125, 23);
 		JLabelLogin.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		contentPane.add(JLabelLogin);
+		btnExit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Irten_actionPerformed(e);
+			}
+		});
+		btnExit.setBounds(309, 216, 117, 22);
+		
+		contentPane.add(btnExit);
+	}
+	private void Irten_actionPerformed(ActionEvent e) {
+		this.setVisible(false);
 	}
 }

@@ -38,7 +38,7 @@ public class RegisterGUI extends JFrame {
 	private JLabel jLabelEnterEmail = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("RegisterGUI.EnterEmail"));
 	private JLabel jLabelRegister = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("RegisterGUI.Register"));
 	private final ButtonGroup buttonGroup = new ButtonGroup();
-	
+	private final JButton btnExit = new JButton(ResourceBundle.getBundle("Etiquetas").getString("RegisterGUI.Exit"));
 	String email;
 	String name;
 	String password;
@@ -153,5 +153,16 @@ public class RegisterGUI extends JFrame {
 		textArea = new JTextArea();
 		textArea.setBounds(134, 241, 145, 22);
 		contentPane.add(textArea);
+		btnExit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Irten_actionPerformed(e);
+			}
+		});
+		btnExit.setBounds(341, 232, 85, 21);
+		
+		contentPane.add(btnExit);
+	}
+	private void Irten_actionPerformed(ActionEvent e) {
+		this.setVisible(false);
 	}
 }
