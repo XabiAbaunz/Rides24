@@ -1,6 +1,7 @@
 package gui;
 
 import java.awt.EventQueue;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 import javax.swing.JFrame;
@@ -9,6 +10,8 @@ import javax.swing.border.EmptyBorder;
 
 import businessLogic.BLFacade;
 import domain.User;
+import exceptions.RideAlreadyExistException;
+import exceptions.RideMustBeLaterThanTodayException;
 
 import javax.swing.JLabel;
 import javax.swing.JButton;
@@ -39,6 +42,7 @@ public class LoginGUI extends JFrame {
 	User u;
 
 	private BLFacade facade;
+	private final JButton btnExit = new JButton(ResourceBundle.getBundle("Etiquetas").getString("LoginGUI.Exit")); //$NON-NLS-1$ //$NON-NLS-2$
 
 	
 	/**
@@ -63,6 +67,8 @@ public class LoginGUI extends JFrame {
 	public LoginGUI() {
 		
 		facade = MainGUI.getBusinessLogic();
+		facade.register("xabid", "xabi", "1234", 0, "Driver");
+		facade.register("xabit", "xabi", "1234", 0, "Traveler");
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -117,11 +123,24 @@ public class LoginGUI extends JFrame {
 		contentPane.add(passwordField);
 		
 		textArea = new JTextArea();
-		textArea.setBounds(93, 216, 255, 22);
+		textArea.setBounds(96, 203, 255, 22);
 		contentPane.add(textArea);
 		JLabelLogin.setBounds(155, 23, 125, 23);
 		JLabelLogin.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		contentPane.add(JLabelLogin);
+		btnExit.setBounds(166, 235, 85, 21);
+		
+		contentPane.add(btnExit);
+		btnExit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Irten_actionPerformed(e);
+			}
+		});
+		btnExit.setBounds(341, 243, 85, 21);
+		contentPane.add(btnExit);
+	}
+	private void Irten_actionPerformed(ActionEvent e) {
+		this.setVisible(false);
 	}
 }

@@ -46,6 +46,7 @@ public class RegisterGUI extends JFrame {
 	private JTextArea textArea;
 	
 	private BLFacade facade;
+	private final JButton btnExit = new JButton(ResourceBundle.getBundle("Etiquetas").getString("RegisterGUI.Exit")); //$NON-NLS-1$ //$NON-NLS-2$
 
 	/**
 	 * Launch the application.
@@ -153,5 +154,18 @@ public class RegisterGUI extends JFrame {
 		textArea = new JTextArea();
 		textArea.setBounds(134, 241, 145, 22);
 		contentPane.add(textArea);
+		btnExit.setBounds(341, 243, 85, 21);
+		
+		contentPane.add(btnExit);
+		btnExit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Irten_actionPerformed(e);
+			}
+		});
+		btnExit.setBounds(341, 243, 85, 21);
+		contentPane.add(btnExit);
+	}
+	private void Irten_actionPerformed(ActionEvent e) {
+		this.setVisible(false);
 	}
 }
