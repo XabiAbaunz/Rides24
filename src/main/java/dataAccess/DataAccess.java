@@ -156,15 +156,21 @@ public class DataAccess  {
 				throw new RideMustBeLaterThanTodayException(ResourceBundle.getBundle("Etiquetas").getString("CreateRideGUI.ErrorRideMustBeLaterThanToday"));
 			}
 			db.getTransaction().begin();
-			
-			Driver driver = db.find(Driver.class, driverEmail);
-			if (car.doesRideExists(from, to, date)) {
+			List<Ride> res = new ArrayList<>();	
+			TypedQuery<Car> query = db.createQuery("SELECT c FROM Car c WHERE c.marka=?1 AND c.modeloa=?2 AND c.eserlekuKop=?3 AND c.driver=?4",Car.class);   
+			query.setParameter(1, car.getMarka());
+			query.setParameter(2, car.getModeloa());
+			query.setParameter(3, car.getEserlekuKop());
+			query.setParameter(4, car.getDriver());
+			List<Car> rides = query.getResultList();
+			Car c = rides.get(0);
+			if (c.doesRideExists(from, to, date)) {
 				db.getTransaction().commit();
 				throw new RideAlreadyExistException(ResourceBundle.getBundle("Etiquetas").getString("DataAccess.RideAlreadyExist"));
 			}
-			Ride ride = car.addRide(from, to, date, nPlaces, price);
+			Ride ride = c.addRide(from, to, date, nPlaces, price);
 			//next instruction can be obviated
-			db.persist(driver); 
+			db.persist(c); 
 			db.getTransaction().commit();
 
 			return ride;
@@ -327,6 +333,41 @@ public class DataAccess  {
 		 db.getTransaction().commit();
 		 System.out.println("Car: " + marka + ", " + modeloa + ", " + eserlekuKop +  " has been added to: " + driver);
 		 return true;
+	 }
+	 
+	 public void deleteRideByRideNumber(int rideNumber) {
+		 Traveler traveler;
+		 db.getTransaction().begin();
+		 Ride ride = this.getRideByRideNumber(rideNumber);
+		 if(ride != null) {
+			 for(ReserveStatus rs:ride.getReserveList()) {
+				 if(rs != null) {
+					 traveler = rs.getTraveler();
+					 traveler.getReserves().remove(rs);
+					 db.persist(traveler);
+				 }
+			 }
+			 ride.getCar().getRides().remove(ride);
+			 db.remove(ride);
+			 db.getTransaction().commit();
+			 System.out.println("Ride: " + ride + " has been deleted.");
+	 	} else {
+	 		System.out.println("The ride doesn't exist");
+	 	}
+	 }
+	 
+	 public Car getCar(String marka, String modeloa, Driver driver) {
+		 List<Car> carList = new ArrayList<Car>();
+		 TypedQuery<Car> query = db.createQuery("SELECT c FROM Car c WHERE c.marka = ?1 AND c.modeloa = ?2 AND c.driver = ?3", Car.class);
+	     query.setParameter(1, marka);
+	     query.setParameter(2, modeloa);
+	     query.setParameter(3, this.getDriverByEmail(driver.getEmail()));
+		 carList = query.getResultList();
+		 return carList.get(0);
+	 }
+	 
+	 public Driver getDriverByEmail(String email) {
+		 return db.find(Driver.class,email);
 	 }
 	
 	

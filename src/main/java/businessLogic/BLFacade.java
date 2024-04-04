@@ -93,6 +93,10 @@ public interface BLFacade  {
 	public boolean addRideByEmail(String email, int rideNumber);
 	
 	public boolean addCarByEmail(String email, String marka, String modeloa, int eserlekuKop);
+	
+	public void deleteRideByRideNumber(int rideNumber);
+	
+	public Car getCar(String marka, String modeloa, Driver driver);
 
 	
 }
