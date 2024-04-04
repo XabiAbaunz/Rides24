@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import businessLogic.BLFacade;
 import domain.Driver;
 import domain.User;
 
@@ -53,6 +54,8 @@ public class DriverMainGUI extends JFrame {
 	public DriverMainGUI(Driver d) {
 		this.driver = d;
 		
+		BLFacade facade = MainGUI.getBusinessLogic();
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -95,6 +98,12 @@ public class DriverMainGUI extends JFrame {
 		});
 		
 		contentPane.add(jButtonKotxeaGehitu);
+		jButtonBidaiaKantzelatu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CancelRideGUI frame = new CancelRideGUI(driver);
+				frame.setVisible(true);
+			}
+		});
 		
 		contentPane.add(jButtonBidaiaKantzelatu);
 	}

@@ -68,15 +68,15 @@ public class AddCarGUI extends JFrame {
 		contentPane.add(lblKotxeaGehitu);
 		
 		lblMarka = new JLabel("Marka idatzi:");
-		lblMarka.setBounds(23, 70, 45, 13);
+		lblMarka.setBounds(23, 70, 92, 13);
 		contentPane.add(lblMarka);
 		
 		lblModeloa = new JLabel("Modeloa idatzi:");
-		lblModeloa.setBounds(23, 110, 45, 13);
+		lblModeloa.setBounds(23, 110, 92, 13);
 		contentPane.add(lblModeloa);
 		
 		lblEserlekuKop = new JLabel("Eserleku kopurua idatzi:");
-		lblEserlekuKop.setBounds(79, 155, 45, 13);
+		lblEserlekuKop.setBounds(23, 155, 133, 13);
 		contentPane.add(lblEserlekuKop);
 		
 		btnNewButton = new JButton("Kotxea gehitu");
@@ -100,7 +100,7 @@ public class AddCarGUI extends JFrame {
 				
 			}
 		});
-		btnNewButton.setBounds(170, 191, 85, 21);
+		btnNewButton.setBounds(163, 191, 111, 30);
 		contentPane.add(btnNewButton);
 		
 		textMarka = new JTextField();

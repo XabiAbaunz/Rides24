@@ -30,6 +30,10 @@ public class Traveler extends User implements Serializable {
 	public void addReserve(ReserveStatus r)  {
         reserves.add(r);
 	}
+	
+	public List<ReserveStatus> getReserves() {
+		return this.reserves;
+	}
 
 	@Override
 	public String toString() {

@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import businessLogic.BLFacade;
 import domain.Car;
 import domain.Driver;
 import domain.Ride;
@@ -16,6 +17,7 @@ import javax.swing.JComboBox;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
 public class CancelRideGUI extends JFrame {
@@ -55,6 +57,8 @@ public class CancelRideGUI extends JFrame {
 	 * Create the frame.
 	 */
 	public CancelRideGUI(Driver driver) {
+		BLFacade facade = MainGUI.getBusinessLogic();
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -64,11 +68,11 @@ public class CancelRideGUI extends JFrame {
 		contentPane.setLayout(null);
 		
 		lblBidaiaKantzelatu = new JLabel("Bidaia kantzelatu");
-		lblBidaiaKantzelatu.setBounds(193, 25, 45, 13);
+		lblBidaiaKantzelatu.setBounds(171, 25, 109, 13);
 		contentPane.add(lblBidaiaKantzelatu);
 		
 		lblBidaiak = new JLabel("Bidaia aukeratu:");
-		lblBidaiak.setBounds(42, 141, 45, 13);
+		lblBidaiak.setBounds(10, 141, 85, 13);
 		contentPane.add(lblBidaiak);
 		
 		comboBidaiak = new JComboBox();
@@ -82,25 +86,43 @@ public class CancelRideGUI extends JFrame {
 		contentPane.add(comboBidaiak);
 		
 		btnKantzelatu = new JButton("Kantzelatu");
+		btnKantzelatu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				facade.deleteRideByRideNumber(ride.getRideNumber());
+				comboKotxeak.setSelectedItem(null);
+				comboBidaiak.setSelectedItem(null);
+				btnKantzelatu.setEnabled(false);
+			}
+		});
 		btnKantzelatu.setBounds(171, 212, 85, 21);
 		contentPane.add(btnKantzelatu);
 		btnKantzelatu.setEnabled(false);
 		
 		lblKotxeak = new JLabel("Kotxea aukeratu:");
-		lblKotxeak.setBounds(42, 83, 45, 13);
+		lblKotxeak.setBounds(10, 83, 99, 13);
 		contentPane.add(lblKotxeak);
-		
 		
 		comboKotxeak = new JComboBox();
 		comboKotxeak.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				String marka;
+				String modeloa;
+				bidaiaComboBoxModel.removeAllElements();
 				btnKantzelatu.setEnabled(false);
-				car = (Car) comboKotxeak.getSelectedItem();
-				if(!car.getRides().isEmpty()) {
-					for(Ride r:car.getRides()) {
-						bidaiaComboBoxModel.addElement(r);
+				Car c = (Car) comboKotxeak.getSelectedItem();
+				if(c != null) {
+					marka = ((Car) comboKotxeak.getSelectedItem()).getMarka();
+					modeloa = ((Car) comboKotxeak.getSelectedItem()).getModeloa();
+					car = facade.getCar(marka, modeloa, driver);
+					if(car != null) {
+						ArrayList<Ride> rides = car.getRides();
+						if(rides != null && !rides.isEmpty()) {
+							for(Ride r:car.getRides()) {
+								bidaiaComboBoxModel.addElement(r);
+							}
+							comboBidaiak.setModel(bidaiaComboBoxModel);
+						}
 					}
-					comboBidaiak.setModel(bidaiaComboBoxModel);
 				}
 			}
 		});

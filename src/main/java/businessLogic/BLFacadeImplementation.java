@@ -190,4 +190,17 @@ public class BLFacadeImplementation  implements BLFacade {
     	dbManager.close();
     	return b;
     }
+    
+    public void deleteRideByRideNumber(int rideNumber) {
+    	dbManager.open();
+    	dbManager.deleteRideByRideNumber(rideNumber);
+    	dbManager.close();
+    }
+    
+    public Car getCar(String marka, String modeloa, Driver driver) {
+    	dbManager.open();
+    	Car car = dbManager.getCar(marka, modeloa, driver);
+    	dbManager.close();
+    	return car;
+    }
 }
