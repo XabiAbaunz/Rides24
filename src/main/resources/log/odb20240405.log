@@ -580,3 +580,665 @@ Type domain.ReserveStatus is not enhanced.
 [2024-04-05 12:43:11 #8 type] 
 Type domain.Traveler is not enhanced.
 
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-04-05 12:59:14 #1 store] 
+Database 'C:\Users\harit\git\Rides2\src\main\resources\rides.temp' is opened by 22176@DESKTOP-VBQNJCT
+
+[2024-04-05 12:59:15 #2 type] 
+Type domain.User is not enhanced.
+
+[2024-04-05 12:59:15 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2024-04-05 12:59:15 #4 type] 
+Type domain.Car is not enhanced.
+
+[2024-04-05 12:59:15 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2024-04-05 12:59:15 #6 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-04-05 12:59:15 #7 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-04-05 13:25:13 #1 store] 
+Database 'C:\Users\harit\git\Rides2\src\main\resources\rides.temp' is opened by 21072@DESKTOP-VBQNJCT
+
+[2024-04-05 13:25:13 #2 type] 
+Type domain.User is not enhanced.
+
+[2024-04-05 13:25:13 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2024-04-05 13:25:13 #4 type] 
+Type domain.Car is not enhanced.
+
+[2024-04-05 13:25:13 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2024-04-05 13:25:13 #6 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-04-05 13:25:13 #7 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-04-05 13:25:36 #1 store] 
+Database 'C:\Users\harit\git\Rides2\src\main\resources\rides.temp' is opened by 6192@DESKTOP-VBQNJCT
+
+[2024-04-05 13:25:36 #2 type] 
+Type domain.User is not enhanced.
+
+[2024-04-05 13:25:36 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2024-04-05 13:25:36 #4 type] 
+Type domain.Car is not enhanced.
+
+[2024-04-05 13:25:36 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2024-04-05 13:25:36 #6 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-04-05 13:25:36 #7 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-04-05 13:33:02 #1 store] 
+Database 'C:\Users\harit\git\Rides2\src\main\resources\rides.temp' is opened by 18392@DESKTOP-VBQNJCT
+
+[2024-04-05 13:33:02 #2 type] 
+Type domain.User is not enhanced.
+
+[2024-04-05 13:33:02 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2024-04-05 13:33:02 #4 type] 
+Type domain.Car is not enhanced.
+
+[2024-04-05 13:33:02 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2024-04-05 13:33:02 #6 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-04-05 13:33:02 #7 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-04-05 13:35:40 #1 store] 
+Database 'C:\Users\harit\git\Rides2\src\main\resources\rides.temp' is opened by 21656@DESKTOP-VBQNJCT
+
+[2024-04-05 13:35:40 #2 type] 
+Type domain.User is not enhanced.
+
+[2024-04-05 13:35:40 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2024-04-05 13:35:40 #4 type] 
+Type domain.Car is not enhanced.
+
+[2024-04-05 13:35:40 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2024-04-05 13:35:40 #6 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-04-05 13:35:40 #7 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-04-05 13:36:18 #1 store] 
+Database 'C:\Users\harit\git\Rides2\src\main\resources\rides.temp' is opened by 2848@DESKTOP-VBQNJCT
+
+[2024-04-05 13:36:18 #2 type] 
+Type domain.User is not enhanced.
+
+[2024-04-05 13:36:18 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2024-04-05 13:36:18 #4 type] 
+Type domain.Car is not enhanced.
+
+[2024-04-05 13:36:18 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2024-04-05 13:36:18 #6 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-04-05 13:36:18 #7 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-04-05 13:39:28 #1 store] 
+Database 'C:\Users\harit\git\Rides2\src\main\resources\rides.temp' is opened by 7968@DESKTOP-VBQNJCT
+
+[2024-04-05 13:39:28 #2 type] 
+Type domain.User is not enhanced.
+
+[2024-04-05 13:39:28 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2024-04-05 13:39:28 #4 type] 
+Type domain.Car is not enhanced.
+
+[2024-04-05 13:39:28 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2024-04-05 13:39:28 #6 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-04-05 13:39:28 #7 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-04-05 13:41:50 #1 store] 
+Database 'C:\Users\harit\git\Rides2\src\main\resources\rides.temp' is opened by 21016@DESKTOP-VBQNJCT
+
+[2024-04-05 13:41:50 #2 type] 
+Type domain.User is not enhanced.
+
+[2024-04-05 13:41:50 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2024-04-05 13:41:50 #4 type] 
+Type domain.Car is not enhanced.
+
+[2024-04-05 13:41:50 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2024-04-05 13:41:50 #6 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-04-05 13:41:50 #7 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-04-05 13:41:55 #1 store] 
+Database 'C:\Users\harit\git\Rides2\src\main\resources\rides.temp' is opened by 15720@DESKTOP-VBQNJCT
+
+[2024-04-05 13:41:55 #2 type] 
+Type domain.User is not enhanced.
+
+[2024-04-05 13:41:55 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2024-04-05 13:41:55 #4 type] 
+Type domain.Car is not enhanced.
+
+[2024-04-05 13:41:55 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2024-04-05 13:41:55 #6 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-04-05 13:41:55 #7 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-04-05 14:46:45 #1 store] 
+Database 'C:\Users\harit\git\Rides2\src\main\resources\rides.temp' has been recovered (tr. 81-84)
+
+[2024-04-05 14:46:45 #2 store] 
+Database 'C:\Users\harit\git\Rides2\src\main\resources\rides.temp' is opened by 3976@DESKTOP-VBQNJCT
+
+[2024-04-05 14:46:45 #3 type] 
+Type domain.User is not enhanced.
+
+[2024-04-05 14:46:45 #4 type] 
+Type domain.Driver is not enhanced.
+
+[2024-04-05 14:46:45 #5 type] 
+Type domain.Car is not enhanced.
+
+[2024-04-05 14:46:45 #6 type] 
+Type domain.Ride is not enhanced.
+
+[2024-04-05 14:46:45 #7 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-04-05 14:46:45 #8 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-04-05 14:50:36 #1 store] 
+Database 'C:\Users\harit\git\Rides2\src\main\resources\rides.temp' has been recovered (tr. 86-89)
+
+[2024-04-05 14:50:36 #2 store] 
+Database 'C:\Users\harit\git\Rides2\src\main\resources\rides.temp' is opened by 19684@DESKTOP-VBQNJCT
+
+[2024-04-05 14:50:37 #3 type] 
+Type domain.User is not enhanced.
+
+[2024-04-05 14:50:37 #4 type] 
+Type domain.Driver is not enhanced.
+
+[2024-04-05 14:50:37 #5 type] 
+Type domain.Car is not enhanced.
+
+[2024-04-05 14:50:37 #6 type] 
+Type domain.Ride is not enhanced.
+
+[2024-04-05 14:50:37 #7 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-04-05 14:50:37 #8 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-04-05 15:02:22 #1 store] 
+Database 'C:\Users\harit\git\Rides2\src\main\resources\rides.temp' has been recovered (tr. 90-92)
+
+[2024-04-05 15:02:22 #2 store] 
+Database 'C:\Users\harit\git\Rides2\src\main\resources\rides.temp' is opened by 22932@DESKTOP-VBQNJCT
+
+[2024-04-05 15:02:22 #3 type] 
+Type domain.User is not enhanced.
+
+[2024-04-05 15:02:22 #4 type] 
+Type domain.Driver is not enhanced.
+
+[2024-04-05 15:02:22 #5 type] 
+Type domain.Car is not enhanced.
+
+[2024-04-05 15:02:22 #6 type] 
+Type domain.Ride is not enhanced.
+
+[2024-04-05 15:02:22 #7 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-04-05 15:02:22 #8 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-04-05 15:03:22 #1 store] 
+Database 'C:\Users\harit\git\Rides2\src\main\resources\rides.temp' is opened by 18352@DESKTOP-VBQNJCT
+
+[2024-04-05 15:03:22 #2 type] 
+Type domain.User is not enhanced.
+
+[2024-04-05 15:03:22 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2024-04-05 15:03:22 #4 type] 
+Type domain.Car is not enhanced.
+
+[2024-04-05 15:03:22 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2024-04-05 15:03:22 #6 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-04-05 15:03:22 #7 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-04-05 15:03:42 #1 store] 
+Database 'C:\Users\harit\git\Rides2\src\main\resources\rides.temp' is opened by 21760@DESKTOP-VBQNJCT
+
+[2024-04-05 15:03:42 #2 type] 
+Type domain.User is not enhanced.
+
+[2024-04-05 15:03:42 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2024-04-05 15:03:42 #4 type] 
+Type domain.Car is not enhanced.
+
+[2024-04-05 15:03:42 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2024-04-05 15:03:42 #6 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-04-05 15:03:42 #7 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-04-05 15:16:18 #1 store] 
+Database 'C:\Users\harit\git\Rides2\src\main\resources\rides.temp' is opened by 23340@DESKTOP-VBQNJCT
+
+[2024-04-05 15:16:18 #2 type] 
+Type domain.User is not enhanced.
+
+[2024-04-05 15:16:18 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2024-04-05 15:16:18 #4 type] 
+Type domain.Car is not enhanced.
+
+[2024-04-05 15:16:18 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2024-04-05 15:16:18 #6 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-04-05 15:16:18 #7 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-04-05 15:34:47 #1 store] 
+Database 'C:\Users\harit\git\Rides2\src\main\resources\rides.temp' has been recovered (tr. 94-98)
+
+[2024-04-05 15:34:47 #2 store] 
+Database 'C:\Users\harit\git\Rides2\src\main\resources\rides.temp' is opened by 19964@DESKTOP-VBQNJCT
+
+[2024-04-05 15:34:47 #3 type] 
+Type domain.User is not enhanced.
+
+[2024-04-05 15:34:47 #4 type] 
+Type domain.Driver is not enhanced.
+
+[2024-04-05 15:34:47 #5 type] 
+Type domain.Car is not enhanced.
+
+[2024-04-05 15:34:47 #6 type] 
+Type domain.Ride is not enhanced.
+
+[2024-04-05 15:34:47 #7 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-04-05 15:34:47 #8 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-04-05 15:38:39 #1 store] 
+Database 'C:\Users\harit\git\Rides2\src\main\resources\rides.temp' has been recovered (tr. 99-100)
+
+[2024-04-05 15:38:39 #2 store] 
+Database 'C:\Users\harit\git\Rides2\src\main\resources\rides.temp' is opened by 17416@DESKTOP-VBQNJCT
+
+[2024-04-05 15:38:39 #3 type] 
+Type domain.User is not enhanced.
+
+[2024-04-05 15:38:39 #4 type] 
+Type domain.Driver is not enhanced.
+
+[2024-04-05 15:38:39 #5 type] 
+Type domain.Car is not enhanced.
+
+[2024-04-05 15:38:39 #6 type] 
+Type domain.Ride is not enhanced.
+
+[2024-04-05 15:38:39 #7 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-04-05 15:38:39 #8 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-04-05 15:41:15 #1 store] 
+Database 'C:\Users\harit\git\Rides2\src\main\resources\rides.temp' is opened by 18612@DESKTOP-VBQNJCT
+
+[2024-04-05 15:41:15 #2 type] 
+Type domain.User is not enhanced.
+
+[2024-04-05 15:41:15 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2024-04-05 15:41:15 #4 type] 
+Type domain.Car is not enhanced.
+
+[2024-04-05 15:41:15 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2024-04-05 15:41:15 #6 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-04-05 15:41:15 #7 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-04-05 15:42:55 #1 store] 
+Database 'C:\Users\harit\git\Rides2\src\main\resources\rides.temp' is opened by 2300@DESKTOP-VBQNJCT
+
+[2024-04-05 15:42:55 #2 type] 
+Type domain.User is not enhanced.
+
+[2024-04-05 15:42:55 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2024-04-05 15:42:55 #4 type] 
+Type domain.Car is not enhanced.
+
+[2024-04-05 15:42:55 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2024-04-05 15:42:55 #6 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-04-05 15:42:55 #7 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-04-05 15:51:32 #1 store] 
+Database 'C:\Users\harit\git\Rides2\src\main\resources\rides.temp' is opened by 16872@DESKTOP-VBQNJCT
+
+[2024-04-05 15:51:32 #2 type] 
+Type domain.User is not enhanced.
+
+[2024-04-05 15:51:32 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2024-04-05 15:51:32 #4 type] 
+Type domain.Car is not enhanced.
+
+[2024-04-05 15:51:32 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2024-04-05 15:51:32 #6 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-04-05 15:51:32 #7 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-04-05 15:52:13 #1 store] 
+Database 'C:\Users\harit\git\Rides2\src\main\resources\rides.temp' is opened by 20300@DESKTOP-VBQNJCT
+
+[2024-04-05 15:52:13 #2 type] 
+Type domain.User is not enhanced.
+
+[2024-04-05 15:52:13 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2024-04-05 15:52:13 #4 type] 
+Type domain.Car is not enhanced.
+
+[2024-04-05 15:52:13 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2024-04-05 15:52:13 #6 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-04-05 15:52:14 #7 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-04-05 15:53:48 #1 store] 
+Database 'C:\Users\harit\git\Rides2\src\main\resources\rides.temp' is opened by 20996@DESKTOP-VBQNJCT
+
+[2024-04-05 15:53:48 #2 type] 
+Type domain.User is not enhanced.
+
+[2024-04-05 15:53:48 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2024-04-05 15:53:48 #4 type] 
+Type domain.Car is not enhanced.
+
+[2024-04-05 15:53:48 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2024-04-05 15:53:48 #6 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-04-05 15:53:48 #7 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-04-05 15:58:56 #1 store] 
+Database 'C:\Users\harit\git\Rides2\src\main\resources\rides.temp' is opened by 14772@DESKTOP-VBQNJCT
+
+[2024-04-05 15:58:56 #2 type] 
+Type domain.User is not enhanced.
+
+[2024-04-05 15:58:56 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2024-04-05 15:58:56 #4 type] 
+Type domain.Car is not enhanced.
+
+[2024-04-05 15:58:56 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2024-04-05 15:58:56 #6 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-04-05 15:58:56 #7 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-04-05 15:59:44 #1 store] 
+Database 'C:\Users\harit\git\Rides2\src\main\resources\rides.temp' is opened by 22608@DESKTOP-VBQNJCT
+
+[2024-04-05 15:59:44 #2 type] 
+Type domain.User is not enhanced.
+
+[2024-04-05 15:59:44 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2024-04-05 15:59:44 #4 type] 
+Type domain.Car is not enhanced.
+
+[2024-04-05 15:59:44 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2024-04-05 15:59:44 #6 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-04-05 15:59:44 #7 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-04-05 16:00:56 #1 store] 
+Database 'C:\Users\harit\git\Rides2\src\main\resources\rides.temp' is opened by 18268@DESKTOP-VBQNJCT
+
+[2024-04-05 16:00:56 #2 type] 
+Type domain.User is not enhanced.
+
+[2024-04-05 16:00:56 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2024-04-05 16:00:56 #4 type] 
+Type domain.Car is not enhanced.
+
+[2024-04-05 16:00:56 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2024-04-05 16:00:56 #6 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-04-05 16:00:56 #7 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-04-05 16:04:44 #1 store] 
+Database 'C:\Users\harit\git\Rides2\src\main\resources\rides.temp' has been recovered (tr. 114-123)
+
+[2024-04-05 16:04:45 #2 store] 
+Database 'C:\Users\harit\git\Rides2\src\main\resources\rides.temp' is opened by 17136@DESKTOP-VBQNJCT
+
+[2024-04-05 16:04:45 #3 type] 
+Type domain.User is not enhanced.
+
+[2024-04-05 16:04:45 #4 type] 
+Type domain.Driver is not enhanced.
+
+[2024-04-05 16:04:45 #5 type] 
+Type domain.Car is not enhanced.
+
+[2024-04-05 16:04:45 #6 type] 
+Type domain.Ride is not enhanced.
+
+[2024-04-05 16:04:45 #7 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-04-05 16:04:45 #8 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-04-05 16:07:47 #1 store] 
+Database 'C:\Users\harit\git\Rides2\src\main\resources\rides.temp' is opened by 18148@DESKTOP-VBQNJCT
+
+[2024-04-05 16:07:47 #2 type] 
+Type domain.User is not enhanced.
+
+[2024-04-05 16:07:47 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2024-04-05 16:07:47 #4 type] 
+Type domain.Car is not enhanced.
+
+[2024-04-05 16:07:47 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2024-04-05 16:07:47 #6 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-04-05 16:07:47 #7 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-04-05 16:09:20 #1 store] 
+Database 'C:\Users\harit\git\Rides2\src\main\resources\rides.temp' is opened by 13296@DESKTOP-VBQNJCT
+
+[2024-04-05 16:09:20 #2 type] 
+Type domain.User is not enhanced.
+
+[2024-04-05 16:09:20 #3 type] 
+Type domain.Driver is not enhanced.
+
+[2024-04-05 16:09:20 #4 type] 
+Type domain.Car is not enhanced.
+
+[2024-04-05 16:09:20 #5 type] 
+Type domain.Ride is not enhanced.
+
+[2024-04-05 16:09:20 #6 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-04-05 16:09:20 #7 type] 
+Type domain.Traveler is not enhanced.
+

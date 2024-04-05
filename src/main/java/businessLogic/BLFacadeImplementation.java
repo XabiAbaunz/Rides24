@@ -171,6 +171,12 @@ public class BLFacadeImplementation  implements BLFacade {
     	return l;
     }
 
+    public List<ReserveStatus> getAllReservesFromEmail(String email){
+    	dbManager.open();
+    	List<ReserveStatus> l = dbManager.getAllReservesFromEmail(email);
+    	dbManager.close();
+    	return l;
+    }
         
     public void removeReserve(int rideNumber, int reserveNumber) {
     	dbManager.open();
@@ -203,5 +209,11 @@ public class BLFacadeImplementation  implements BLFacade {
     	Car car = dbManager.getCar(marka, modeloa, driver);
     	dbManager.close();
     	return car;
+    }
+    
+    public void changeReserveStatus(ReserveStatus erreserba, Boolean erantzun, Boolean onartu) {
+    	dbManager.open();
+    	dbManager.changeReserveStatus( erreserba,  erantzun,  onartu);
+    	dbManager.close();
     }
 }
