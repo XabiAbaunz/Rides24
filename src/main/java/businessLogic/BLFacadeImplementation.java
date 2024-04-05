@@ -170,7 +170,8 @@ public class BLFacadeImplementation  implements BLFacade {
     	dbManager.close();
     	return l;
     }
-    
+
+        
     public void removeReserve(int rideNumber, int reserveNumber) {
     	dbManager.open();
     	dbManager.removeReserve(rideNumber, reserveNumber);

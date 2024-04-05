@@ -308,7 +308,7 @@ public class DataAccess  {
 	
 	public List<Ride> getAllRidesFromEmail(String email) {
 		List<Ride> rideList = new ArrayList<>();
-		TypedQuery<Ride> query = db.createQuery("SELECT r FROM Ride r WHERE r.driver.email = ?1", Ride.class);
+		TypedQuery<Ride> query = db.createQuery("SELECT r FROM Ride r WHERE r.car.driver.email = ?1", Ride.class);
         query.setParameter(1, email);
 		rideList = query.getResultList();
 	 	return rideList;

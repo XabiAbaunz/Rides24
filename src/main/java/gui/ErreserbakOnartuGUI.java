@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import businessLogic.BLFacade;
+import domain.Car;
 import domain.Driver;
 import domain.ReserveStatus;
 import domain.Ride;
@@ -53,7 +54,7 @@ public class ErreserbakOnartuGUI extends JFrame {
 		
 		this.facade = MainGUI.getBusinessLogic();
 		
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -88,19 +89,17 @@ public class ErreserbakOnartuGUI extends JFrame {
 		contentPane.add(comboBoxReserves);
 		
 		
-		jLabelErreserbakOnartu = new JLabel("New label");
-		jLabelErreserbakOnartu.setBounds(190, 36, 45, 13);
+		jLabelErreserbakOnartu.setBounds(190, 36, 143, 13);
 		contentPane.add(jLabelErreserbakOnartu);
 		
-		jLabelBidaiaAukeratu = new JLabel("New label");
-		jLabelBidaiaAukeratu.setBounds(68, 84, 45, 13);
+
+		jLabelBidaiaAukeratu.setBounds(0, 84, 113, 13);
 		contentPane.add(jLabelBidaiaAukeratu);
 		
-		jLabelBidaiariaAukeratu = new JLabel("New label");
-		jLabelBidaiariaAukeratu.setBounds(68, 143, 45, 13);
+
+		jLabelBidaiariaAukeratu.setBounds(0, 143, 113, 13);
 		contentPane.add(jLabelBidaiariaAukeratu);
 		
-		jButtonOnartu = new JButton("New button");
 		jButtonOnartu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				reserve.setAccepted(true);
@@ -115,7 +114,6 @@ public class ErreserbakOnartuGUI extends JFrame {
 		contentPane.add(jButtonOnartu);
 		jButtonOnartu.setEnabled(false);
 		
-		JButtonBaztertu = new JButton("New button");
 		JButtonBaztertu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				reserve.setAccepted(false);

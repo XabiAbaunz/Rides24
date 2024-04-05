@@ -69,7 +69,6 @@ public class LoginGUI extends JFrame {
 		facade.register("xabid", "xabi", "1234", 0, "Driver");
 		facade.register("xabit", "xabi", "1234", 0, "Traveler");
 		
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

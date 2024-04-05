@@ -55,7 +55,6 @@ public class AddCarGUI extends JFrame {
 	 * Create the frame.
 	 */
 	public AddCarGUI(Driver driver) {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
