@@ -20,9 +20,18 @@ public class ReserveStatus {
 	private int reserveNumber;
 	private boolean accepted=false;
 	private boolean answered=false;
+	private boolean finished=false;
 	private double frozenBalance;
 	private Traveler traveler;
+	private Ride bidaia;
 	private static int count = 0;
+	
+	public boolean isFinished() {
+		return this.finished;
+	}
+	public void setFinished(boolean finished) {
+		this.finished = finished;
+	}
 	
 	public int getReserveNumber() {
 		return reserveNumber;
@@ -32,9 +41,10 @@ public class ReserveStatus {
 		this.reserveNumber = reserveNumber;
 	}
 
-	public ReserveStatus(float price, Traveler traveler) {
+	public ReserveStatus(float price, Traveler traveler, Ride bidaia) {
 		this.frozenBalance = price;
 		this.traveler = traveler;
+		this.bidaia = bidaia;
 		reserveNumber = count;
 		count++;
 	}
@@ -67,6 +77,13 @@ public class ReserveStatus {
 		return traveler;
 	}
 
+    public Ride getRide() {
+        return bidaia;
+    }
+
+    public void setRide(Ride ride) {
+        this.bidaia = ride;
+    }
 	public void setEmail(Traveler traveler) {
 		this.traveler = traveler;
 	}

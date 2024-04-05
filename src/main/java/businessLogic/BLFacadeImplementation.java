@@ -216,4 +216,9 @@ public class BLFacadeImplementation  implements BLFacade {
     	dbManager.changeReserveStatus( erreserba,  erantzun,  onartu);
     	dbManager.close();
     }
+    public void bidaiaBaieztatu(String email, int reserveNumber) {
+    	dbManager.open();
+    	dbManager.bidaiaBaieztatu(email, reserveNumber);
+    	dbManager.close();
+    }
 }
