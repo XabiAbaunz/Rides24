@@ -314,6 +314,23 @@ public class DataAccess  {
 	 	return rideList;
 	}
 	
+	public List<ReserveStatus> getAllReservesFromEmail(String email) {
+		List<ReserveStatus> reserveList = new ArrayList<>();
+		TypedQuery<ReserveStatus> query = db.createQuery("SELECT rs FROM ReserveStatus rs WHERE rs.traveler.email = ?1", ReserveStatus.class);
+        query.setParameter(1, email);
+		reserveList = query.getResultList();
+	 	return reserveList;
+	}
+	
+	public void changeReserveStatus(ReserveStatus erreserba, Boolean erantzun, Boolean onartu) {
+		db.getTransaction().begin();
+		erreserba.setAccepted(onartu);
+		erreserba.setAnswered(erantzun);
+		db.merge(erreserba);
+		db.getTransaction().commit();
+	}
+	
+	
 	public boolean addRideByEmail(String email, int rideNumber) {
 		Ride ride = this.getRideByRideNumber(rideNumber);
 		db.getTransaction().begin();
@@ -409,5 +426,6 @@ public void open(){
 	            }
 	        }
 	    }
-	
+
+
 }

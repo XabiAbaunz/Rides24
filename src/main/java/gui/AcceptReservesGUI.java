@@ -22,7 +22,7 @@ import java.util.ResourceBundle;
 import java.awt.event.ActionEvent;
 import javax.swing.DefaultComboBoxModel;
 
-public class ErreserbakOnartuGUI extends JFrame {
+public class AcceptReservesGUI extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -48,7 +48,7 @@ public class ErreserbakOnartuGUI extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public ErreserbakOnartuGUI(Driver d) {
+	public AcceptReservesGUI(Driver d) {
 		
 		this.driver = d;
 		
@@ -102,8 +102,7 @@ public class ErreserbakOnartuGUI extends JFrame {
 		
 		jButtonOnartu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				reserve.setAccepted(true);
-				reserve.setAnswered(true);
+				facade.changeReserveStatus(reserve, true, true);
 				facade.addRideByEmail(reserve.getTraveler().getEmail(), ride.getRideNumber());
 				facade.removeReserve(ride.getRideNumber(), reserve.getReserveNumber());
 				comboBoxReserves.removeAllItems();
@@ -116,8 +115,7 @@ public class ErreserbakOnartuGUI extends JFrame {
 		
 		JButtonBaztertu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				reserve.setAccepted(false);
-				reserve.setAnswered(true);
+				facade.changeReserveStatus(reserve, true, false);
 				facade.updateMoneyByEmail(reserve.getTraveler().getEmail(), reserve.getFrozenBalance());
 				facade.removeReserve(ride.getRideNumber(), reserve.getReserveNumber());
 				comboBoxReserves.removeAllItems();

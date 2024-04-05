@@ -75,7 +75,7 @@ public class DriverMainGUI extends JFrame {
 		contentPane.add(jButtonCreateRide);
 		jButtonAcceptReservation.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ErreserbakOnartuGUI frame = new ErreserbakOnartuGUI(driver);
+				AcceptReservesGUI frame = new AcceptReservesGUI(driver);
 				frame.setVisible(true);
 			}
 		});

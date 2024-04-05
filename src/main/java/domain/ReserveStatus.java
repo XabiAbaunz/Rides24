@@ -18,8 +18,8 @@ public class ReserveStatus {
 	@XmlJavaTypeAdapter(IntegerAdapter.class)
 	@GeneratedValue
 	private int reserveNumber;
-	private boolean accepted;
-	private boolean answered;
+	private boolean accepted=false;
+	private boolean answered=false;
 	private double frozenBalance;
 	private Traveler traveler;
 	private static int count = 0;
@@ -33,8 +33,6 @@ public class ReserveStatus {
 	}
 
 	public ReserveStatus(float price, Traveler traveler) {
-		this.accepted = false;
-		this.answered = false;
 		this.frozenBalance = price;
 		this.traveler = traveler;
 		reserveNumber = count;
@@ -77,4 +75,15 @@ public class ReserveStatus {
 	public String toString() {
 		return reserveNumber+";"+traveler;
 	}
+
+	public String getStatus() {
+	    if (accepted && answered) {
+	        return "Onartua";
+	    } else if (!accepted && answered) {
+	        return "Baztertua";
+	    } else {
+	        return "Itxaroten";
+	    }
+	}
+
 }

@@ -27,6 +27,7 @@ public class TravelerMainGUI extends JFrame {
 	private Traveler traveler;
 	private JButton jButtonDiruaSartu = new JButton(ResourceBundle.getBundle("Etiquetas").getString("TravelerMainGUI.diruaSartuAtera")); //$NON-NLS-1$ //$NON-NLS-2$
 
+	private JButton jButtonErreserbakKon = new JButton(ResourceBundle.getBundle("Etiquetas").getString("ErreserbakKontsultatuGUI.erreserbakKontsultatu"));
 	/**
 	 * Launch the application.
 	 */
@@ -53,7 +54,7 @@ public class TravelerMainGUI extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(new GridLayout(3, 1, 0, 0));
+		contentPane.setLayout(new GridLayout(4, 1, 0, 0));
 		JlabelAukeratu.setHorizontalAlignment(SwingConstants.CENTER);
 		contentPane.add(JlabelAukeratu);
 		rdbtBidaiaBilatu.addActionListener(new ActionListener() {
@@ -71,6 +72,19 @@ public class TravelerMainGUI extends JFrame {
 		});
 		
 		contentPane.add(jButtonDiruaSartu);
+		
+		jButtonErreserbakKon.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CheckReserveStatusGUI frame = new CheckReserveStatusGUI(t);
+				frame.setVisible(true);
+			}
+		});
+		
+		
+		contentPane.add(jButtonErreserbakKon);
+		
+		
+		
 	}
 
 }

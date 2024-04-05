@@ -99,5 +99,9 @@ public interface BLFacade  {
 	
 	public Car getCar(String marka, String modeloa, Driver driver);
 
+	public List<ReserveStatus> getAllReservesFromEmail(String email);
+	
+	public void changeReserveStatus(ReserveStatus erreserba, Boolean erantzun, Boolean onartu);
+
 	
 }
