@@ -395,6 +395,9 @@ public class DataAccess  {
 			double dirua = erreserba.getFrozenBalance();
 			Driver gidaria = bidaia.getCar().getDriver();
 			gidaria.setCash(gidaria.getCash() + dirua);
+			Date data = new Date();
+			Movement mugimendua = new Movement(gidaria, dirua, data);
+			gidaria.mugimenduaGehitu(mugimendua);
 	        db.persist(gidaria);
 			db.getTransaction().commit();
 	        removeReserve(bidaia.getRideNumber(), reserveNumber);
