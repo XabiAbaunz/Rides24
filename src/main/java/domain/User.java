@@ -61,6 +61,10 @@ public abstract class User {
 	public void setCash(Double cash) {
 		this.cash = cash;
 	}
+	
+	public void mugimenduaGehitu(Movement mugimendua) {
+		this.movements.add(mugimendua);
+	}
 
 	@Override
 	public String toString() {
