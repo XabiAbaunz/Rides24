@@ -102,6 +102,8 @@ public interface BLFacade  {
 	public List<ReserveStatus> getAllReservesFromEmail(String email);
 	
 	public void changeReserveStatus(ReserveStatus erreserba, Boolean erantzun, Boolean onartu);
+	
+	public void bidaiaBaieztatu(String email, int reserveNumber);
 
 	
 }

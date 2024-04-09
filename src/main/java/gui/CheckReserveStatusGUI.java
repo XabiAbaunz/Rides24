@@ -50,23 +50,18 @@ public class CheckReserveStatusGUI extends JFrame {
         comboBoxReservas.setBounds(200, 42, 200, 22);
         contentPane.add(comboBoxReservas);
 
-        JButton btnConsultarEstado = new JButton("Egoera kontsultatu");
-        btnConsultarEstado.addActionListener(new ActionListener() {
+        JButton btnEgoeraKontsultatu = new JButton("Egoera kontsultatu");
+        btnEgoeraKontsultatu.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-            	 ReserveStatus reservaSeleccionada = (ReserveStatus) comboBoxReservas.getSelectedItem();
-                 if (reservaSeleccionada != null) {
-                     String estado = reservaSeleccionada.getStatus();
-                     
-
-                     lblEstadoReserva.setText("Erreserbaren egoera: " + estado);
-                 } else {
-                  
-                     lblEstadoReserva.setText("Aukeratu erreserba bat");
-                 }
+            	 ReserveStatus aukeratutakoEgoera = (ReserveStatus) comboBoxReservas.getSelectedItem();
+                 if (aukeratutakoEgoera != null) {
+                     String egoera = aukeratutakoEgoera.getStatus();
+                     lblEstadoReserva.setText("Erreserbaren egoera: " + egoera);
+                    
              }
-        });
-        btnConsultarEstado.setBounds(137, 106, 150, 25);
-        contentPane.add(btnConsultarEstado);
+            }});
+        btnEgoeraKontsultatu.setBounds(137, 106, 150, 25);
+        contentPane.add(btnEgoeraKontsultatu);
         
         lblEstadoReserva = new JLabel("");
         lblEstadoReserva.setBounds(36, 150, 400, 16);
@@ -74,12 +69,11 @@ public class CheckReserveStatusGUI extends JFrame {
 
         erreserbakKargatu();
     }
-
     private void erreserbakKargatu() {
         List<ReserveStatus> reservas = facade.getAllReservesFromEmail(traveler.getEmail());
         comboBoxReservas.setModel(new DefaultComboBoxModel<ReserveStatus>());
         for (ReserveStatus reserva : reservas) {
-            comboBoxReservas.addItem(reserva);
+            comboBoxReservas.addItem(reserva) ;
         }
     }
 }

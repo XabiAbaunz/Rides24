@@ -386,6 +386,33 @@ public class DataAccess  {
 	 public Driver getDriverByEmail(String email) {
 		 return db.find(Driver.class,email);
 	 }
+	 
+	public void bidaiaBaieztatu(String email, int reserveNumber){
+		db.getTransaction().begin();
+		ReserveStatus erreserba = db.find(ReserveStatus.class, reserveNumber);
+		if(erreserba != null) {
+			Ride bidaia = erreserba.getRide();
+			double dirua = erreserba.getFrozenBalance();
+			Driver gidaria = bidaia.getCar().getDriver();
+			gidaria.setCash(gidaria.getCash() + dirua);
+	        db.persist(gidaria);
+			db.getTransaction().commit();
+	        removeReserve(bidaia.getRideNumber(), reserveNumber);
+	        db.getTransaction().begin();
+	        db.remove(erreserba);
+	        boolean allReservesFinished = true;
+	        for (ReserveStatus rs : bidaia.getReserveList()) {
+	            if (rs != null && !rs.isFinished()) {
+	                allReservesFinished = false;
+	                break;
+	            }
+	        }
+	        if (allReservesFinished) {
+	            bidaia.setBukatuta(true);
+	        }
+		}
+		db.getTransaction().commit();
+	}
 	
 	
 

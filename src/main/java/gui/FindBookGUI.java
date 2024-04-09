@@ -259,7 +259,7 @@ public class FindBookGUI extends JFrame {
 		
 		jButtonBook.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ReserveStatus rs = new ReserveStatus(ride.getPrice(), traveler);
+				ReserveStatus rs = new ReserveStatus(ride.getPrice(), traveler, ride);
 				facade.updateMoneyByEmail(traveler.getEmail(), -ride.getPrice());
 				boolean b = facade.addReserve(rs, ride.getRideNumber());
 				if(!b) {

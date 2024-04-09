@@ -206,8 +206,6 @@ public class Ride implements Serializable {
 		this.price = price;
 	}
 
-
-
 	public String toString(){
 		return from+";"+to+";"+(date.getYear()+1900)+"/"+(date.getMonth()+1)+"/"+(date.getDay()+1);  
 	}
