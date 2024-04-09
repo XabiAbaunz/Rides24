@@ -264,6 +264,7 @@ public class DataAccess  {
 		User u = getUserByEmail(email);
 		db.getTransaction().begin();
 		u.setCash(u.getCash() + cash);
+		u.addMovement(cash, new Date());	
 		db.persist(u);
 		db.getTransaction().commit();
 		System.out.println(u + " has been updated");
@@ -396,8 +397,7 @@ public class DataAccess  {
 			Driver gidaria = bidaia.getCar().getDriver();
 			gidaria.setCash(gidaria.getCash() + dirua);
 			Date data = new Date();
-			Movement mugimendua = new Movement(gidaria, dirua, data);
-			gidaria.mugimenduaGehitu(mugimendua);
+			gidaria.addMovement(dirua, data);
 	        db.persist(gidaria);
 			db.getTransaction().commit();
 	        removeReserve(bidaia.getRideNumber(), reserveNumber);

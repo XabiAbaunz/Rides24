@@ -31,6 +31,8 @@ public class DriverMainGUI extends JFrame {
 	private final JButton jButtonDiruaSartu = new JButton(ResourceBundle.getBundle("Etiquetas").getString("TravelerMainGUI.diruaSartuAtera")); //$NON-NLS-1$ //$NON-NLS-2$
 	private final JButton jButtonBidaiaKantzelatu = new JButton("Bidaia kantzelatu");
 	private final JButton jButtonKotxeaGehitu = new JButton("Kotxea gehitu");
+	
+	private JButton jButtonMugimenduakIkusi = new JButton(ResourceBundle.getBundle("Etiquetas").getString("TravelerMainGUI.mugimenduakIkusi"));
 	/**
 	 * Launch the application.
 	 */
@@ -71,6 +73,15 @@ public class DriverMainGUI extends JFrame {
 				frame.setVisible(true);
 			}
 		});
+		
+		jButtonMugimenduakIkusi.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MugimenduakIkusiGUI frame = new MugimenduakIkusiGUI((User)d);
+				frame.setVisible(true);
+			}
+		});
+
+		contentPane.add(jButtonMugimenduakIkusi);
 		
 		contentPane.add(jButtonCreateRide);
 		jButtonAcceptReservation.addActionListener(new ActionListener() {
