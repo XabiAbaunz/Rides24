@@ -29,6 +29,9 @@ public class TravelerMainGUI extends JFrame {
 
 	private JButton jButtonErreserbakKon = new JButton(ResourceBundle.getBundle("Etiquetas").getString("ErreserbakKontsultatuGUI.erreserbakKontsultatu"));
 	private JButton jButtonBidaiaEginda = new JButton("Bidaia egin dela baieztatu");
+	
+	private JButton jButtonMugimenduakIkusi = new JButton(ResourceBundle.getBundle("Etiquetas").getString("TravelerMainGUI.mugimenduakIkusi"));
+
 	/**
 	 * Launch the application.
 	 */
@@ -55,7 +58,7 @@ public class TravelerMainGUI extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(new GridLayout(5, 1, 0, 0));
+		contentPane.setLayout(new GridLayout(6, 1, 0, 0));
 		JlabelAukeratu.setHorizontalAlignment(SwingConstants.CENTER);
 		contentPane.add(JlabelAukeratu);
 		rdbtBidaiaBilatu.addActionListener(new ActionListener() {
@@ -68,6 +71,13 @@ public class TravelerMainGUI extends JFrame {
 		jButtonDiruaSartu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				DiruaSartuGUI frame = new DiruaSartuGUI((User)t);
+				frame.setVisible(true);
+			}
+		});
+		
+		jButtonMugimenduakIkusi.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MugimenduakIkusiGUI frame = new MugimenduakIkusiGUI((User)t);
 				frame.setVisible(true);
 			}
 		});
@@ -89,6 +99,7 @@ public class TravelerMainGUI extends JFrame {
 			}
 		});
 		contentPane.add(jButtonBidaiaEginda);
+		contentPane.add(jButtonMugimenduakIkusi);
 		
 		
 		
