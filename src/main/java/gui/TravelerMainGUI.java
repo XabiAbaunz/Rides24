@@ -28,6 +28,7 @@ public class TravelerMainGUI extends JFrame {
 	private JButton jButtonDiruaSartu = new JButton(ResourceBundle.getBundle("Etiquetas").getString("TravelerMainGUI.diruaSartuAtera")); //$NON-NLS-1$ //$NON-NLS-2$
 
 	private JButton jButtonErreserbakKon = new JButton(ResourceBundle.getBundle("Etiquetas").getString("ErreserbakKontsultatuGUI.erreserbakKontsultatu"));
+	private JButton jButtonBidaiaEginda = new JButton("Bidaia egin dela baieztatu");
 	/**
 	 * Launch the application.
 	 */
@@ -54,7 +55,7 @@ public class TravelerMainGUI extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(new GridLayout(4, 1, 0, 0));
+		contentPane.setLayout(new GridLayout(5, 1, 0, 0));
 		JlabelAukeratu.setHorizontalAlignment(SwingConstants.CENTER);
 		contentPane.add(JlabelAukeratu);
 		rdbtBidaiaBilatu.addActionListener(new ActionListener() {
@@ -79,9 +80,17 @@ public class TravelerMainGUI extends JFrame {
 				frame.setVisible(true);
 			}
 		});
-		
-		
 		contentPane.add(jButtonErreserbakKon);
+		
+		jButtonBidaiaEginda.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				BidaiaEgindaGUI frame = new BidaiaEgindaGUI(t);
+				frame.setVisible(true);
+			}
+		});
+		contentPane.add(jButtonBidaiaEginda);
+		
+		
 		
 		
 		

@@ -28,7 +28,6 @@ public class CheckReserveStatusGUI extends JFrame {
 
     private JComboBox<ReserveStatus> comboBoxReservas;
     private JLabel lblEstadoReserva;
-	private JButton btnBidaiaBaieztatu;
 
     /**
      * Create the frame.
@@ -54,42 +53,19 @@ public class CheckReserveStatusGUI extends JFrame {
         JButton btnEgoeraKontsultatu = new JButton("Egoera kontsultatu");
         btnEgoeraKontsultatu.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-            	btnBidaiaBaieztatu.setEnabled(false);
             	 ReserveStatus aukeratutakoEgoera = (ReserveStatus) comboBoxReservas.getSelectedItem();
                  if (aukeratutakoEgoera != null) {
                      String egoera = aukeratutakoEgoera.getStatus();
                      lblEstadoReserva.setText("Erreserbaren egoera: " + egoera);
-                     if (egoera == "Onartua") {
-                    	 btnBidaiaBaieztatu.setEnabled(true);
-                     }
-                 } else {
-                     lblEstadoReserva.setText("Aukeratu erreserba bat");
-                 }
+                    
              }
-        });
+            }});
         btnEgoeraKontsultatu.setBounds(137, 106, 150, 25);
         contentPane.add(btnEgoeraKontsultatu);
         
         lblEstadoReserva = new JLabel("");
         lblEstadoReserva.setBounds(36, 150, 400, 16);
         contentPane.add(lblEstadoReserva);
-        
-        btnBidaiaBaieztatu = new JButton("Bidaia egin dela baieztatu");
-        btnBidaiaBaieztatu.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-            	 ReserveStatus aukeratutakoa = (ReserveStatus) comboBoxReservas.getSelectedItem();
-            	 if( aukeratutakoa != null) {
-            		 int erreZenbakia = aukeratutakoa.getReserveNumber();
-            		 facade.bidaiaBaieztatu(traveler.getEmail(), erreZenbakia);
-            		 erreserbakKargatu();
-            		 btnBidaiaBaieztatu.setEnabled(false);
-            	 }
-            }
-        });
-        btnBidaiaBaieztatu.setBounds(120, 232, 179, 21);
-        btnBidaiaBaieztatu.setEnabled(false);
-        
-        contentPane.add(btnBidaiaBaieztatu);
 
         erreserbakKargatu();
     }
