@@ -66,8 +66,6 @@ public class LoginGUI extends JFrame {
 	public LoginGUI() {
 		
 		facade = MainGUI.getBusinessLogic();
-		facade.register("xabid", "xabi", "1234", 0, "Driver");
-		facade.register("xabit", "xabi", "1234", 0, "Traveler");
 		
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
