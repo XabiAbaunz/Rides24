@@ -67,6 +67,10 @@ public class LoginGUI extends JFrame {
 		
 		facade = MainGUI.getBusinessLogic();
 		
+		facade.register("aa", "aa", "aa", 0.0, "Driver");
+		facade.register("bb", "bb", "bb", 0.0, "Traveler");
+		facade.addCarByEmail("aa", "lambo", "urus", 4);
+		
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

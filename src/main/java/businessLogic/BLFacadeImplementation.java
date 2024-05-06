@@ -204,9 +204,9 @@ public class BLFacadeImplementation  implements BLFacade {
     	dbManager.close();
     }
     
-    public Car getCar(String marka, String modeloa, Driver driver) {
+    public List<Car> getCarsByEmail(String email) {
     	dbManager.open();
-    	Car car = dbManager.getCar(marka, modeloa, driver);
+    	List<Car> car = dbManager.getCarsByEmail(email);
     	dbManager.close();
     	return car;
     }
@@ -216,9 +216,17 @@ public class BLFacadeImplementation  implements BLFacade {
     	dbManager.changeReserveStatus( erreserba,  erantzun,  onartu);
     	dbManager.close();
     }
+    
     public void bidaiaBaieztatu(String email, int reserveNumber) {
     	dbManager.open();
     	dbManager.bidaiaBaieztatu(email, reserveNumber);
     	dbManager.close();
+    }
+    
+	public List<ReserveStatus> getAllReservesFromRideNumber(int rideNumber) {
+    	dbManager.open();
+    	List<ReserveStatus> reserveList = dbManager.getAllReservesFromRideNumber(rideNumber);
+    	dbManager.close();
+    	return reserveList;
     }
 }
