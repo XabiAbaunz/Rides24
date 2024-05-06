@@ -95,8 +95,6 @@ public class AddCarGUI extends JFrame {
 				} else {
 					erroreArea.setText("Datuak ez daude osatuta.");
 				}
-				driver.addCar("a", "a", 2);
-				
 			}
 		});
 		btnNewButton.setBounds(163, 191, 111, 30);

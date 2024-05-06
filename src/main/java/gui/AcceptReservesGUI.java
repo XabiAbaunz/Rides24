@@ -70,8 +70,8 @@ public class AcceptReservesGUI extends JFrame {
 				comboBoxReserves.removeAllItems();
 				ride = (Ride) comboBoxRides.getSelectedItem();
 				if(ride != null) {
-					for(ReserveStatus rs:ride.getReserveList()) {
-						if(rs!=null ) {
+					for(ReserveStatus rs:facade.getAllReservesFromRideNumber(ride.getRideNumber())) {
+						if(rs!=null) {
 							reserveComboBoxModel.addElement(rs);
 						}
 					}
@@ -104,9 +104,7 @@ public class AcceptReservesGUI extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				facade.changeReserveStatus(reserve, true, true);
 				facade.addRideByEmail(reserve.getTraveler().getEmail(), ride.getRideNumber());
-				facade.removeReserve(ride.getRideNumber(), reserve.getReserveNumber());
 				comboBoxReserves.removeAllItems();
-				
 			}
 		});
 		jButtonOnartu.setBounds(106, 197, 85, 21);

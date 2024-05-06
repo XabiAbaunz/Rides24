@@ -104,35 +104,22 @@ public class CancelRideGUI extends JFrame {
 		comboKotxeak = new JComboBox();
 		comboKotxeak.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String marka;
-				String modeloa;
 				bidaiaComboBoxModel.removeAllElements();
 				btnKantzelatu.setEnabled(false);
-				Car c = (Car) comboKotxeak.getSelectedItem();
-				if(c != null) {
-					marka = ((Car) comboKotxeak.getSelectedItem()).getMarka();
-					modeloa = ((Car) comboKotxeak.getSelectedItem()).getModeloa();
-					car = facade.getCar(marka, modeloa, driver);
-					if(car != null) {
-						ArrayList<Ride> rides = car.getRides();
-						if(rides != null && !rides.isEmpty()) {
-							for(Ride r:car.getRides()) {
-								bidaiaComboBoxModel.addElement(r);
-							}
-							comboBidaiak.setModel(bidaiaComboBoxModel);
-						}
+				car = (Car) comboKotxeak.getSelectedItem();
+				if(car != null) {
+					ArrayList<Ride> rides = car.getRides();
+					for(Ride r:rides) {
+						System.out.println(r.toString());
+						bidaiaComboBoxModel.addElement(r);
 					}
+					comboBidaiak.setModel(bidaiaComboBoxModel);
 				}
 			}
 		});
 		comboKotxeak.setBounds(119, 79, 269, 21);
 		contentPane.add(comboKotxeak);
-		
-		if(!driver.getCars().isEmpty()) {
-			for(Car c:driver.getCars()) {
-				kotxeComboBoxModel.addElement(c);
-			}
-			comboKotxeak.setModel(kotxeComboBoxModel);
-		}
+		kotxeComboBoxModel.addAll(facade.getCarsByEmail(driver.getEmail()));
+		comboKotxeak.setModel(kotxeComboBoxModel);
 	}
 }

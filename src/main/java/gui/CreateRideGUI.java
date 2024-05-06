@@ -132,11 +132,10 @@ public class CreateRideGUI extends JFrame {
 		
 		comboBoxCars = new JComboBox();
 		comboBoxCars.setBounds(100, 213, 267, 21);
-		if(driver.getCars()!=null) {
-			for(Car c:driver.getCars()) {
-				if(c!=null) {
-					carComboBoxModel.addElement(c);
-				}
+		List<Car> cars = facade.getCarsByEmail(driver.getEmail());
+		for(Car c:cars) {
+			if(c!=null) {
+				carComboBoxModel.addElement(c);
 			}
 		}
 		comboBoxCars.setModel(carComboBoxModel);

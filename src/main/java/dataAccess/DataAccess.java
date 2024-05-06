@@ -354,18 +354,20 @@ public class DataAccess  {
 	 }
 	 
 	 public void deleteRideByRideNumber(int rideNumber) {
-		 Traveler traveler;
 		 db.getTransaction().begin();
 		 Ride ride = this.getRideByRideNumber(rideNumber);
 		 if(ride != null) {
 			 for(ReserveStatus rs:ride.getReserveList()) {
 				 if(rs != null) {
-					 traveler = rs.getTraveler();
-					 traveler.getReserves().remove(rs);
-					 db.persist(traveler);
+					 Traveler t = rs.getTraveler();
+					 t.getReserves().remove(rs);
+					 db.persist(t);
+					 db.remove(rs);
 				 }
 			 }
-			 ride.getCar().getRides().remove(ride);
+			 Car c = ride.getCar();
+			 c.getRides().remove(ride);
+			 db.persist(c);
 			 db.remove(ride);
 			 db.getTransaction().commit();
 			 System.out.println("Ride: " + ride + " has been deleted.");
@@ -374,14 +376,12 @@ public class DataAccess  {
 	 	}
 	 }
 	 
-	 public Car getCar(String marka, String modeloa, Driver driver) {
+	 public List<Car> getCarsByEmail(String email) {
 		 List<Car> carList = new ArrayList<Car>();
-		 TypedQuery<Car> query = db.createQuery("SELECT c FROM Car c WHERE c.marka = ?1 AND c.modeloa = ?2 AND c.driver = ?3", Car.class);
-	     query.setParameter(1, marka);
-	     query.setParameter(2, modeloa);
-	     query.setParameter(3, this.getDriverByEmail(driver.getEmail()));
+		 TypedQuery<Car> query = db.createQuery("SELECT c FROM Car c WHERE c.driver.email = ?1", Car.class);
+	     query.setParameter(1, email);
 		 carList = query.getResultList();
-		 return carList.get(0);
+		 return carList;
 	 }
 	 
 	 public Driver getDriverByEmail(String email) {
@@ -415,6 +415,14 @@ public class DataAccess  {
 	        }
 		}
 		db.getTransaction().commit();
+	}
+	
+	public List<ReserveStatus> getAllReservesFromRideNumber(int rideNumber) {
+		List<ReserveStatus> reserveList = new ArrayList<ReserveStatus>();
+		TypedQuery<ReserveStatus> query = db.createQuery("SELECT rs FROM ReserveStatus rs WHERE rs.ride.rideNumber = ?1", ReserveStatus.class);
+	    query.setParameter(1, rideNumber);
+	    reserveList = query.getResultList();
+	    return reserveList;
 	}
 	
 	
