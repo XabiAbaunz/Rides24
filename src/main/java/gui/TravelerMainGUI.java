@@ -94,7 +94,7 @@ public class TravelerMainGUI extends JFrame {
 		
 		jButtonBidaiaEginda.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				BidaiaEgindaGUI frame = new BidaiaEgindaGUI(t);
+				BidaiakKudeatuGUI frame = new BidaiakKudeatuGUI(t);
 				frame.setVisible(true);
 			}
 		});
