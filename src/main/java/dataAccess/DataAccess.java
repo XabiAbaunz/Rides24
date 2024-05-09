@@ -236,7 +236,7 @@ public class DataAccess  {
 	
 	public User isLogged(String user, String password) {
 		User u = db.find(User.class, user);
-		if(u.getPassword().equals(password)) {
+		if(u != null && u.getPassword().equals(password)) {
 			System.out.println(">> DataAccess: isLogged=> erabiltzailea sisteman dago");
 			return u;
 		} else {
@@ -419,10 +419,31 @@ public class DataAccess  {
 	
 	public List<ReserveStatus> getAllReservesFromRideNumber(int rideNumber) {
 		List<ReserveStatus> reserveList = new ArrayList<ReserveStatus>();
-		TypedQuery<ReserveStatus> query = db.createQuery("SELECT rs FROM ReserveStatus rs WHERE rs.ride.rideNumber = ?1", ReserveStatus.class);
+		TypedQuery<ReserveStatus> query = db.createQuery("SELECT rs FROM ReserveStatus rs WHERE rs.bidaia.rideNumber = ?1", ReserveStatus.class);
 	    query.setParameter(1, rideNumber);
 	    reserveList = query.getResultList();
 	    return reserveList;
+	}
+	
+	public void addBalorazioByEmail(String email, double balorazioa) {
+		Driver driver = db.find(Driver.class, email);
+		 db.getTransaction().begin();
+		 driver.addBalorazio(balorazioa);
+		 db.persist(driver);
+		 db.getTransaction().commit();
+		 System.out.println("Balorazioa: " + balorazioa + " has been added to " + email + ".");
+	}
+	
+	public void bidaiaErreklamatu(String arrazoia, String email, int rideNumber) {
+		Erreklamazio err = null;
+		User u = db.find(User.class, email);
+		Ride r = db.find(Ride.class, rideNumber);
+		db.getTransaction().begin();
+		err = new Erreklamazio(arrazoia, u, r);
+		r.addErreklamazio(err);
+		db.persist(r);
+		db.getTransaction().commit();
+		System.out.println("New Erreklamazio has been added to Ride: " + r.getRideNumber());
 	}
 	
 	

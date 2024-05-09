@@ -229,4 +229,16 @@ public class BLFacadeImplementation  implements BLFacade {
     	dbManager.close();
     	return reserveList;
     }
+	
+	public void addBalorazioByEmail(String email, double balorazioa) {
+		dbManager.open();
+		dbManager.addBalorazioByEmail(email, balorazioa);
+		dbManager.close();
+	}
+	
+	public void bidaiaErreklamatu(String mezua, String email, int rideNumber) {
+		dbManager.open();
+		dbManager.bidaiaErreklamatu(mezua, email, rideNumber);
+		dbManager.close();
+	}
 }

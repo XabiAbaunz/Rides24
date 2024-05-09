@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 import java.util.Vector;
+import java.util.ArrayList;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -14,6 +15,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlIDREF;
 
+
 @XmlAccessorType(XmlAccessType.FIELD)
 @Entity
 public class Traveler extends User implements Serializable {
@@ -22,6 +24,8 @@ public class Traveler extends User implements Serializable {
 	@XmlIDREF
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
 	private List<ReserveStatus> reserves=new Vector<ReserveStatus>();
+	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
+	private ArrayList<Erreklamazio> erreklamazioak = new ArrayList<>();
 	
 	public Traveler(String email, String name, String password, Double cash) {
 		super(email, name, password, cash);

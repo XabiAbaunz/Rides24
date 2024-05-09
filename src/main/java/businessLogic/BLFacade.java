@@ -106,6 +106,10 @@ public interface BLFacade  {
 	public void bidaiaBaieztatu(String email, int reserveNumber);
 	
 	public List<ReserveStatus> getAllReservesFromRideNumber(int rideNumber);
+	
+	public void addBalorazioByEmail(String email, double balorazioa);
+	
+	public void bidaiaErreklamatu(String mezua, String email, int rideNumber);
 
 	
 }
