@@ -26,6 +26,7 @@ public class Driver extends User implements Serializable {
 	@XmlIDREF
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
 	private ArrayList<Car> cars = new ArrayList<Car>();
+	private ArrayList<Double> balorazioak = new ArrayList<>();
 
 	public Driver(String email, String name, String password, double cash) {
 		super(email, name, password, cash);
@@ -45,6 +46,10 @@ public class Driver extends User implements Serializable {
 	
 	public List<Car> getCars() {
 		return this.cars;
+	}
+	
+	public void addBalorazio(double balorazio) {
+		balorazioak.add(balorazio);
 	}
 
 	@Override

@@ -1,0 +1,194 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-05-07 22:31:58 #1 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' is opened by 15968@DESKTOP-PNFEN4V
+
+[2024-05-07 22:32:00 #2 type.registry] 
+New type domain.User
+
+[2024-05-07 22:32:00 #3 type] 
+Type domain.User is not enhanced.
+
+[2024-05-07 22:32:00 #4 type.registry] 
+New type domain.Movement
+
+[2024-05-07 22:32:00 #5 type.registry] 
+New type java.util.ArrayList<domain.Movement>
+
+[2024-05-07 22:32:00 #6 type] 
+Type domain.Movement is not enhanced.
+
+[2024-05-07 22:32:00 #7 type.registry] 
+New type domain.Driver
+
+[2024-05-07 22:32:00 #8 type] 
+Type domain.Driver is not enhanced.
+
+[2024-05-07 22:32:00 #9 type.registry] 
+New type domain.Car
+
+[2024-05-07 22:32:00 #10 type.registry] 
+New type java.util.ArrayList<domain.Car>
+
+[2024-05-07 22:32:00 #11 type] 
+Type domain.Car is not enhanced.
+
+[2024-05-07 22:32:00 #12 type.registry] 
+New type domain.Ride
+
+[2024-05-07 22:32:00 #13 type.registry] 
+New type java.util.ArrayList<domain.Ride>
+
+[2024-05-07 22:32:00 #14 type] 
+Type domain.Ride is not enhanced.
+
+[2024-05-07 22:32:00 #15 type.registry] 
+New type domain.ReserveStatus
+
+[2024-05-07 22:32:00 #16 type.registry] 
+New type domain.ReserveStatus[]
+
+[2024-05-07 22:32:00 #17 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-05-07 22:32:00 #18 type.registry] 
+New type domain.Traveler
+
+[2024-05-07 22:32:00 #19 type] 
+Type domain.Traveler is not enhanced.
+
+[2024-05-07 22:32:00 #20 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2024-05-07 22:32:00 #21 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+[2024-05-07 22:32:00 #22 type.registry] 
+New type java.util.Vector<domain.ReserveStatus>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-05-07 22:34:34 #1 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' is opened by 10156@DESKTOP-PNFEN4V
+
+[2024-05-07 22:34:34 #2 type.registry] 
+New type domain.User
+
+[2024-05-07 22:34:34 #3 type] 
+Type domain.User is not enhanced.
+
+[2024-05-07 22:34:34 #4 type.registry] 
+New type domain.Movement
+
+[2024-05-07 22:34:34 #5 type.registry] 
+New type java.util.ArrayList<domain.Movement>
+
+[2024-05-07 22:34:34 #6 type] 
+Type domain.Movement is not enhanced.
+
+[2024-05-07 22:34:34 #7 type.registry] 
+New type domain.Driver
+
+[2024-05-07 22:34:34 #8 type] 
+Type domain.Driver is not enhanced.
+
+[2024-05-07 22:34:34 #9 type.registry] 
+New type domain.Car
+
+[2024-05-07 22:34:34 #10 type.registry] 
+New type java.util.ArrayList<domain.Car>
+
+[2024-05-07 22:34:34 #11 type] 
+Type domain.Car is not enhanced.
+
+[2024-05-07 22:34:34 #12 type.registry] 
+New type domain.Ride
+
+[2024-05-07 22:34:34 #13 type.registry] 
+New type java.util.ArrayList<domain.Ride>
+
+[2024-05-07 22:34:34 #14 type] 
+Type domain.Ride is not enhanced.
+
+[2024-05-07 22:34:34 #15 type.registry] 
+New type domain.ReserveStatus
+
+[2024-05-07 22:34:34 #16 type.registry] 
+New type domain.ReserveStatus[]
+
+[2024-05-07 22:34:34 #17 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-05-07 22:34:34 #18 type.registry] 
+New type domain.Traveler
+
+[2024-05-07 22:34:34 #19 type] 
+Type domain.Traveler is not enhanced.
+
+[2024-05-07 22:34:34 #20 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2024-05-07 22:34:35 #21 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+[2024-05-07 22:34:35 #22 type.registry] 
+New type java.util.Vector<domain.ReserveStatus>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-05-07 22:35:21 #1 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' has been recovered (tr. 1-10)
+
+[2024-05-07 22:35:21 #2 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' is opened by 4420@DESKTOP-PNFEN4V
+
+[2024-05-07 22:35:21 #3 type] 
+Type domain.User is not enhanced.
+
+[2024-05-07 22:35:21 #4 type] 
+Type domain.Movement is not enhanced.
+
+[2024-05-07 22:35:21 #5 type] 
+Type domain.Driver is not enhanced.
+
+[2024-05-07 22:35:21 #6 type] 
+Type domain.Car is not enhanced.
+
+[2024-05-07 22:35:21 #7 type] 
+Type domain.Ride is not enhanced.
+
+[2024-05-07 22:35:21 #8 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-05-07 22:35:21 #9 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-05-07 22:38:06 #1 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' has been recovered (tr. 11-14)
+
+[2024-05-07 22:38:06 #2 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' is opened by 13076@DESKTOP-PNFEN4V
+
+[2024-05-07 22:38:07 #3 type] 
+Type domain.User is not enhanced.
+
+[2024-05-07 22:38:07 #4 type] 
+Type domain.Movement is not enhanced.
+
+[2024-05-07 22:38:07 #5 type] 
+Type domain.Driver is not enhanced.
+
+[2024-05-07 22:38:07 #6 type] 
+Type domain.Car is not enhanced.
+
+[2024-05-07 22:38:07 #7 type] 
+Type domain.Ride is not enhanced.
+
+[2024-05-07 22:38:07 #8 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-05-07 22:38:07 #9 type] 
+Type domain.Traveler is not enhanced.
+

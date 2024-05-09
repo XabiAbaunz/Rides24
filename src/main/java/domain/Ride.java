@@ -33,6 +33,9 @@ public class Ride implements Serializable {
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
 	private ReserveStatus[] reserveList;
 	
+	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
+	private ArrayList<Erreklamazio> erreklamazioak;
+	
 	private Car car;  
 	
 	public Ride(){
@@ -52,7 +55,7 @@ public class Ride implements Serializable {
 		this.reserveList = new ReserveStatus[nPlaces];
 		this.jasotakoDirua = 0;
 		this.bukatuta = false;
-		
+		this.erreklamazioak = new ArrayList<>();
 	}
 	
 	public float getJasotakoDirua() {
@@ -218,6 +221,14 @@ public class Ride implements Serializable {
 		} else {
 			return false;
 		}
+	}
+	
+	public void addErreklamazio(Erreklamazio erreklamazio) {
+		this.erreklamazioak.add(erreklamazio);
+	}
+	
+	public ArrayList<Erreklamazio> getErreklamazioak() {
+		return this.erreklamazioak;
 	}
 	
 
