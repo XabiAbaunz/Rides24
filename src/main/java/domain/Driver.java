@@ -51,6 +51,11 @@ public class Driver extends User implements Serializable {
 	public void addBalorazio(double balorazio) {
 		balorazioak.add(balorazio);
 	}
+	
+	public ArrayList<Double> getBalorazioak(){
+		return this.balorazioak;
+	}
+	
 
 	@Override
 	public boolean equals(Object obj) {
