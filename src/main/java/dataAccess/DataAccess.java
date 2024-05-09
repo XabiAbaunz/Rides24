@@ -446,6 +446,21 @@ public class DataAccess  {
 		System.out.println("New Erreklamazio has been added to Ride: " + r.getRideNumber());
 	}
 	
+	public double getBalorazioa(String email) {
+		 Driver gidaria = db.find(Driver.class, email);
+		 ArrayList<Double> balorazioak = gidaria.getBalorazioak();
+		 double guztira = 0.0;
+		 if	(balorazioak.size() != 0) {
+	        for (Double balorazioa : balorazioak) {
+	            guztira += balorazioa;
+	        }
+	        return guztira / balorazioak.size();
+		 }else {
+	        	return -1;
+	        }
+	        
+	}
+	
 	
 
 public void open(){
