@@ -436,8 +436,8 @@ public class DataAccess  {
 	
 	public void bidaiaErreklamatu(String arrazoia, String email, int rideNumber) {
 		Erreklamazio err = null;
-		User u = db.find(User.class, email);
-		Ride r = db.find(Ride.class, rideNumber);
+		User u = this.getUserByEmail(email);
+		Ride r = this.getRideByRideNumber(rideNumber);
 		db.getTransaction().begin();
 		err = new Erreklamazio(arrazoia, u, r);
 		r.addErreklamazio(err);

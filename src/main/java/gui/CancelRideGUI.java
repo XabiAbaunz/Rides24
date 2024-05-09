@@ -91,6 +91,8 @@ public class CancelRideGUI extends JFrame {
 				comboKotxeak.setSelectedItem(null);
 				comboBidaiak.setSelectedItem(null);
 				btnKantzelatu.setEnabled(false);
+				comboKotxeak.removeAllItems();
+				kotxeComboBoxModel.addAll(facade.getCarsByEmail(driver.getEmail()));
 			}
 		});
 		btnKantzelatu.setBounds(171, 212, 85, 21);

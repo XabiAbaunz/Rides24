@@ -33,6 +33,7 @@ public class DriverMainGUI extends JFrame {
 	private final JButton jButtonKotxeaGehitu = new JButton("Kotxea gehitu");
 	
 	private JButton jButtonMugimenduakIkusi = new JButton(ResourceBundle.getBundle("Etiquetas").getString("TravelerMainGUI.mugimenduakIkusi"));
+	private final JButton jButtonBidaiariaErreklamatu = new JButton("Bidaiaria erreklamatu");
 	/**
 	 * Launch the application.
 	 */
@@ -116,6 +117,14 @@ public class DriverMainGUI extends JFrame {
 		});
 		
 		contentPane.add(jButtonBidaiaKantzelatu);
+		jButtonBidaiariaErreklamatu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				BidaiariaErreklamatuGUI frame = new BidaiariaErreklamatuGUI(driver);
+				frame.setVisible(true);
+			}
+		});
+		
+		contentPane.add(jButtonBidaiariaErreklamatu);
 	}
 
 }
