@@ -56,7 +56,8 @@ public class FindBookGUI extends JFrame {
 	private String[] columnNamesRides = new String[] {
 			ResourceBundle.getBundle("Etiquetas").getString("FindRidesGUI.Driver"), 
 			ResourceBundle.getBundle("Etiquetas").getString("FindRidesGUI.NPlaces"), 
-			ResourceBundle.getBundle("Etiquetas").getString("FindRidesGUI.Price")
+			ResourceBundle.getBundle("Etiquetas").getString("FindRidesGUI.Price"),
+			ResourceBundle.getBundle("Etiquetas").getString("FindRidesGUI.Balorazioa")
 	};
 	
 	private Traveler traveler;
@@ -72,7 +73,7 @@ public class FindBookGUI extends JFrame {
 		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("FindRidesGUI.FindRides"));
 
 		jLabelEventDate.setBounds(new Rectangle(457, 6, 140, 25));
-		jLabelEvents.setBounds(172, 229, 259, 16);
+		jLabelEvents.setBounds(38, 231, 259, 16);
 
 		this.getContentPane().add(jLabelEventDate, null);
 		this.getContentPane().add(jLabelEvents);
@@ -199,7 +200,13 @@ public class FindBookGUI extends JFrame {
 							row.add(ride.getCar().getDriver().getName());
 							row.add(ride.getnPlaces());
 							row.add(ride.getPrice());
-							row.add(ride); // ev object added in order to obtain it with tableModelEvents.getValueAt(i,3)
+							double balorazioa = facade.getBalorazioa(ride.getCar().getDriver().getEmail());
+							if (balorazioa != -1) {
+								row.add(balorazioa);
+							}else {
+								row.add("gidariak ez du baloraziorik");
+							}
+							//row.add(ride); // ev object added in order to obtain it with tableModelEvents.getValueAt(i,3)
 							tableModelRides.addRow(row);		
 						}
 						datesWithRidesCurrentMonth=facade.getThisMonthDatesWithRides((String)jComboBoxOrigin.getSelectedItem(),(String)jComboBoxDestination.getSelectedItem(),jCalendar1.getDate());
@@ -210,10 +217,11 @@ public class FindBookGUI extends JFrame {
 
 						e1.printStackTrace();
 					}
-					tableRides.getColumnModel().getColumn(0).setPreferredWidth(170);
-					tableRides.getColumnModel().getColumn(1).setPreferredWidth(30);
-					tableRides.getColumnModel().getColumn(1).setPreferredWidth(30);
-					tableRides.getColumnModel().removeColumn(tableRides.getColumnModel().getColumn(3)); // not shown in JTable
+					tableRides.getColumnModel().getColumn(0).setPreferredWidth(130);
+					tableRides.getColumnModel().getColumn(1).setPreferredWidth(20);
+					tableRides.getColumnModel().getColumn(2).setPreferredWidth(20);
+					tableRides.getColumnModel().getColumn(3).setPreferredWidth(65);
+					//tableRides.getColumnModel().removeColumn(tableRides.getColumnModel().getColumn(3)); // not shown in JTable
 
 				}
 			} 
@@ -222,7 +230,7 @@ public class FindBookGUI extends JFrame {
 
 		this.getContentPane().add(jCalendar1, null);
 
-		scrollPaneEvents.setBounds(new Rectangle(172, 257, 346, 150));
+		scrollPaneEvents.setBounds(new Rectangle(38, 257, 603, 150));
 
 		scrollPaneEvents.setViewportView(tableRides);
 		tableModelRides = new DefaultTableModel(null, columnNamesRides);
@@ -234,7 +242,8 @@ public class FindBookGUI extends JFrame {
 
 		tableRides.getColumnModel().getColumn(0).setPreferredWidth(170);
 		tableRides.getColumnModel().getColumn(1).setPreferredWidth(30);
-		tableRides.getColumnModel().getColumn(1).setPreferredWidth(30);
+		tableRides.getColumnModel().getColumn(2).setPreferredWidth(30);
+		tableRides.getColumnModel().getColumn(3).setPreferredWidth(30);
 		
 		tableRides.getColumnModel().removeColumn(tableRides.getColumnModel().getColumn(3)); // not shown in JTable
 		tableRides.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
