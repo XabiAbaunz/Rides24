@@ -214,13 +214,17 @@ public class Ride implements Serializable {
 	}
 	
 	public boolean addReserve(ReserveStatus rs) {
-		if(count < nPlaces) {
-			reserveList[count] = rs;
-			count++;
-			return true;
-		} else {
-			return false;
+		boolean b = false;
+		if(nPlaces > 0) {
+			for(int i = 0; i < nPlaces; i++) {
+				if(reserveList[i] == null) {
+					reserveList[i] = rs;
+					b = true;
+					break;
+				}
+			}
 		}
+		return b;
 	}
 	
 	public void addErreklamazio(Erreklamazio erreklamazio) {

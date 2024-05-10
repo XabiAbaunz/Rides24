@@ -1,0 +1,868 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-05-09 12:09:58 #1 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' is opened by 9308@DESKTOP-PNFEN4V
+
+[2024-05-09 12:09:58 #2 type] 
+Type domain.User is not enhanced.
+
+[2024-05-09 12:09:58 #3 type] 
+Type domain.Movement is not enhanced.
+
+[2024-05-09 12:09:58 #4 type] 
+Type domain.Driver is not enhanced.
+
+[2024-05-09 12:09:58 #5 type] 
+Type domain.Car is not enhanced.
+
+[2024-05-09 12:09:58 #6 type] 
+Type domain.Ride is not enhanced.
+
+[2024-05-09 12:09:58 #7 type] 
+Type domain.Erreklamazio is not enhanced.
+
+[2024-05-09 12:09:58 #8 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-05-09 12:09:58 #9 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-05-09 12:11:31 #1 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' is opened by 21832@DESKTOP-PNFEN4V
+
+[2024-05-09 12:11:31 #2 type] 
+Type domain.User is not enhanced.
+
+[2024-05-09 12:11:31 #3 type] 
+Type domain.Movement is not enhanced.
+
+[2024-05-09 12:11:31 #4 type] 
+Type domain.Driver is not enhanced.
+
+[2024-05-09 12:11:31 #5 type] 
+Type domain.Car is not enhanced.
+
+[2024-05-09 12:11:31 #6 type] 
+Type domain.Ride is not enhanced.
+
+[2024-05-09 12:11:31 #7 type] 
+Type domain.Erreklamazio is not enhanced.
+
+[2024-05-09 12:11:31 #8 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-05-09 12:11:31 #9 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-05-09 12:22:24 #1 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' has been recovered (tr. 20-23)
+
+[2024-05-09 12:22:24 #2 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' is opened by 19580@DESKTOP-PNFEN4V
+
+[2024-05-09 12:22:24 #3 type] 
+Type domain.User is not enhanced.
+
+[2024-05-09 12:22:24 #4 type] 
+Type domain.Movement is not enhanced.
+
+[2024-05-09 12:22:24 #5 type] 
+Type domain.Driver is not enhanced.
+
+[2024-05-09 12:22:24 #6 type] 
+Type domain.Car is not enhanced.
+
+[2024-05-09 12:22:24 #7 type] 
+Type domain.Ride is not enhanced.
+
+[2024-05-09 12:22:24 #8 type] 
+Type domain.Erreklamazio is not enhanced.
+
+[2024-05-09 12:22:24 #9 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-05-09 12:22:24 #10 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-05-09 12:22:50 #1 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' is opened by 12432@DESKTOP-PNFEN4V
+
+[2024-05-09 12:22:50 #2 type] 
+Type domain.User is not enhanced.
+
+[2024-05-09 12:22:50 #3 type] 
+Type domain.Movement is not enhanced.
+
+[2024-05-09 12:22:50 #4 type] 
+Type domain.Driver is not enhanced.
+
+[2024-05-09 12:22:50 #5 type] 
+Type domain.Car is not enhanced.
+
+[2024-05-09 12:22:50 #6 type] 
+Type domain.Ride is not enhanced.
+
+[2024-05-09 12:22:50 #7 type] 
+Type domain.Erreklamazio is not enhanced.
+
+[2024-05-09 12:22:50 #8 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-05-09 12:22:50 #9 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-05-09 12:24:01 #1 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' is opened by 6612@DESKTOP-PNFEN4V
+
+[2024-05-09 12:24:01 #2 type] 
+Type domain.User is not enhanced.
+
+[2024-05-09 12:24:01 #3 type] 
+Type domain.Movement is not enhanced.
+
+[2024-05-09 12:24:01 #4 type] 
+Type domain.Driver is not enhanced.
+
+[2024-05-09 12:24:01 #5 type] 
+Type domain.Car is not enhanced.
+
+[2024-05-09 12:24:01 #6 type] 
+Type domain.Ride is not enhanced.
+
+[2024-05-09 12:24:01 #7 type] 
+Type domain.Erreklamazio is not enhanced.
+
+[2024-05-09 12:24:01 #8 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-05-09 12:24:01 #9 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-05-09 12:26:16 #1 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' is opened by 19536@DESKTOP-PNFEN4V
+
+[2024-05-09 12:26:16 #2 type] 
+Type domain.User is not enhanced.
+
+[2024-05-09 12:26:16 #3 type] 
+Type domain.Movement is not enhanced.
+
+[2024-05-09 12:26:16 #4 type] 
+Type domain.Driver is not enhanced.
+
+[2024-05-09 12:26:16 #5 type] 
+Type domain.Car is not enhanced.
+
+[2024-05-09 12:26:16 #6 type] 
+Type domain.Ride is not enhanced.
+
+[2024-05-09 12:26:16 #7 type] 
+Type domain.Erreklamazio is not enhanced.
+
+[2024-05-09 12:26:16 #8 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-05-09 12:26:16 #9 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-05-09 12:27:34 #1 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' is opened by 20284@DESKTOP-PNFEN4V
+
+[2024-05-09 12:27:34 #2 type] 
+Type domain.User is not enhanced.
+
+[2024-05-09 12:27:34 #3 type] 
+Type domain.Movement is not enhanced.
+
+[2024-05-09 12:27:34 #4 type] 
+Type domain.Driver is not enhanced.
+
+[2024-05-09 12:27:34 #5 type] 
+Type domain.Car is not enhanced.
+
+[2024-05-09 12:27:34 #6 type] 
+Type domain.Ride is not enhanced.
+
+[2024-05-09 12:27:34 #7 type] 
+Type domain.Erreklamazio is not enhanced.
+
+[2024-05-09 12:27:34 #8 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-05-09 12:27:34 #9 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-05-09 12:29:22 #1 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' is opened by 21768@DESKTOP-PNFEN4V
+
+[2024-05-09 12:29:22 #2 type] 
+Type domain.User is not enhanced.
+
+[2024-05-09 12:29:22 #3 type] 
+Type domain.Movement is not enhanced.
+
+[2024-05-09 12:29:22 #4 type] 
+Type domain.Driver is not enhanced.
+
+[2024-05-09 12:29:22 #5 type] 
+Type domain.Car is not enhanced.
+
+[2024-05-09 12:29:22 #6 type] 
+Type domain.Ride is not enhanced.
+
+[2024-05-09 12:29:22 #7 type] 
+Type domain.Erreklamazio is not enhanced.
+
+[2024-05-09 12:29:22 #8 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-05-09 12:29:22 #9 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-05-09 12:33:06 #1 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' is opened by 3880@DESKTOP-PNFEN4V
+
+[2024-05-09 12:33:07 #2 type] 
+Type domain.User is not enhanced.
+
+[2024-05-09 12:33:07 #3 type] 
+Type domain.Movement is not enhanced.
+
+[2024-05-09 12:33:07 #4 type] 
+Type domain.Driver is not enhanced.
+
+[2024-05-09 12:33:07 #5 type] 
+Type domain.Car is not enhanced.
+
+[2024-05-09 12:33:07 #6 type] 
+Type domain.Ride is not enhanced.
+
+[2024-05-09 12:33:07 #7 type] 
+Type domain.Erreklamazio is not enhanced.
+
+[2024-05-09 12:33:07 #8 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-05-09 12:33:07 #9 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-05-09 12:34:02 #1 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' has been recovered (tr. 24-24)
+
+[2024-05-09 12:34:02 #2 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' is opened by 7748@DESKTOP-PNFEN4V
+
+[2024-05-09 12:34:02 #3 type] 
+Type domain.User is not enhanced.
+
+[2024-05-09 12:34:02 #4 type] 
+Type domain.Movement is not enhanced.
+
+[2024-05-09 12:34:02 #5 type] 
+Type domain.Driver is not enhanced.
+
+[2024-05-09 12:34:02 #6 type] 
+Type domain.Car is not enhanced.
+
+[2024-05-09 12:34:02 #7 type] 
+Type domain.Ride is not enhanced.
+
+[2024-05-09 12:34:02 #8 type] 
+Type domain.Erreklamazio is not enhanced.
+
+[2024-05-09 12:34:02 #9 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-05-09 12:34:02 #10 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-05-09 12:34:37 #1 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' is opened by 17964@DESKTOP-PNFEN4V
+
+[2024-05-09 12:34:37 #2 type] 
+Type domain.User is not enhanced.
+
+[2024-05-09 12:34:37 #3 type] 
+Type domain.Movement is not enhanced.
+
+[2024-05-09 12:34:37 #4 type] 
+Type domain.Driver is not enhanced.
+
+[2024-05-09 12:34:37 #5 type] 
+Type domain.Car is not enhanced.
+
+[2024-05-09 12:34:37 #6 type] 
+Type domain.Ride is not enhanced.
+
+[2024-05-09 12:34:37 #7 type] 
+Type domain.Erreklamazio is not enhanced.
+
+[2024-05-09 12:34:37 #8 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-05-09 12:34:37 #9 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-05-09 12:44:00 #1 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' is opened by 8128@DESKTOP-PNFEN4V
+
+[2024-05-09 12:44:00 #2 type] 
+Type domain.User is not enhanced.
+
+[2024-05-09 12:44:00 #3 type] 
+Type domain.Movement is not enhanced.
+
+[2024-05-09 12:44:00 #4 type] 
+Type domain.Driver is not enhanced.
+
+[2024-05-09 12:44:00 #5 type] 
+Type domain.Car is not enhanced.
+
+[2024-05-09 12:44:00 #6 type] 
+Type domain.Ride is not enhanced.
+
+[2024-05-09 12:44:00 #7 type] 
+Type domain.Erreklamazio is not enhanced.
+
+[2024-05-09 12:44:00 #8 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-05-09 12:44:00 #9 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-05-09 14:42:28 #1 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' is opened by 10308@DESKTOP-PNFEN4V
+
+[2024-05-09 14:42:28 #2 type] 
+Type domain.User is not enhanced.
+
+[2024-05-09 14:42:28 #3 type] 
+Type domain.Movement is not enhanced.
+
+[2024-05-09 14:42:29 #4 type] 
+Type domain.Driver is not enhanced.
+
+[2024-05-09 14:42:29 #5 type] 
+Type domain.Car is not enhanced.
+
+[2024-05-09 14:42:29 #6 type] 
+Type domain.Ride is not enhanced.
+
+[2024-05-09 14:42:29 #7 type] 
+Type domain.Erreklamazio is not enhanced.
+
+[2024-05-09 14:42:29 #8 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-05-09 14:42:29 #9 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-05-09 14:45:11 #1 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' is opened by 20328@DESKTOP-PNFEN4V
+
+[2024-05-09 14:45:11 #2 type] 
+Type domain.User is not enhanced.
+
+[2024-05-09 14:45:11 #3 type] 
+Type domain.Movement is not enhanced.
+
+[2024-05-09 14:45:11 #4 type] 
+Type domain.Driver is not enhanced.
+
+[2024-05-09 14:45:11 #5 type] 
+Type domain.Car is not enhanced.
+
+[2024-05-09 14:45:11 #6 type] 
+Type domain.Ride is not enhanced.
+
+[2024-05-09 14:45:11 #7 type] 
+Type domain.Erreklamazio is not enhanced.
+
+[2024-05-09 14:45:11 #8 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-05-09 14:45:11 #9 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-05-09 14:49:53 #1 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' has been recovered (tr. 27-27)
+
+[2024-05-09 14:49:53 #2 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' is opened by 18156@DESKTOP-PNFEN4V
+
+[2024-05-09 14:49:53 #3 type] 
+Type domain.User is not enhanced.
+
+[2024-05-09 14:49:53 #4 type] 
+Type domain.Movement is not enhanced.
+
+[2024-05-09 14:49:53 #5 type] 
+Type domain.Driver is not enhanced.
+
+[2024-05-09 14:49:53 #6 type] 
+Type domain.Car is not enhanced.
+
+[2024-05-09 14:49:53 #7 type] 
+Type domain.Ride is not enhanced.
+
+[2024-05-09 14:49:53 #8 type] 
+Type domain.Erreklamazio is not enhanced.
+
+[2024-05-09 14:49:53 #9 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-05-09 14:49:53 #10 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-05-09 14:52:54 #1 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' has been recovered (tr. 28-30)
+
+[2024-05-09 14:52:54 #2 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' is opened by 13688@DESKTOP-PNFEN4V
+
+[2024-05-09 14:52:54 #3 type] 
+Type domain.User is not enhanced.
+
+[2024-05-09 14:52:54 #4 type] 
+Type domain.Movement is not enhanced.
+
+[2024-05-09 14:52:54 #5 type] 
+Type domain.Driver is not enhanced.
+
+[2024-05-09 14:52:54 #6 type] 
+Type domain.Car is not enhanced.
+
+[2024-05-09 14:52:54 #7 type] 
+Type domain.Ride is not enhanced.
+
+[2024-05-09 14:52:54 #8 type] 
+Type domain.Erreklamazio is not enhanced.
+
+[2024-05-09 14:52:54 #9 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-05-09 14:52:54 #10 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-05-09 14:57:27 #1 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' has been recovered (tr. 31-38)
+
+[2024-05-09 14:57:27 #2 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' is opened by 21644@DESKTOP-PNFEN4V
+
+[2024-05-09 14:57:27 #3 type] 
+Type domain.User is not enhanced.
+
+[2024-05-09 14:57:27 #4 type] 
+Type domain.Movement is not enhanced.
+
+[2024-05-09 14:57:27 #5 type] 
+Type domain.Driver is not enhanced.
+
+[2024-05-09 14:57:27 #6 type] 
+Type domain.Car is not enhanced.
+
+[2024-05-09 14:57:27 #7 type] 
+Type domain.Ride is not enhanced.
+
+[2024-05-09 14:57:27 #8 type] 
+Type domain.Erreklamazio is not enhanced.
+
+[2024-05-09 14:57:27 #9 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-05-09 14:57:27 #10 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-05-09 14:58:56 #1 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' is opened by 21252@DESKTOP-PNFEN4V
+
+[2024-05-09 14:58:56 #2 type] 
+Type domain.User is not enhanced.
+
+[2024-05-09 14:58:56 #3 type] 
+Type domain.Movement is not enhanced.
+
+[2024-05-09 14:58:56 #4 type] 
+Type domain.Driver is not enhanced.
+
+[2024-05-09 14:58:56 #5 type] 
+Type domain.Car is not enhanced.
+
+[2024-05-09 14:58:56 #6 type] 
+Type domain.Ride is not enhanced.
+
+[2024-05-09 14:58:56 #7 type] 
+Type domain.Erreklamazio is not enhanced.
+
+[2024-05-09 14:58:56 #8 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-05-09 14:58:56 #9 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-05-09 14:59:36 #1 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' is opened by 18236@DESKTOP-PNFEN4V
+
+[2024-05-09 14:59:36 #2 type] 
+Type domain.User is not enhanced.
+
+[2024-05-09 14:59:36 #3 type] 
+Type domain.Movement is not enhanced.
+
+[2024-05-09 14:59:36 #4 type] 
+Type domain.Driver is not enhanced.
+
+[2024-05-09 14:59:36 #5 type] 
+Type domain.Car is not enhanced.
+
+[2024-05-09 14:59:36 #6 type] 
+Type domain.Ride is not enhanced.
+
+[2024-05-09 14:59:36 #7 type] 
+Type domain.Erreklamazio is not enhanced.
+
+[2024-05-09 14:59:36 #8 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-05-09 14:59:36 #9 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-05-09 15:01:52 #1 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' has been recovered (tr. 39-39)
+
+[2024-05-09 15:01:52 #2 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' is opened by 11528@DESKTOP-PNFEN4V
+
+[2024-05-09 15:01:52 #3 type] 
+Type domain.User is not enhanced.
+
+[2024-05-09 15:01:52 #4 type] 
+Type domain.Movement is not enhanced.
+
+[2024-05-09 15:01:53 #5 type] 
+Type domain.Driver is not enhanced.
+
+[2024-05-09 15:01:53 #6 type] 
+Type domain.Car is not enhanced.
+
+[2024-05-09 15:01:53 #7 type] 
+Type domain.Ride is not enhanced.
+
+[2024-05-09 15:01:53 #8 type] 
+Type domain.Erreklamazio is not enhanced.
+
+[2024-05-09 15:01:53 #9 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-05-09 15:01:53 #10 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-05-09 15:20:46 #1 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' is opened by 21552@DESKTOP-PNFEN4V
+
+[2024-05-09 15:20:47 #2 type] 
+Type domain.User is not enhanced.
+
+[2024-05-09 15:20:47 #3 type] 
+Type domain.Movement is not enhanced.
+
+[2024-05-09 15:20:47 #4 type] 
+Type domain.Driver is not enhanced.
+
+[2024-05-09 15:20:47 #5 type] 
+Type domain.Car is not enhanced.
+
+[2024-05-09 15:20:47 #6 type] 
+Type domain.Ride is not enhanced.
+
+[2024-05-09 15:20:47 #7 type] 
+Type domain.Erreklamazio is not enhanced.
+
+[2024-05-09 15:20:47 #8 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-05-09 15:20:47 #9 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-05-09 15:25:57 #1 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' has been recovered (tr. 41-43)
+
+[2024-05-09 15:25:57 #2 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' is opened by 19256@DESKTOP-PNFEN4V
+
+[2024-05-09 15:25:57 #3 type] 
+Type domain.User is not enhanced.
+
+[2024-05-09 15:25:57 #4 type] 
+Type domain.Movement is not enhanced.
+
+[2024-05-09 15:25:57 #5 type] 
+Type domain.Driver is not enhanced.
+
+[2024-05-09 15:25:57 #6 type] 
+Type domain.Car is not enhanced.
+
+[2024-05-09 15:25:57 #7 type] 
+Type domain.Ride is not enhanced.
+
+[2024-05-09 15:25:57 #8 type] 
+Type domain.Erreklamazio is not enhanced.
+
+[2024-05-09 15:25:57 #9 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-05-09 15:25:57 #10 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-05-09 15:34:45 #1 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' has been recovered (tr. 44-45)
+
+[2024-05-09 15:34:46 #2 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' is opened by 20148@DESKTOP-PNFEN4V
+
+[2024-05-09 15:34:46 #3 type] 
+Type domain.User is not enhanced.
+
+[2024-05-09 15:34:46 #4 type] 
+Type domain.Movement is not enhanced.
+
+[2024-05-09 15:34:46 #5 type] 
+Type domain.Driver is not enhanced.
+
+[2024-05-09 15:34:46 #6 type] 
+Type domain.Car is not enhanced.
+
+[2024-05-09 15:34:46 #7 type] 
+Type domain.Ride is not enhanced.
+
+[2024-05-09 15:34:46 #8 type] 
+Type domain.Erreklamazio is not enhanced.
+
+[2024-05-09 15:34:46 #9 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-05-09 15:34:46 #10 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-05-09 22:00:57 #1 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' has been recovered (tr. 46-46)
+
+[2024-05-09 22:00:57 #2 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' is opened by 11496@DESKTOP-PNFEN4V
+
+[2024-05-09 22:00:57 #3 type] 
+Type domain.User is not enhanced.
+
+[2024-05-09 22:00:57 #4 type] 
+Type domain.Movement is not enhanced.
+
+[2024-05-09 22:00:57 #5 type] 
+Type domain.Driver is not enhanced.
+
+[2024-05-09 22:00:57 #6 type] 
+Type domain.Car is not enhanced.
+
+[2024-05-09 22:00:57 #7 type] 
+Type domain.Ride is not enhanced.
+
+[2024-05-09 22:00:57 #8 type] 
+Type domain.Erreklamazio is not enhanced.
+
+[2024-05-09 22:00:57 #9 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-05-09 22:00:57 #10 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-05-09 22:05:03 #1 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' is opened by 15548@DESKTOP-PNFEN4V
+
+[2024-05-09 22:05:03 #2 type] 
+Type domain.User is not enhanced.
+
+[2024-05-09 22:05:03 #3 type] 
+Type domain.Movement is not enhanced.
+
+[2024-05-09 22:05:03 #4 type] 
+Type domain.Driver is not enhanced.
+
+[2024-05-09 22:05:03 #5 type] 
+Type domain.Car is not enhanced.
+
+[2024-05-09 22:05:03 #6 type] 
+Type domain.Ride is not enhanced.
+
+[2024-05-09 22:05:03 #7 type] 
+Type domain.Erreklamazio is not enhanced.
+
+[2024-05-09 22:05:03 #8 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-05-09 22:05:03 #9 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-05-09 22:05:57 #1 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' is opened by 10612@DESKTOP-PNFEN4V
+
+[2024-05-09 22:05:58 #2 type] 
+Type domain.User is not enhanced.
+
+[2024-05-09 22:05:58 #3 type] 
+Type domain.Movement is not enhanced.
+
+[2024-05-09 22:05:58 #4 type] 
+Type domain.Driver is not enhanced.
+
+[2024-05-09 22:05:58 #5 type] 
+Type domain.Car is not enhanced.
+
+[2024-05-09 22:05:58 #6 type] 
+Type domain.Ride is not enhanced.
+
+[2024-05-09 22:05:58 #7 type] 
+Type domain.Erreklamazio is not enhanced.
+
+[2024-05-09 22:05:58 #8 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-05-09 22:05:58 #9 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-05-09 22:06:46 #1 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' is opened by 3500@DESKTOP-PNFEN4V
+
+[2024-05-09 22:06:46 #2 type] 
+Type domain.User is not enhanced.
+
+[2024-05-09 22:06:46 #3 type] 
+Type domain.Movement is not enhanced.
+
+[2024-05-09 22:06:46 #4 type] 
+Type domain.Driver is not enhanced.
+
+[2024-05-09 22:06:46 #5 type] 
+Type domain.Car is not enhanced.
+
+[2024-05-09 22:06:46 #6 type] 
+Type domain.Ride is not enhanced.
+
+[2024-05-09 22:06:46 #7 type] 
+Type domain.Erreklamazio is not enhanced.
+
+[2024-05-09 22:06:46 #8 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-05-09 22:06:46 #9 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-05-09 22:11:05 #1 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' is opened by 13004@DESKTOP-PNFEN4V
+
+[2024-05-09 22:11:05 #2 type] 
+Type domain.User is not enhanced.
+
+[2024-05-09 22:11:05 #3 type] 
+Type domain.Movement is not enhanced.
+
+[2024-05-09 22:11:05 #4 type] 
+Type domain.Driver is not enhanced.
+
+[2024-05-09 22:11:05 #5 type] 
+Type domain.Car is not enhanced.
+
+[2024-05-09 22:11:06 #6 type] 
+Type domain.Ride is not enhanced.
+
+[2024-05-09 22:11:06 #7 type] 
+Type domain.Erreklamazio is not enhanced.
+
+[2024-05-09 22:11:06 #8 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-05-09 22:11:06 #9 type] 
+Type domain.Traveler is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-05-09 22:11:43 #1 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' is opened by 14712@DESKTOP-PNFEN4V
+
+[2024-05-09 22:11:43 #2 type] 
+Type domain.User is not enhanced.
+
+[2024-05-09 22:11:43 #3 type] 
+Type domain.Movement is not enhanced.
+
+[2024-05-09 22:11:43 #4 type] 
+Type domain.Driver is not enhanced.
+
+[2024-05-09 22:11:43 #5 type] 
+Type domain.Car is not enhanced.
+
+[2024-05-09 22:11:43 #6 type] 
+Type domain.Ride is not enhanced.
+
+[2024-05-09 22:11:43 #7 type] 
+Type domain.Erreklamazio is not enhanced.
+
+[2024-05-09 22:11:43 #8 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-05-09 22:11:43 #9 type] 
+Type domain.Traveler is not enhanced.
+

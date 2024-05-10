@@ -90,7 +90,7 @@ public class ReserveStatus {
 	
 	@Override
 	public String toString() {
-		return reserveNumber+";"+traveler;
+		return bidaia.getFrom() + " to " + bidaia.getTo() + ", " + bidaia.getDate();
 	}
 
 	public String getStatus() {
