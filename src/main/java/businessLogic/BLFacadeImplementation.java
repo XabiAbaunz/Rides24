@@ -248,4 +248,18 @@ public class BLFacadeImplementation  implements BLFacade {
 		dbManager.close();
 		return balorazioa;
 	}
+	
+	public void deskontuaSortu(String kodea, int zenbatekoa, Date iraunData) {
+		dbManager.open();
+		dbManager.deskontuaSortu(kodea, zenbatekoa, iraunData);
+		dbManager.close();
+		
+	}
+	
+	public int deskontuaEgiaztatu(String kodea, String email) {
+		dbManager.open();
+		int kop = dbManager.deskontuaEgiaztatu(kodea, email);
+		dbManager.close();
+		return kop;
+	}
 }

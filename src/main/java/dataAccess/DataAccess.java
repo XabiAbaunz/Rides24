@@ -69,6 +69,7 @@ public class DataAccess  {
 	public void initializeDB(){
 		
 		db.getTransaction().begin();
+		
 
 		try {
 
@@ -78,7 +79,8 @@ public class DataAccess  {
 		   int year=today.get(Calendar.YEAR);
 		   if (month==12) { month=1; year+=1;}  
 	    
-		   
+		   Administratzailea admin = new Administratzailea("c","c","c",10.0);
+		   db.persist(admin);
 		    /*Create drivers 
 			Driver driver1=new Driver("driver1@gmail.com","Aitor Fernandez");
 			Driver driver2=new Driver("driver2@gmail.com","Ane Gaztañaga");
@@ -459,6 +461,28 @@ public class DataAccess  {
 	        	return -1;
 	        }
 	        
+	}
+	
+	public void deskontuaSortu(String kodea, int zenbatekoa, Date iraunData) {
+		db.getTransaction().begin();
+		Deskontua deskontu = new Deskontua(kodea, zenbatekoa, iraunData);
+		db.persist(deskontu);
+		db.getTransaction().commit();	
+	}
+	
+	public int deskontuaEgiaztatu(String kodea, String email) {
+		Deskontua desk = db.find(Deskontua.class, kodea);
+		//Deskontua ez da aurkitu
+		if(desk == null) {return -1;}
+		//Deskontua kadukatuta
+		if(desk.getIraungitzeData().before(new Date())) {return -2;}
+		//Deskontua erabiltzaileak iada erabilita
+		if(desk.getErabilita().contains(email)) {return -3;}
+		desk.getErabilita().add(email);
+		db.getTransaction().begin();
+		db.merge(desk);
+		db.getTransaction().commit();
+		return desk.getZenbatekoa();
 	}
 	
 	

@@ -63,17 +63,27 @@ public class FindBookGUI extends JFrame {
 	private Traveler traveler;
 	
 	private Ride ride;
+	private final JLabel lbl_deskontua = new JLabel("Sartu deskontu kodea");
+	private final JTextField text_deskontua = new JTextField();
+
+
+	private int berezkoDeskontua = 0;
+
+
+	private JButton botoi_deskontua = new JButton("deskontua aplikatu");
 
 
 	public FindBookGUI(Traveler t)
 	{
+		botoi_deskontua.setEnabled(true);
+		text_deskontua.setBounds(175, 335, 122, 25);
 		this.traveler=t;
 		this.getContentPane().setLayout(null);
 		this.setSize(new Dimension(700, 500));
 		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("FindRidesGUI.FindRides"));
 
 		jLabelEventDate.setBounds(new Rectangle(457, 6, 140, 25));
-		jLabelEvents.setBounds(38, 231, 259, 16);
+		jLabelEvents.setBounds(38, 206, 259, 16);
 
 		this.getContentPane().add(jLabelEventDate, null);
 		this.getContentPane().add(jLabelEvents);
@@ -187,7 +197,7 @@ public class FindBookGUI extends JFrame {
 						tableModelRides.setRowCount(0);
 						tableRides.clearSelection();
 						tableModelRides.setDataVector(null, columnNamesRides);
-						tableModelRides.setColumnCount(4); // another column added to allocate ride objects
+						tableModelRides.setColumnCount(5); // another column added to allocate ride objects
 						jButtonBook.setEnabled(false);
 
 						BLFacade facade = MainGUI.getBusinessLogic();
@@ -206,7 +216,7 @@ public class FindBookGUI extends JFrame {
 							}else {
 								row.add("gidariak ez du baloraziorik");
 							}
-							//row.add(ride); // ev object added in order to obtain it with tableModelEvents.getValueAt(i,3)
+							row.add(ride); // ev object added in order to obtain it with tableModelEvents.getValueAt(i,3)
 							tableModelRides.addRow(row);		
 						}
 						datesWithRidesCurrentMonth=facade.getThisMonthDatesWithRides((String)jComboBoxOrigin.getSelectedItem(),(String)jComboBoxDestination.getSelectedItem(),jCalendar1.getDate());
@@ -219,9 +229,9 @@ public class FindBookGUI extends JFrame {
 					}
 					tableRides.getColumnModel().getColumn(0).setPreferredWidth(130);
 					tableRides.getColumnModel().getColumn(1).setPreferredWidth(20);
-					tableRides.getColumnModel().getColumn(2).setPreferredWidth(20);
-					tableRides.getColumnModel().getColumn(3).setPreferredWidth(65);
-					//tableRides.getColumnModel().removeColumn(tableRides.getColumnModel().getColumn(3)); // not shown in JTable
+					tableRides.getColumnModel().getColumn(1).setPreferredWidth(20);
+					tableRides.getColumnModel().getColumn(1).setPreferredWidth(65);
+					tableRides.getColumnModel().removeColumn(tableRides.getColumnModel().getColumn(4)); // not shown in JTable
 
 				}
 			} 
@@ -230,7 +240,7 @@ public class FindBookGUI extends JFrame {
 
 		this.getContentPane().add(jCalendar1, null);
 
-		scrollPaneEvents.setBounds(new Rectangle(38, 257, 603, 150));
+		scrollPaneEvents.setBounds(new Rectangle(38, 232, 603, 93));
 
 		scrollPaneEvents.setViewportView(tableRides);
 		tableModelRides = new DefaultTableModel(null, columnNamesRides);
@@ -238,19 +248,19 @@ public class FindBookGUI extends JFrame {
 		tableRides.setModel(tableModelRides);
 
 		tableModelRides.setDataVector(null, columnNamesRides);
-		tableModelRides.setColumnCount(4); // another column added to allocate ride objects
+		tableModelRides.setColumnCount(5); // another column added to allocate ride objects
 
 		tableRides.getColumnModel().getColumn(0).setPreferredWidth(170);
 		tableRides.getColumnModel().getColumn(1).setPreferredWidth(30);
-		tableRides.getColumnModel().getColumn(2).setPreferredWidth(30);
-		tableRides.getColumnModel().getColumn(3).setPreferredWidth(30);
+		tableRides.getColumnModel().getColumn(1).setPreferredWidth(30);
+		tableRides.getColumnModel().getColumn(1).setPreferredWidth(30);
 		
 		tableRides.getColumnModel().removeColumn(tableRides.getColumnModel().getColumn(3)); // not shown in JTable
 		tableRides.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
 			public void valueChanged(ListSelectionEvent e) {
 				if(!e.getValueIsAdjusting()) {
 					int selectedRow = tableRides.getSelectedRow();
-                    int selectedColumn = 3;
+                    int selectedColumn = 4;
                     try {
                     	ride = (Ride) tableModelRides.getValueAt(selectedRow, selectedColumn);
                     } catch(ArrayIndexOutOfBoundsException ex) {
@@ -269,7 +279,7 @@ public class FindBookGUI extends JFrame {
 		jButtonBook.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ReserveStatus rs = new ReserveStatus(ride.getPrice(), traveler, ride);
-				facade.updateMoneyByEmail(traveler.getEmail(), -ride.getPrice());
+				facade.updateMoneyByEmail(traveler.getEmail(), -1 *(ride.getPrice() * (1-berezkoDeskontua)));
 				boolean b = facade.addReserve(rs, ride.getRideNumber());
 				if(!b) {
 					jLabelEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("FindBookGUI.ErreserbakBeteta"));
@@ -279,6 +289,41 @@ public class FindBookGUI extends JFrame {
 		jButtonBook.setBounds(300, 420, 130, 30);
 		getContentPane().add(jButtonBook);
 		jButtonBook.setEnabled(false);
+		lbl_deskontua.setBounds(38, 335, 122, 25);
+		
+		getContentPane().add(lbl_deskontua);
+		
+		getContentPane().add(text_deskontua);
+		
+		JTextArea oharArea = new JTextArea();
+		oharArea.setText(""); //$NON-NLS-1$ //$NON-NLS-2$
+		oharArea.setBounds(95, 423, 122, 30);
+		getContentPane().add(oharArea);
+		
+		
+		
+		botoi_deskontua.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(text_deskontua.getText() == "") {
+					oharArea.setText("Sartu deskontu kodea");
+				}else{
+					int desk = facade.deskontuaEgiaztatu(text_deskontua.getText(), t.getEmail());
+					if(desk == -1) { 
+						oharArea.setText("Deskontua ez da exisitzen");
+					}else if(desk == -2){ 
+						oharArea.setText("Deskontua iada iraungita");
+					}else if(desk == -3) {
+						oharArea.setText("Deskontua iada erabili duzu");
+					}else {
+						oharArea.setText("Deskontua behar bezala aplikatu da  %" +  desk);
+						berezkoDeskontua = desk;
+						botoi_deskontua.setEnabled(false);
+					}
+				}
+			}
+		});
+		botoi_deskontua.setBounds(75, 370, 172, 37);
+		getContentPane().add(botoi_deskontua);
 
 	}
 	public static void paintDaysWithEvents(JCalendar jCalendar,List<Date> datesWithEventsCurrentMonth, Color color) {

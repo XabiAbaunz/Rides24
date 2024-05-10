@@ -113,4 +113,8 @@ public interface BLFacade  {
 
 	public double getBalorazioa(String email);
 	
+	public void deskontuaSortu(String kodea, int zenbatekoa, Date iraunData);
+	
+	public int deskontuaEgiaztatu(String kodea, String email);
+	
 }

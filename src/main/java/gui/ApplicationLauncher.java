@@ -1,6 +1,7 @@
 package gui;
 
 import java.awt.Color;
+
 import java.net.URL;
 import java.util.Locale;
 
@@ -10,7 +11,6 @@ import javax.xml.ws.Service;
 
 import configuration.ConfigXML;
 import dataAccess.DataAccess;
-import domain.Driver;
 import businessLogic.BLFacade;
 import businessLogic.BLFacadeImplementation;
 
