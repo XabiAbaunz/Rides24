@@ -241,4 +241,11 @@ public class BLFacadeImplementation  implements BLFacade {
 		dbManager.bidaiaErreklamatu(mezua, email, rideNumber);
 		dbManager.close();
 	}
+	
+	public double getBalorazioa(String email) {
+		dbManager.open();
+		double balorazioa = dbManager.getBalorazioa(email);
+		dbManager.close();
+		return balorazioa;
+	}
 }

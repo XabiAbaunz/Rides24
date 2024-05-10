@@ -34,6 +34,10 @@ public class DriverMainGUI extends JFrame {
 	
 	private JButton jButtonMugimenduakIkusi = new JButton(ResourceBundle.getBundle("Etiquetas").getString("TravelerMainGUI.mugimenduakIkusi"));
 	private final JButton jButtonBidaiariaErreklamatu = new JButton("Bidaiaria erreklamatu");
+	
+	private JLabel lbl_balorazioa1 = new JLabel("Zure balorazioa");
+	private JLabel lbl_balorazioa2 = new JLabel();
+	
 	/**
 	 * Launch the application.
 	 */
@@ -125,6 +129,19 @@ public class DriverMainGUI extends JFrame {
 		});
 		
 		contentPane.add(jButtonBidaiariaErreklamatu);
+		
+		lbl_balorazioa1.setBounds(37, 218, 90, 35);
+		contentPane.add(lbl_balorazioa1);
+		
+		 double balorazioa = facade.getBalorazioa(d.getEmail());
+			if (balorazioa != -1) {
+				lbl_balorazioa2.setText(String.valueOf(balorazioa));
+			}else {
+				lbl_balorazioa2.setText("Ez duzu baloraziorik");
+			}
+		
+		lbl_balorazioa2.setBounds(173, 217, 213, 36);
+		contentPane.add(lbl_balorazioa2);
 	}
 
 }

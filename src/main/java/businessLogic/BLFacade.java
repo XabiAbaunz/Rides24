@@ -111,6 +111,6 @@ public interface BLFacade  {
 	
 	public void bidaiaErreklamatu(String mezua, String email, int rideNumber);
 
+	public double getBalorazioa(String email);
 
-	
 }
