@@ -28,7 +28,7 @@ public class Ride implements Serializable {
 	private float price;
 	private float jasotakoDirua;
 	private boolean bukatuta;
-	private int count;
+	private static int count = 0;
 	
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
 	private ReserveStatus[] reserveList;
@@ -39,35 +39,20 @@ public class Ride implements Serializable {
 		super();
 	}
 	
-	public Ride(Integer rideNumber, String from, String to, Date date, int nPlaces, float price, Car car) {
+	public Ride(String from, String to, Date date, int nPlaces, float price, Car car) {
 		super();
-		this.rideNumber = rideNumber;
+		this.count++;
+		this.rideNumber = count;
 		this.from = from;
 		this.to = to;
 		this.nPlaces = nPlaces;
 		this.date=date;
 		this.price=price;
 		this.car = car;
-		this.count = 0;
 		this.reserveList = new ReserveStatus[nPlaces];
 		this.jasotakoDirua = 0;
 		this.bukatuta = false;
 		
-	}
-
-	
-	public Ride(String from, String to,  Date date, int nPlaces, float price, Car car) {
-		super();
-		this.from = from;
-		this.to = to;
-		this.nPlaces = nPlaces;
-		this.date=date;
-		this.price=price;
-		this.car = car;
-		this.count = 0;
-		this.reserveList = new ReserveStatus[nPlaces];
-		this.jasotakoDirua = 0;
-		this.bukatuta = false;
 	}
 	
 	public float getJasotakoDirua() {
@@ -220,8 +205,6 @@ public class Ride implements Serializable {
 	public void setPrice(float price) {
 		this.price = price;
 	}
-
-
 
 	public String toString(){
 		return from+";"+to+";"+(date.getYear()+1900)+"/"+(date.getMonth()+1)+"/"+(date.getDay()+1);  

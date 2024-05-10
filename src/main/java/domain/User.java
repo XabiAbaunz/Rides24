@@ -1,6 +1,7 @@
 package domain;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Objects;
 
 import javax.persistence.Entity;
@@ -80,7 +81,16 @@ public abstract class User {
 				&& Objects.equals(name, other.name) && Objects.equals(password, other.password);
 	}
 	
-	
-	
+	public ArrayList<Movement> getMovements() {
+		return movements;
+	}
+
+	public void setMovements(ArrayList<Movement> movement) {
+		this.movements = movement;
+	}
+
+	public void addMovement(double diruKop, Date data) {
+		this.movements.add(new Movement(this, diruKop, data));
+	}		
 	
 }

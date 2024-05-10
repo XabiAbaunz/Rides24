@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import businessLogic.BLFacade;
 import domain.Driver;
 import domain.User;
 
@@ -28,6 +29,10 @@ public class DriverMainGUI extends JFrame {
 
 	private Driver driver;
 	private final JButton jButtonDiruaSartu = new JButton(ResourceBundle.getBundle("Etiquetas").getString("TravelerMainGUI.diruaSartuAtera")); //$NON-NLS-1$ //$NON-NLS-2$
+	private final JButton jButtonBidaiaKantzelatu = new JButton("Bidaia kantzelatu");
+	private final JButton jButtonKotxeaGehitu = new JButton("Kotxea gehitu");
+	
+	private JButton jButtonMugimenduakIkusi = new JButton(ResourceBundle.getBundle("Etiquetas").getString("TravelerMainGUI.mugimenduakIkusi"));
 	/**
 	 * Launch the application.
 	 */
@@ -51,13 +56,14 @@ public class DriverMainGUI extends JFrame {
 	public DriverMainGUI(Driver d) {
 		this.driver = d;
 		
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		BLFacade facade = MainGUI.getBusinessLogic();
+
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
-		contentPane.setLayout(new GridLayout(4, 1, 0, 0));
+		contentPane.setLayout(new GridLayout(6, 1, 0, 0));
 		
 		jLabelSelectOption.setHorizontalAlignment(SwingConstants.CENTER);
 		contentPane.add(jLabelSelectOption);
@@ -68,10 +74,19 @@ public class DriverMainGUI extends JFrame {
 			}
 		});
 		
+		jButtonMugimenduakIkusi.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MugimenduakIkusiGUI frame = new MugimenduakIkusiGUI((User)d);
+				frame.setVisible(true);
+			}
+		});
+
+		contentPane.add(jButtonMugimenduakIkusi);
+		
 		contentPane.add(jButtonCreateRide);
 		jButtonAcceptReservation.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ErreserbakOnartuGUI frame = new ErreserbakOnartuGUI(driver);
+				AcceptReservesGUI frame = new AcceptReservesGUI(driver);
 				frame.setVisible(true);
 			}
 		});
@@ -85,6 +100,22 @@ public class DriverMainGUI extends JFrame {
 		});
 		
 		contentPane.add(jButtonDiruaSartu);
+		jButtonKotxeaGehitu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				AddCarGUI frame = new AddCarGUI(driver);
+				frame.setVisible(true);
+			}
+		});
+		
+		contentPane.add(jButtonKotxeaGehitu);
+		jButtonBidaiaKantzelatu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CancelRideGUI frame = new CancelRideGUI(driver);
+				frame.setVisible(true);
+			}
+		});
+		
+		contentPane.add(jButtonBidaiaKantzelatu);
 	}
 
 }

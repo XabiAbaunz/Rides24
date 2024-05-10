@@ -1,11 +1,13 @@
 package businessLogic;
 
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
 //import domain.Booking;
 import domain.Ride;
 import domain.User;
+import domain.Car;
 import domain.Driver;
 import domain.ReserveStatus;
 import exceptions.RideMustBeLaterThanTodayException;
@@ -49,7 +51,7 @@ public interface BLFacade  {
  	 * @throws RideAlreadyExistException if the same ride already exists for the driver
 	 */
    @WebMethod
-   public Ride createRide( String from, String to, Date date, int nPlaces, float price, String driverEmail) throws RideMustBeLaterThanTodayException, RideAlreadyExistException;
+   public Ride createRide( String from, String to, Date date, int nPlaces, float price, String driverEmail, Car car) throws RideMustBeLaterThanTodayException, RideAlreadyExistException;
 	
 	
 	/**
@@ -90,6 +92,18 @@ public interface BLFacade  {
 	public void removeReserve(int rideNumber, int reserveNumber);
 	
 	public boolean addRideByEmail(String email, int rideNumber);
+	
+	public boolean addCarByEmail(String email, String marka, String modeloa, int eserlekuKop);
+	
+	public void deleteRideByRideNumber(int rideNumber);
+	
+	public Car getCar(String marka, String modeloa, Driver driver);
+
+	public List<ReserveStatus> getAllReservesFromEmail(String email);
+	
+	public void changeReserveStatus(ReserveStatus erreserba, Boolean erantzun, Boolean onartu);
+	
+	public void bidaiaBaieztatu(String email, int reserveNumber);
 
 	
 }

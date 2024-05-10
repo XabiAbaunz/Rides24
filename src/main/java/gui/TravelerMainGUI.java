@@ -27,6 +27,11 @@ public class TravelerMainGUI extends JFrame {
 	private Traveler traveler;
 	private JButton jButtonDiruaSartu = new JButton(ResourceBundle.getBundle("Etiquetas").getString("TravelerMainGUI.diruaSartuAtera")); //$NON-NLS-1$ //$NON-NLS-2$
 
+	private JButton jButtonErreserbakKon = new JButton(ResourceBundle.getBundle("Etiquetas").getString("ErreserbakKontsultatuGUI.erreserbakKontsultatu"));
+	private JButton jButtonBidaiaEginda = new JButton("Bidaia egin dela baieztatu");
+	
+	private JButton jButtonMugimenduakIkusi = new JButton(ResourceBundle.getBundle("Etiquetas").getString("TravelerMainGUI.mugimenduakIkusi"));
+
 	/**
 	 * Launch the application.
 	 */
@@ -49,12 +54,11 @@ public class TravelerMainGUI extends JFrame {
 	 */
 	public TravelerMainGUI(Traveler t) {
 		this.traveler = t;
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(new GridLayout(3, 1, 0, 0));
+		contentPane.setLayout(new GridLayout(6, 1, 0, 0));
 		JlabelAukeratu.setHorizontalAlignment(SwingConstants.CENTER);
 		contentPane.add(JlabelAukeratu);
 		rdbtBidaiaBilatu.addActionListener(new ActionListener() {
@@ -71,7 +75,36 @@ public class TravelerMainGUI extends JFrame {
 			}
 		});
 		
+		jButtonMugimenduakIkusi.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MugimenduakIkusiGUI frame = new MugimenduakIkusiGUI((User)t);
+				frame.setVisible(true);
+			}
+		});
+		
 		contentPane.add(jButtonDiruaSartu);
+		
+		jButtonErreserbakKon.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CheckReserveStatusGUI frame = new CheckReserveStatusGUI(t);
+				frame.setVisible(true);
+			}
+		});
+		contentPane.add(jButtonErreserbakKon);
+		
+		jButtonBidaiaEginda.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				BidaiaEgindaBaloratuGUI frame = new BidaiaEgindaBaloratuGUI(t);
+				frame.setVisible(true);
+			}
+		});
+		contentPane.add(jButtonBidaiaEginda);
+		contentPane.add(jButtonMugimenduakIkusi);
+		
+		
+		
+		
+		
 	}
 
 }

@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import businessLogic.BLFacade;
+import domain.Car;
 import domain.Driver;
 import domain.ReserveStatus;
 import domain.Ride;
@@ -21,7 +22,7 @@ import java.util.ResourceBundle;
 import java.awt.event.ActionEvent;
 import javax.swing.DefaultComboBoxModel;
 
-public class ErreserbakOnartuGUI extends JFrame {
+public class AcceptReservesGUI extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -47,13 +48,13 @@ public class ErreserbakOnartuGUI extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public ErreserbakOnartuGUI(Driver d) {
+	public AcceptReservesGUI(Driver d) {
 		
 		this.driver = d;
 		
 		this.facade = MainGUI.getBusinessLogic();
 		
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -88,24 +89,21 @@ public class ErreserbakOnartuGUI extends JFrame {
 		contentPane.add(comboBoxReserves);
 		
 		
-		jLabelErreserbakOnartu = new JLabel("New label");
-		jLabelErreserbakOnartu.setBounds(190, 36, 45, 13);
+		jLabelErreserbakOnartu.setBounds(190, 36, 143, 13);
 		contentPane.add(jLabelErreserbakOnartu);
 		
-		jLabelBidaiaAukeratu = new JLabel("New label");
-		jLabelBidaiaAukeratu.setBounds(68, 84, 45, 13);
+
+		jLabelBidaiaAukeratu.setBounds(0, 84, 113, 13);
 		contentPane.add(jLabelBidaiaAukeratu);
 		
-		jLabelBidaiariaAukeratu = new JLabel("New label");
-		jLabelBidaiariaAukeratu.setBounds(68, 143, 45, 13);
+
+		jLabelBidaiariaAukeratu.setBounds(0, 143, 113, 13);
 		contentPane.add(jLabelBidaiariaAukeratu);
 		
-		jButtonOnartu = new JButton("New button");
 		jButtonOnartu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				reserve.setAccepted(true);
-				reserve.setAnswered(true);
-				facade.addRideByEmail(reserve.getEmail(), ride.getRideNumber());
+				facade.changeReserveStatus(reserve, true, true);
+				facade.addRideByEmail(reserve.getTraveler().getEmail(), ride.getRideNumber());
 				facade.removeReserve(ride.getRideNumber(), reserve.getReserveNumber());
 				comboBoxReserves.removeAllItems();
 				
@@ -115,12 +113,10 @@ public class ErreserbakOnartuGUI extends JFrame {
 		contentPane.add(jButtonOnartu);
 		jButtonOnartu.setEnabled(false);
 		
-		JButtonBaztertu = new JButton("New button");
 		JButtonBaztertu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				reserve.setAccepted(false);
-				reserve.setAnswered(true);
-				facade.updateMoneyByEmail(reserve.getEmail(), reserve.getFrozenBalance());
+				facade.changeReserveStatus(reserve, true, false);
+				facade.updateMoneyByEmail(reserve.getTraveler().getEmail(), reserve.getFrozenBalance());
 				facade.removeReserve(ride.getRideNumber(), reserve.getReserveNumber());
 				comboBoxReserves.removeAllItems();
 			}

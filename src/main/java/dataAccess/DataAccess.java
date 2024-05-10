@@ -18,11 +18,7 @@ import javax.persistence.TypedQuery;
 
 import configuration.ConfigXML;
 import configuration.UtilDate;
-import domain.Driver;
-import domain.ReserveStatus;
-import domain.Ride;
-import domain.User;
-import domain.Traveler;
+import domain.*;
 import exceptions.RideAlreadyExistException;
 import exceptions.RideMustBeLaterThanTodayException;
 import exceptions.UserAlreadyExistException;
@@ -153,22 +149,28 @@ public class DataAccess  {
 	 * @throws RideMustBeLaterThanTodayException if the ride date is before today 
  	 * @throws RideAlreadyExistException if the same ride already exists for the driver
 	 */
-	public Ride createRide(String from, String to, Date date, int nPlaces, float price, String driverEmail) throws  RideAlreadyExistException, RideMustBeLaterThanTodayException {
+	public Ride createRide(String from, String to, Date date, int nPlaces, float price, String driverEmail, Car car) throws  RideAlreadyExistException, RideMustBeLaterThanTodayException {
 		System.out.println(">> DataAccess: createRide=> from= "+from+" to= "+to+" driver="+driverEmail+" date "+date);
 		try {
 			if(new Date().compareTo(date)>0) {
 				throw new RideMustBeLaterThanTodayException(ResourceBundle.getBundle("Etiquetas").getString("CreateRideGUI.ErrorRideMustBeLaterThanToday"));
 			}
 			db.getTransaction().begin();
-			
-			Driver driver = db.find(Driver.class, driverEmail);
-			if (driver.doesRideExists(from, to, date)) {
+			List<Ride> res = new ArrayList<>();	
+			TypedQuery<Car> query = db.createQuery("SELECT c FROM Car c WHERE c.marka=?1 AND c.modeloa=?2 AND c.eserlekuKop=?3 AND c.driver=?4",Car.class);   
+			query.setParameter(1, car.getMarka());
+			query.setParameter(2, car.getModeloa());
+			query.setParameter(3, car.getEserlekuKop());
+			query.setParameter(4, car.getDriver());
+			List<Car> rides = query.getResultList();
+			Car c = rides.get(0);
+			if (c.doesRideExists(from, to, date)) {
 				db.getTransaction().commit();
 				throw new RideAlreadyExistException(ResourceBundle.getBundle("Etiquetas").getString("DataAccess.RideAlreadyExist"));
 			}
-			Ride ride = driver.addRide(from, to, date, nPlaces, price);
+			Ride ride = c.addRide(from, to, date, nPlaces, price);
 			//next instruction can be obviated
-			db.persist(driver); 
+			db.persist(c); 
 			db.getTransaction().commit();
 
 			return ride;
@@ -262,6 +264,7 @@ public class DataAccess  {
 		User u = getUserByEmail(email);
 		db.getTransaction().begin();
 		u.setCash(u.getCash() + cash);
+		u.addMovement(cash, new Date());	
 		db.persist(u);
 		db.getTransaction().commit();
 		System.out.println(u + " has been updated");
@@ -306,11 +309,28 @@ public class DataAccess  {
 	
 	public List<Ride> getAllRidesFromEmail(String email) {
 		List<Ride> rideList = new ArrayList<>();
-		TypedQuery<Ride> query = db.createQuery("SELECT r FROM Ride r WHERE r.driver.email = ?1", Ride.class);
+		TypedQuery<Ride> query = db.createQuery("SELECT r FROM Ride r WHERE r.car.driver.email = ?1", Ride.class);
         query.setParameter(1, email);
 		rideList = query.getResultList();
 	 	return rideList;
 	}
+	
+	public List<ReserveStatus> getAllReservesFromEmail(String email) {
+		List<ReserveStatus> reserveList = new ArrayList<>();
+		TypedQuery<ReserveStatus> query = db.createQuery("SELECT rs FROM ReserveStatus rs WHERE rs.traveler.email = ?1", ReserveStatus.class);
+        query.setParameter(1, email);
+		reserveList = query.getResultList();
+	 	return reserveList;
+	}
+	
+	public void changeReserveStatus(ReserveStatus erreserba, Boolean erantzun, Boolean onartu) {
+		db.getTransaction().begin();
+		erreserba.setAccepted(onartu);
+		erreserba.setAnswered(erantzun);
+		db.merge(erreserba);
+		db.getTransaction().commit();
+	}
+	
 	
 	public boolean addRideByEmail(String email, int rideNumber) {
 		Ride ride = this.getRideByRideNumber(rideNumber);
@@ -321,6 +341,81 @@ public class DataAccess  {
 		System.out.println("Ride: " + ride + " has been added to: " + t);
 		return true;
 	}  
+	
+	 public boolean addCarByEmail(String email, String marka, String modeloa, int eserlekuKop) {
+		 db.getTransaction().begin();
+		 Driver driver = (Driver) this.getUserByEmail(email);
+		 System.out.println(driver.getCars());
+		 driver.addCar(marka, modeloa, eserlekuKop);
+		 db.persist(driver);
+		 db.getTransaction().commit();
+		 System.out.println("Car: " + marka + ", " + modeloa + ", " + eserlekuKop +  " has been added to: " + driver);
+		 return true;
+	 }
+	 
+	 public void deleteRideByRideNumber(int rideNumber) {
+		 Traveler traveler;
+		 db.getTransaction().begin();
+		 Ride ride = this.getRideByRideNumber(rideNumber);
+		 if(ride != null) {
+			 for(ReserveStatus rs:ride.getReserveList()) {
+				 if(rs != null) {
+					 traveler = rs.getTraveler();
+					 traveler.getReserves().remove(rs);
+					 db.persist(traveler);
+				 }
+			 }
+			 ride.getCar().getRides().remove(ride);
+			 db.remove(ride);
+			 db.getTransaction().commit();
+			 System.out.println("Ride: " + ride + " has been deleted.");
+	 	} else {
+	 		System.out.println("The ride doesn't exist");
+	 	}
+	 }
+	 
+	 public Car getCar(String marka, String modeloa, Driver driver) {
+		 List<Car> carList = new ArrayList<Car>();
+		 TypedQuery<Car> query = db.createQuery("SELECT c FROM Car c WHERE c.marka = ?1 AND c.modeloa = ?2 AND c.driver = ?3", Car.class);
+	     query.setParameter(1, marka);
+	     query.setParameter(2, modeloa);
+	     query.setParameter(3, this.getDriverByEmail(driver.getEmail()));
+		 carList = query.getResultList();
+		 return carList.get(0);
+	 }
+	 
+	 public Driver getDriverByEmail(String email) {
+		 return db.find(Driver.class,email);
+	 }
+	 
+	public void bidaiaBaieztatu(String email, int reserveNumber){
+		db.getTransaction().begin();
+		ReserveStatus erreserba = db.find(ReserveStatus.class, reserveNumber);
+		if(erreserba != null) {
+			Ride bidaia = erreserba.getRide();
+			double dirua = erreserba.getFrozenBalance();
+			Driver gidaria = bidaia.getCar().getDriver();
+			gidaria.setCash(gidaria.getCash() + dirua);
+			Date data = new Date();
+			gidaria.addMovement(dirua, data);
+	        db.persist(gidaria);
+			db.getTransaction().commit();
+	        removeReserve(bidaia.getRideNumber(), reserveNumber);
+	        db.getTransaction().begin();
+	        db.remove(erreserba);
+	        boolean allReservesFinished = true;
+	        for (ReserveStatus rs : bidaia.getReserveList()) {
+	            if (rs != null && !rs.isFinished()) {
+	                allReservesFinished = false;
+	                break;
+	            }
+	        }
+	        if (allReservesFinished) {
+	            bidaia.setBukatuta(true);
+	        }
+		}
+		db.getTransaction().commit();
+	}
 	
 	
 
@@ -361,5 +456,6 @@ public void open(){
 	            }
 	        }
 	    }
-	
+
+
 }

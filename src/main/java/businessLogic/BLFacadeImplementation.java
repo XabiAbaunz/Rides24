@@ -11,6 +11,7 @@ import dataAccess.DataAccess;
 import domain.Ride;
 import domain.Traveler;
 import domain.User;
+import domain.Car;
 import domain.Driver;
 import domain.ReserveStatus;
 import exceptions.RideMustBeLaterThanTodayException;
@@ -74,10 +75,9 @@ public class BLFacadeImplementation  implements BLFacade {
 	 * {@inheritDoc}
 	 */
    @WebMethod
-   public Ride createRide( String from, String to, Date date, int nPlaces, float price, String driverEmail ) throws RideMustBeLaterThanTodayException, RideAlreadyExistException{
-	   
+   public Ride createRide( String from, String to, Date date, int nPlaces, float price, String driverEmail, Car car ) throws RideMustBeLaterThanTodayException, RideAlreadyExistException{
 		dbManager.open();
-		Ride ride=dbManager.createRide(from, to, date, nPlaces, price, driverEmail);		
+		Ride ride=dbManager.createRide(from, to, date, nPlaces, price, driverEmail, car);		
 		dbManager.close();
 		return ride;
    };
@@ -170,7 +170,14 @@ public class BLFacadeImplementation  implements BLFacade {
     	dbManager.close();
     	return l;
     }
-    
+
+    public List<ReserveStatus> getAllReservesFromEmail(String email){
+    	dbManager.open();
+    	List<ReserveStatus> l = dbManager.getAllReservesFromEmail(email);
+    	dbManager.close();
+    	return l;
+    }
+        
     public void removeReserve(int rideNumber, int reserveNumber) {
     	dbManager.open();
     	dbManager.removeReserve(rideNumber, reserveNumber);
@@ -182,5 +189,36 @@ public class BLFacadeImplementation  implements BLFacade {
     	boolean b = dbManager.addRideByEmail(email, rideNumber);
     	dbManager.close();
     	return b;
+    }
+    
+    public boolean addCarByEmail(String email, String marka, String modeloa, int eserlekuKop) {
+    	dbManager.open();
+    	Boolean b = dbManager.addCarByEmail(email, marka, modeloa, eserlekuKop);
+    	dbManager.close();
+    	return b;
+    }
+    
+    public void deleteRideByRideNumber(int rideNumber) {
+    	dbManager.open();
+    	dbManager.deleteRideByRideNumber(rideNumber);
+    	dbManager.close();
+    }
+    
+    public Car getCar(String marka, String modeloa, Driver driver) {
+    	dbManager.open();
+    	Car car = dbManager.getCar(marka, modeloa, driver);
+    	dbManager.close();
+    	return car;
+    }
+    
+    public void changeReserveStatus(ReserveStatus erreserba, Boolean erantzun, Boolean onartu) {
+    	dbManager.open();
+    	dbManager.changeReserveStatus( erreserba,  erantzun,  onartu);
+    	dbManager.close();
+    }
+    public void bidaiaBaieztatu(String email, int reserveNumber) {
+    	dbManager.open();
+    	dbManager.bidaiaBaieztatu(email, reserveNumber);
+    	dbManager.close();
     }
 }
