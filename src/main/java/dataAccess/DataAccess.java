@@ -434,13 +434,21 @@ public class DataAccess  {
 		 System.out.println("Balorazioa: " + balorazioa + " has been added to " + email + ".");
 	}
 	
-	public void bidaiaErreklamatu(String arrazoia, String email, int rideNumber) {
+	public void bidaiaErreklamatu(String arrazoia, String email, int rideNumber, String besteEmail) {
 		Erreklamazio err = null;
 		User u = this.getUserByEmail(email);
 		Ride r = this.getRideByRideNumber(rideNumber);
+		Traveler t = null;
+		if(u instanceof Driver) {
+			t = db.find(Traveler.class, besteEmail);
+		}
 		db.getTransaction().begin();
-		err = new Erreklamazio(arrazoia, u, r);
+		err = new Erreklamazio(arrazoia, u, r, t);
 		r.addErreklamazio(err);
+		if(u instanceof Driver) {
+			t.addErreklamazio(err);;
+			db.persist(t);
+		}
 		db.persist(r);
 		db.getTransaction().commit();
 		System.out.println("New Erreklamazio has been added to Ride: " + r.getRideNumber());
@@ -458,7 +466,35 @@ public class DataAccess  {
 		 }else {
 	        	return -1;
 	        }
-	        
+	}
+	
+	public List<Erreklamazio> getAllErreklamazioFromEmail(String email) {
+		Traveler traveler = (Traveler) this.getUserByEmail(email);
+		return traveler.getErreklamazioak();
+	}
+	
+	public List<Erreklamazio> getAllErreklamazioFromRideNumber(int rideNumber) {
+		Ride ride = db.find(Ride.class, rideNumber);
+		return ride.getErreklamazioak();
+	}
+	
+	public void erreklamazioaOnartu(String email, int rideNumber, boolean onartuta, String arrazoia) {
+		List<Erreklamazio> erreklamazioList = new ArrayList<Erreklamazio>();
+		TypedQuery<Erreklamazio> query = db.createQuery("SELECT err FROM Erreklamazio err WHERE err.traveler.email = ?1 AND err.ride.rideNumber = ?2", Erreklamazio.class);
+	    query.setParameter(1, email);
+	    query.setParameter(2, rideNumber);
+	    erreklamazioList = query.getResultList();
+	    Erreklamazio err = erreklamazioList.get(0);
+	    db.getTransaction().begin();
+	    err.setErantzunda(true);
+	    err.setKonponduta(onartuta);
+	    if(!onartuta && err.getGidariMezua().equals("")) {
+	    	err.setGidariMezua(arrazoia);
+	    } else if(!onartuta && err.getBidaiariMezua().equals("")) {
+	    	err.setBidaiariMezua(arrazoia);
+	    }
+	    db.persist(err);
+	    db.getTransaction().commit();
 	}
 	
 	

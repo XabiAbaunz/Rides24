@@ -9,6 +9,7 @@ import domain.Ride;
 import domain.User;
 import domain.Car;
 import domain.Driver;
+import domain.Erreklamazio;
 import domain.ReserveStatus;
 import exceptions.RideMustBeLaterThanTodayException;
 import exceptions.RideAlreadyExistException;
@@ -109,8 +110,14 @@ public interface BLFacade  {
 	
 	public void addBalorazioByEmail(String email, double balorazioa);
 	
-	public void bidaiaErreklamatu(String mezua, String email, int rideNumber);
+	public void bidaiaErreklamatu(String mezua, String email, int rideNumber, String besteEmail);
 
 	public double getBalorazioa(String email);
+	
+	public List<Erreklamazio> getAllErreklamazioFromEmail(String email);
+	
+	public List<Erreklamazio> getAllErreklamazioFromRideNumber(int rideNumber);
+	
+	public void erreklamazioaErantzun(String email, int rideNumber, boolean onartuta, String arrazoia);
 	
 }

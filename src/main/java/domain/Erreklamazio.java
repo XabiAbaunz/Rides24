@@ -13,15 +13,18 @@ public class Erreklamazio {
 	private Traveler traveler;
 	/* private Admin admin; */
 	
-	public Erreklamazio(String mezua, User user, Ride ride) {
+	public Erreklamazio(String mezua, User user, Ride ride, User bestea) {
 		this.konponduta = false;
 		this.erantzunda = false;
 		this.ride = ride;
 		if(user instanceof Driver) {
 			this.gidariMezua = mezua;
+			this.traveler = (Traveler) bestea;
+			this.bidaiariMezua = "";
 		} else if(user instanceof Traveler) {
 			this.bidaiariMezua = mezua;
 			this.traveler = (Traveler) user;
+			this.gidariMezua = "";
 		}
 	}
 
@@ -71,5 +74,10 @@ public class Erreklamazio {
 
 	public void setBidaiariMezua(String bidaiariMezua) {
 		this.bidaiariMezua = bidaiariMezua;
+	}
+
+	@Override
+	public String toString() {
+		return "Erreklamazioa: " + this.ride;
 	}
 }
