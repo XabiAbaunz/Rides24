@@ -147,8 +147,6 @@ public class BLFacadeImplementation  implements BLFacade {
     	catch(UserAlreadyExistException e) {
     		return null;
     	}
-    	
-    	
     }
     
     public User updateMoneyByEmail(String email, double cash) {
@@ -268,5 +266,17 @@ public class BLFacadeImplementation  implements BLFacade {
 		dbManager.open();
 		dbManager.erreklamazioaOnartu(email, rideNumber, onartuta, arrazoia);
 		dbManager.close();
+	public void deskontuaSortu(String kodea, int zenbatekoa, Date iraunData) {
+		dbManager.open();
+		dbManager.deskontuaSortu(kodea, zenbatekoa, iraunData);
+		dbManager.close();
+		
+	}
+	
+	public int deskontuaEgiaztatu(String kodea, String email) {
+		dbManager.open();
+		int kop = dbManager.deskontuaEgiaztatu(kodea, email);
+		dbManager.close();
+		return kop;
 	}
 }

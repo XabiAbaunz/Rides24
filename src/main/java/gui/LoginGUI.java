@@ -22,6 +22,7 @@ import javax.swing.JTextArea;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+import domain.Administratzailea;
 import domain.Driver;
 import domain.Traveler;
 
@@ -67,6 +68,8 @@ public class LoginGUI extends JFrame {
 		
 		facade = MainGUI.getBusinessLogic();
 		
+		
+		
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -95,6 +98,10 @@ public class LoginGUI extends JFrame {
 						} else if(u instanceof Traveler) {
 							Traveler t = (Traveler) u;
 							JFrame a = new TravelerMainGUI(t);
+							a.setVisible(true);
+						}else if(u instanceof Administratzailea) {
+							Administratzailea ad = (Administratzailea) u;
+							JFrame a = new AdminMainGUI(ad);
 							a.setVisible(true);
 						}
 					} else {

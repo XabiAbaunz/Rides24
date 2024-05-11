@@ -55,6 +55,7 @@ public class MainGUI extends JFrame {
 		// this.setSize(271, 295);
 		this.setSize(495, 290);
 		
+		
 		rdbtnNewRadioButton = new JRadioButton("English");
 		rdbtnNewRadioButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

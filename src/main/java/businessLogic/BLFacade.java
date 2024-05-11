@@ -120,4 +120,8 @@ public interface BLFacade  {
 	
 	public void erreklamazioaErantzun(String email, int rideNumber, boolean onartuta, String arrazoia);
 	
+	public void deskontuaSortu(String kodea, int zenbatekoa, Date iraunData);
+	
+	public int deskontuaEgiaztatu(String kodea, String email);
+	
 }
