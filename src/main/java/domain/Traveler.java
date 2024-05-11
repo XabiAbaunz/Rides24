@@ -38,6 +38,14 @@ public class Traveler extends User implements Serializable {
 	public List<ReserveStatus> getReserves() {
 		return this.reserves;
 	}
+	
+	public ArrayList<Erreklamazio> getErreklamazioak() {
+		return this.erreklamazioak;
+	}
+	
+	public void addErreklamazio(Erreklamazio erreklamazio) {
+		this.erreklamazioak.add(erreklamazio);
+	}
 
 	@Override
 	public String toString() {

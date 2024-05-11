@@ -121,7 +121,7 @@ public class BidaiariaErreklamatuGUI extends JFrame {
 				try {
 					String arrazoia = textArrazoia.getText();
 					if(arrazoia.length()>=10) {
-						facade.bidaiaErreklamatu(arrazoia, driver.getEmail(), bidaia.getRideNumber());
+						facade.bidaiaErreklamatu(arrazoia, driver.getEmail(), bidaia.getRideNumber(), bidaiari.getEmail());
 						textArrazoia.setEnabled(false);
 						btnErreklamatu.setEnabled(false);
 						comboBidaiari.removeAllItems();

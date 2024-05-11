@@ -37,6 +37,7 @@ public class DriverMainGUI extends JFrame {
 	
 	private JLabel lbl_balorazioa1 = new JLabel("Zure balorazioa");
 	private JLabel lbl_balorazioa2 = new JLabel();
+	private final JButton jButtonErreklamazioakErantzun = new JButton("Erreklamazioak erantzun"); //$NON-NLS-1$ //$NON-NLS-2$
 	
 	/**
 	 * Launch the application.
@@ -149,19 +150,15 @@ public class DriverMainGUI extends JFrame {
 		
 		lbl_balorazioa2.setBounds(173, 217, 213, 36);
 		contentPane.add(lbl_balorazioa2);
-	}
-
-		lbl_balorazioa1.setBounds(37, 218, 90, 35);
-		contentPane.add(lbl_balorazioa1);
 		
-		 double balorazioa = facade.getBalorazioa(d.getEmail());
-			if (balorazioa != -1) {
-				lbl_balorazioa2.setText(String.valueOf(balorazioa));
-			}else {
-				lbl_balorazioa2.setText("Ez duzu baloraziorik");
+		jButtonErreklamazioakErantzun.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ErreklamazioakErantzunGUI frame = new ErreklamazioakErantzunGUI((User) driver);
+				frame.setVisible(true);
 			}
+		});
+		jButtonErreklamazioakErantzun.setBounds(218, 131, 213, 42);
 		
-		lbl_balorazioa2.setBounds(173, 217, 213, 36);
-		contentPane.add(lbl_balorazioa2);
+		contentPane.add(jButtonErreklamazioakErantzun);
 	}
 }

@@ -135,7 +135,7 @@ public class BidaiakKudeatuGUI extends JFrame {
         		try {
         			String arrazoia = textArrazoia.getText();
         			if(arrazoia.length()>=10) {
-        				facade.bidaiaErreklamatu(arrazoia, traveler.getEmail(), ride.getRideNumber());
+        				facade.bidaiaErreklamatu(arrazoia, traveler.getEmail(), ride.getRideNumber(), "");
                 		lblArrazoia.setEnabled(false);
                 		textArrazoia.setEnabled(false);
                 		btnErreklamatu.setEnabled(false);

@@ -29,6 +29,7 @@ public class TravelerMainGUI extends JFrame {
 	private JButton jButtonBidaiaEginda = new JButton("Erreserbak kudeatu");
 	
 	private JButton jButtonMugimenduakIkusi = new JButton(ResourceBundle.getBundle("Etiquetas").getString("TravelerMainGUI.mugimenduakIkusi"));
+	private final JButton jButtonErreklamazioakErantzun = new JButton(ResourceBundle.getBundle("Etiquetas").getString("TravelerMainGUI.btnNewButton.text")); //$NON-NLS-1$ //$NON-NLS-2$
 
 	/**
 	 * Launch the application.
@@ -56,7 +57,7 @@ public class TravelerMainGUI extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(new GridLayout(5, 1, 0, 0));
+		contentPane.setLayout(new GridLayout(6, 1, 0, 0));
 		JlabelAukeratu.setHorizontalAlignment(SwingConstants.CENTER);
 		contentPane.add(JlabelAukeratu);
 		rdbtBidaiaBilatu.addActionListener(new ActionListener() {
@@ -73,13 +74,6 @@ public class TravelerMainGUI extends JFrame {
 			}
 		});
 		
-		jButtonMugimenduakIkusi.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				MugimenduakIkusiGUI frame = new MugimenduakIkusiGUI((User)t);
-				frame.setVisible(true);
-			}
-		});
-		
 		contentPane.add(jButtonDiruaSartu);
 		
 		jButtonBidaiaEginda.addActionListener(new ActionListener() {
@@ -89,7 +83,22 @@ public class TravelerMainGUI extends JFrame {
 			}
 		});
 		contentPane.add(jButtonBidaiaEginda);
+		
+		jButtonMugimenduakIkusi.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MugimenduakIkusiGUI frame = new MugimenduakIkusiGUI((User)t);
+				frame.setVisible(true);
+			}
+		});
 		contentPane.add(jButtonMugimenduakIkusi);
+		jButtonErreklamazioakErantzun.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ErreklamazioakErantzunGUI frame = new ErreklamazioakErantzunGUI((User)t);
+				frame.setVisible(true);
+			}
+		});
+		
+		contentPane.add(jButtonErreklamazioakErantzun);
 	}
 
 }

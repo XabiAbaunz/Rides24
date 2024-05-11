@@ -13,6 +13,7 @@ import domain.Traveler;
 import domain.User;
 import domain.Car;
 import domain.Driver;
+import domain.Erreklamazio;
 import domain.ReserveStatus;
 import exceptions.RideMustBeLaterThanTodayException;
 import exceptions.RideAlreadyExistException;
@@ -236,9 +237,9 @@ public class BLFacadeImplementation  implements BLFacade {
 		dbManager.close();
 	}
 	
-	public void bidaiaErreklamatu(String mezua, String email, int rideNumber) {
+	public void bidaiaErreklamatu(String mezua, String email, int rideNumber, String besteEmail) {
 		dbManager.open();
-		dbManager.bidaiaErreklamatu(mezua, email, rideNumber);
+		dbManager.bidaiaErreklamatu(mezua, email, rideNumber, besteEmail);
 		dbManager.close();
 	}
 	
@@ -247,5 +248,25 @@ public class BLFacadeImplementation  implements BLFacade {
 		double balorazioa = dbManager.getBalorazioa(email);
 		dbManager.close();
 		return balorazioa;
+	}
+	
+	public List<Erreklamazio> getAllErreklamazioFromEmail(String email) {
+		dbManager.open();
+		List<Erreklamazio> erreklamazioak = dbManager.getAllErreklamazioFromEmail(email);
+		dbManager.close();
+		return erreklamazioak;
+	}
+	
+	public List<Erreklamazio> getAllErreklamazioFromRideNumber(int rideNumber) {
+		dbManager.open();
+		List<Erreklamazio> erreklamazioak = dbManager.getAllErreklamazioFromRideNumber(rideNumber);
+		dbManager.close();
+		return erreklamazioak;
+	}
+	
+	public void erreklamazioaErantzun(String email, int rideNumber, boolean onartuta, String arrazoia) {
+		dbManager.open();
+		dbManager.erreklamazioaOnartu(email, rideNumber, onartuta, arrazoia);
+		dbManager.close();
 	}
 }
