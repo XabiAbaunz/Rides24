@@ -99,6 +99,14 @@ public interface BLFacade  {
 	public void deleteRideByRideNumber(int rideNumber);
 	
 	public List<Car> getCarsByEmail(String email);
+	
+	public Car getCar(String marka, String modeloa, Driver driver);
+
+	public List<ReserveStatus> getAllReservesFromEmail(String email);
+	
+	public void changeReserveStatus(ReserveStatus erreserba, Boolean erantzun, Boolean onartu);
+	
+	public void bidaiaBaieztatu(String email, int reserveNumber);
 
 	public List<ReserveStatus> getAllReservesFromEmail(String email);
 	

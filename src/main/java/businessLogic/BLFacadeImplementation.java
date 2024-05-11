@@ -205,7 +205,14 @@ public class BLFacadeImplementation  implements BLFacade {
     
     public List<Car> getCarsByEmail(String email) {
     	dbManager.open();
-    	List<Car> car = dbManager.getCarsByEmail(email);
+    	List<Car> cars = dbManager.getCarsByEmail(email);
+		dbManager.close();
+		return cars;
+	}
+	
+    public Car getCar(String marka, String modeloa, Driver driver) {
+    	dbManager.open();
+    	Car car = dbManager.getCar(marka, modeloa, driver);
     	dbManager.close();
     	return car;
     }

@@ -386,6 +386,16 @@ public class DataAccess  {
 		 return carList;
 	 }
 	 
+	 public Car getCar(String marka, String modeloa, Driver driver) {
+		 List<Car> carList = new ArrayList<Car>();
+		 TypedQuery<Car> query = db.createQuery("SELECT c FROM Car c WHERE c.marka = ?1 AND c.modeloa = ?2 AND c.driver = ?3", Car.class);
+	     query.setParameter(1, marka);
+	     query.setParameter(2, modeloa);
+	     query.setParameter(3, this.getDriverByEmail(driver.getEmail()));
+		 carList = query.getResultList();
+		 return carList.get(0);
+	 }
+	 
 	 public Driver getDriverByEmail(String email) {
 		 return db.find(Driver.class,email);
 	 }

@@ -31,6 +31,11 @@ public class TravelerMainGUI extends JFrame {
 	private JButton jButtonMugimenduakIkusi = new JButton(ResourceBundle.getBundle("Etiquetas").getString("TravelerMainGUI.mugimenduakIkusi"));
 	private final JButton jButtonErreklamazioakErantzun = new JButton(ResourceBundle.getBundle("Etiquetas").getString("TravelerMainGUI.btnNewButton.text")); //$NON-NLS-1$ //$NON-NLS-2$
 
+	private JButton jButtonErreserbakKon = new JButton(ResourceBundle.getBundle("Etiquetas").getString("ErreserbakKontsultatuGUI.erreserbakKontsultatu"));
+	private JButton jButtonBidaiaEginda = new JButton("Bidaia egin dela baieztatu");
+	
+	private JButton jButtonMugimenduakIkusi = new JButton(ResourceBundle.getBundle("Etiquetas").getString("TravelerMainGUI.mugimenduakIkusi"));
+
 	/**
 	 * Launch the application.
 	 */
@@ -70,6 +75,13 @@ public class TravelerMainGUI extends JFrame {
 		jButtonDiruaSartu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				DiruaSartuGUI frame = new DiruaSartuGUI((User)t);
+				frame.setVisible(true);
+			}
+		});
+		
+		jButtonMugimenduakIkusi.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MugimenduakIkusiGUI frame = new MugimenduakIkusiGUI((User)t);
 				frame.setVisible(true);
 			}
 		});

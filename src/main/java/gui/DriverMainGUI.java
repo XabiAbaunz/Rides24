@@ -92,6 +92,15 @@ public class DriverMainGUI extends JFrame {
 
 		contentPane.add(jButtonMugimenduakIkusi);
 		
+		jButtonMugimenduakIkusi.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MugimenduakIkusiGUI frame = new MugimenduakIkusiGUI((User)d);
+				frame.setVisible(true);
+			}
+		});
+
+		contentPane.add(jButtonMugimenduakIkusi);
+		
 		contentPane.add(jButtonCreateRide);
 		jButtonAcceptReservation.setBounds(218, 47, 213, 42);
 		jButtonAcceptReservation.addActionListener(new ActionListener() {

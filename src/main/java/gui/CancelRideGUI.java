@@ -18,20 +18,21 @@ import javax.swing.JButton;
 import javax.swing.JTextArea;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 import java.awt.event.ActionEvent;
 
 public class CancelRideGUI extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JLabel lblBidaiaKantzelatu;
-	private JLabel lblBidaiak;
+	private JLabel lblBidaiaKantzelatu=  new JLabel(ResourceBundle.getBundle("Etiquetas").getString("CancelRideGUI.bidaiaKantzelatu"));
+	private JLabel lblBidaiak=  new JLabel(ResourceBundle.getBundle("Etiquetas").getString("CancelRideGUI.bidaiak"));
 	private JComboBox comboKotxeak;
 	private DefaultComboBoxModel kotxeComboBoxModel = new DefaultComboBoxModel();
 	private JComboBox comboBidaiak;
 	private DefaultComboBoxModel bidaiaComboBoxModel = new DefaultComboBoxModel();
-	private JButton btnKantzelatu;
-	private JLabel lblKotxeak;
+	private JButton btnKantzelatu = new JButton(ResourceBundle.getBundle("Etiquetas").getString("CancelRideGUI.kantzelatu"));
+	private JLabel lblKotxeak=  new JLabel(ResourceBundle.getBundle("Etiquetas").getString("CancelRideGUI.kotxeak"));
 	
 	private Car car;
 	private Ride ride;
@@ -66,11 +67,10 @@ public class CancelRideGUI extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		lblBidaiaKantzelatu = new JLabel("Bidaia kantzelatu");
+		
 		lblBidaiaKantzelatu.setBounds(171, 25, 109, 13);
 		contentPane.add(lblBidaiaKantzelatu);
 		
-		lblBidaiak = new JLabel("Bidaia aukeratu:");
 		lblBidaiak.setBounds(10, 141, 85, 13);
 		contentPane.add(lblBidaiak);
 		
@@ -84,7 +84,6 @@ public class CancelRideGUI extends JFrame {
 		comboBidaiak.setBounds(119, 137, 269, 21);
 		contentPane.add(comboBidaiak);
 		
-		btnKantzelatu = new JButton("Kantzelatu");
 		btnKantzelatu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				facade.deleteRideByRideNumber(ride.getRideNumber());
@@ -99,7 +98,11 @@ public class CancelRideGUI extends JFrame {
 		contentPane.add(btnKantzelatu);
 		btnKantzelatu.setEnabled(false);
 		
-		lblKotxeak = new JLabel("Kotxea aukeratu:");
+		btnKantzelatu.setBounds(158, 212, 122, 21);
+		contentPane.add(btnKantzelatu);
+		btnKantzelatu.setEnabled(false);
+		
+		
 		lblKotxeak.setBounds(10, 83, 99, 13);
 		contentPane.add(lblKotxeak);
 		
