@@ -7,8 +7,10 @@ import java.util.List;
 //import domain.Booking;
 import domain.Ride;
 import domain.User;
+import domain.Alerta;
 import domain.Car;
 import domain.Driver;
+import domain.Erreklamazio;
 import domain.ReserveStatus;
 import exceptions.RideMustBeLaterThanTodayException;
 import exceptions.RideAlreadyExistException;
@@ -98,18 +100,45 @@ public interface BLFacade  {
 	public void deleteRideByRideNumber(int rideNumber);
 	
 	public List<Car> getCarsByEmail(String email);
+	
+	public Car getCar(String marka, String modeloa, Driver driver);
 
 	public List<ReserveStatus> getAllReservesFromEmail(String email);
 	
 	public void changeReserveStatus(ReserveStatus erreserba, Boolean erantzun, Boolean onartu);
 	
 	public void bidaiaBaieztatu(String email, int reserveNumber);
-	
+
 	public List<ReserveStatus> getAllReservesFromRideNumber(int rideNumber);
 	
 	public void addBalorazioByEmail(String email, double balorazioa);
 	
-	public void bidaiaErreklamatu(String mezua, String email, int rideNumber);
+	public void bidaiaErreklamatu(String mezua, String email, int rideNumber, String besteEmail);
 
+	public double getBalorazioa(String email);
+	
+	public List<Erreklamazio> getAllErreklamazioFromEmail(String email);
+	
+	public List<Erreklamazio> getAllErreklamazioFromRideNumber(int rideNumber);
+	
+	public void erreklamazioaErantzun(String email, int rideNumber, boolean onartuta, String arrazoia);
+	
+	public void deskontuaSortu(String kodea, int zenbatekoa, Date iraunData);
+	
+	public int deskontuaEgiaztatu(String kodea, String email);
+	
+	public void deskontuaErabili(String kodea, String email);
+	
+	public Erreklamazio getKonponduGabekoErreklamazioa();
+	
+	public void erreklamazioaKonpondu(String nork, int rideNumber, String tEmail);
+	
+	public void addAlertaByEmail(String email, String from, String to, Date date);
+	
+	public boolean alertaSortuDa(String email);
+	
+	public List<Alerta> getAlertakByEmail(String email);
+	
+	public void alertaEzabatu(Long id, String email);
 	
 }

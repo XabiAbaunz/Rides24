@@ -1,4 +1,5 @@
 package businessLogic;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -11,8 +12,10 @@ import dataAccess.DataAccess;
 import domain.Ride;
 import domain.Traveler;
 import domain.User;
+import domain.Alerta;
 import domain.Car;
 import domain.Driver;
+import domain.Erreklamazio;
 import domain.ReserveStatus;
 import exceptions.RideMustBeLaterThanTodayException;
 import exceptions.RideAlreadyExistException;
@@ -146,8 +149,6 @@ public class BLFacadeImplementation  implements BLFacade {
     	catch(UserAlreadyExistException e) {
     		return null;
     	}
-    	
-    	
     }
     
     public User updateMoneyByEmail(String email, double cash) {
@@ -206,7 +207,14 @@ public class BLFacadeImplementation  implements BLFacade {
     
     public List<Car> getCarsByEmail(String email) {
     	dbManager.open();
-    	List<Car> car = dbManager.getCarsByEmail(email);
+    	List<Car> cars = dbManager.getCarsByEmail(email);
+		dbManager.close();
+		return cars;
+	}
+	
+    public Car getCar(String marka, String modeloa, Driver driver) {
+    	dbManager.open();
+    	Car car = dbManager.getCar(marka, modeloa, driver);
     	dbManager.close();
     	return car;
     }
@@ -236,9 +244,96 @@ public class BLFacadeImplementation  implements BLFacade {
 		dbManager.close();
 	}
 	
-	public void bidaiaErreklamatu(String mezua, String email, int rideNumber) {
+	public void bidaiaErreklamatu(String mezua, String email, int rideNumber, String besteEmail) {
 		dbManager.open();
-		dbManager.bidaiaErreklamatu(mezua, email, rideNumber);
+		dbManager.bidaiaErreklamatu(mezua, email, rideNumber, besteEmail);
+		dbManager.close();
+	}
+	
+	public double getBalorazioa(String email) {
+		dbManager.open();
+		double balorazioa = dbManager.getBalorazioa(email);
+		dbManager.close();
+		return balorazioa;
+	}
+	
+	public List<Erreklamazio> getAllErreklamazioFromEmail(String email) {
+		dbManager.open();
+		List<Erreklamazio> erreklamazioak = dbManager.getAllErreklamazioFromEmail(email);
+		dbManager.close();
+		return erreklamazioak;
+	}
+	
+	public List<Erreklamazio> getAllErreklamazioFromRideNumber(int rideNumber) {
+		dbManager.open();
+		List<Erreklamazio> erreklamazioak = dbManager.getAllErreklamazioFromRideNumber(rideNumber);
+		dbManager.close();
+		return erreklamazioak;
+	}
+	
+	public void erreklamazioaErantzun(String email, int rideNumber, boolean onartuta, String arrazoia) {
+		dbManager.open();
+		dbManager.erreklamazioaOnartu(email, rideNumber, onartuta, arrazoia);
+		dbManager.close();
+	}
+	
+	public void deskontuaSortu(String kodea, int zenbatekoa, Date iraunData) {
+		dbManager.open();
+		dbManager.deskontuaSortu(kodea, zenbatekoa, iraunData);
+		dbManager.close();
+		
+	}
+	
+	public int deskontuaEgiaztatu(String kodea, String email) {
+		dbManager.open();
+		int kop = dbManager.deskontuaEgiaztatu(kodea, email);
+		dbManager.close();
+		return kop;
+	}
+	
+	public void deskontuaErabili(String kodea, String email) {
+		dbManager.open();
+		dbManager.deskontuaErabili(kodea, email);
+		dbManager.close();
+	}
+	
+	public Erreklamazio getKonponduGabekoErreklamazioa() {
+		dbManager.open();
+		Erreklamazio erreklamazioa = dbManager.getKonponduGabekoErreklamazioa();
+		dbManager.close();
+		return erreklamazioa;
+	}
+	
+	public void erreklamazioaKonpondu(String nork, int rideNumber, String tEmail) {
+		dbManager.open();
+		dbManager.erreklamazioaKonpondu(nork, rideNumber, tEmail);
+		dbManager.close();
+	}
+	
+	public void addAlertaByEmail(String email, String from, String to, Date date) {
+		dbManager.open();
+		dbManager.addAlertaByEmail(email, from, to, date);
+		dbManager.close();
+	}
+	
+	public boolean alertaSortuDa(String email) {
+		dbManager.open();
+		boolean b = dbManager.alertaSortuDa(email);
+		dbManager.close();
+		return b;
+	}
+	
+	public List<Alerta> getAlertakByEmail(String email){
+		dbManager.open();
+		List<Alerta> alertak = dbManager.getAlertakByEmail(email);
+		dbManager.close();
+		return alertak;
+		
+	}
+	
+	public void alertaEzabatu(Long id, String email) {
+		dbManager.open();
+		dbManager.alertaEzabatu(id, email);
 		dbManager.close();
 	}
 }

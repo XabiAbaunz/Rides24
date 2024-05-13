@@ -69,6 +69,7 @@ public class DataAccess  {
 	public void initializeDB(){
 		
 		db.getTransaction().begin();
+		
 
 		try {
 
@@ -78,7 +79,8 @@ public class DataAccess  {
 		   int year=today.get(Calendar.YEAR);
 		   if (month==12) { month=1; year+=1;}  
 	    
-		   
+		   Administratzailea admin = new Administratzailea("c","c","c",10.0);
+		   db.persist(admin);
 		    /*Create drivers 
 			Driver driver1=new Driver("driver1@gmail.com","Aitor Fernandez");
 			Driver driver2=new Driver("driver2@gmail.com","Ane Gaztañaga");
@@ -384,6 +386,16 @@ public class DataAccess  {
 		 return carList;
 	 }
 	 
+	 public Car getCar(String marka, String modeloa, Driver driver) {
+		 List<Car> carList = new ArrayList<Car>();
+		 TypedQuery<Car> query = db.createQuery("SELECT c FROM Car c WHERE c.marka = ?1 AND c.modeloa = ?2 AND c.driver = ?3", Car.class);
+	     query.setParameter(1, marka);
+	     query.setParameter(2, modeloa);
+	     query.setParameter(3, this.getDriverByEmail(driver.getEmail()));
+		 carList = query.getResultList();
+		 return carList.get(0);
+	 }
+	 
 	 public Driver getDriverByEmail(String email) {
 		 return db.find(Driver.class,email);
 	 }
@@ -434,21 +446,186 @@ public class DataAccess  {
 		 System.out.println("Balorazioa: " + balorazioa + " has been added to " + email + ".");
 	}
 	
-	public void bidaiaErreklamatu(String arrazoia, String email, int rideNumber) {
+	public void bidaiaErreklamatu(String arrazoia, String email, int rideNumber, String besteEmail) {
 		Erreklamazio err = null;
-		User u = db.find(User.class, email);
-		Ride r = db.find(Ride.class, rideNumber);
+		User u = this.getUserByEmail(email);
+		Ride r = this.getRideByRideNumber(rideNumber);
+		Traveler t = null;
+		if(u instanceof Driver) {
+			t = db.find(Traveler.class, besteEmail);
+		}
 		db.getTransaction().begin();
-		err = new Erreklamazio(arrazoia, u, r);
+		err = new Erreklamazio(arrazoia, u, r, t);
 		r.addErreklamazio(err);
+		if(u instanceof Driver) {
+			t.addErreklamazio(err);;
+			db.persist(t);
+		}
 		db.persist(r);
 		db.getTransaction().commit();
 		System.out.println("New Erreklamazio has been added to Ride: " + r.getRideNumber());
 	}
 	
+	public double getBalorazioa(String email) {
+		 Driver gidaria = db.find(Driver.class, email);
+		 ArrayList<Double> balorazioak = gidaria.getBalorazioak();
+		 double guztira = 0.0;
+		 if	(balorazioak.size() != 0) {
+	        for (Double balorazioa : balorazioak) {
+	            guztira += balorazioa;
+	        }
+	        return guztira / balorazioak.size();
+		 }else {
+	        	return -1;
+	        }
+	}
 	
-
-public void open(){
+	public List<Erreklamazio> getAllErreklamazioFromEmail(String email) {
+		Traveler traveler = (Traveler) this.getUserByEmail(email);
+		return traveler.getErreklamazioak();
+	}
+	
+	public List<Erreklamazio> getAllErreklamazioFromRideNumber(int rideNumber) {
+		Ride ride = db.find(Ride.class, rideNumber);
+		return ride.getErreklamazioak();
+	}
+	
+	public void erreklamazioaOnartu(String email, int rideNumber, boolean onartuta, String arrazoia) {
+		List<Erreklamazio> erreklamazioList = new ArrayList<Erreklamazio>();
+		TypedQuery<Erreklamazio> query = db.createQuery("SELECT err FROM Erreklamazio err WHERE err.traveler.email = ?1 AND err.ride.rideNumber = ?2", Erreklamazio.class);
+	    query.setParameter(1, email);
+	    query.setParameter(2, rideNumber);
+	    erreklamazioList = query.getResultList();
+	    Erreklamazio err = erreklamazioList.get(0);
+	    db.getTransaction().begin();
+	    err.setErantzunda(true);
+	    err.setKonponduta(onartuta);
+	    if(!onartuta && err.getGidariMezua().equals("")) {
+	    	err.setGidariMezua(arrazoia);
+	    } else if(!onartuta && err.getBidaiariMezua().equals("")) {
+	    	err.setBidaiariMezua(arrazoia);
+	    }
+	    db.persist(err);
+	    db.getTransaction().commit();
+	}
+	
+	public void deskontuaSortu(String kodea, int zenbatekoa, Date iraunData) {
+		db.getTransaction().begin();
+		Deskontua deskontu = new Deskontua(kodea, zenbatekoa, iraunData);
+		db.persist(deskontu);
+		db.getTransaction().commit();	
+	}
+	
+	public int deskontuaEgiaztatu(String kodea, String email) {
+		Deskontua desk = db.find(Deskontua.class, kodea);
+		//Deskontua ez da aurkitu
+		if(desk == null) {return -1;}
+		//Deskontua kadukatuta
+		if(desk.getIraungitzeData().before(new Date())) {return -2;}
+		//Deskontua erabiltzaileak iada erabilita
+		for(Traveler bidaiari : desk.getErabilita()) {
+			if(bidaiari.getEmail().equals(email)) {return -3;}
+		}
+		return desk.getZenbatekoa();
+	}
+	
+	public void deskontuaErabili(String kodea, String email) {
+		Traveler bidaiaria = db.find(Traveler.class, email);
+		Deskontua desk = db.find(Deskontua.class, kodea);
+		desk.getErabilita().add(bidaiaria);
+		db.getTransaction().begin();
+		db.persist(desk);
+		db.getTransaction().commit();	
+	}
+	
+	public Erreklamazio getKonponduGabekoErreklamazioa() {
+		List<Erreklamazio> erreklamazioList = new ArrayList<Erreklamazio>();
+		TypedQuery<Erreklamazio> query = db.createQuery("SELECT err FROM Erreklamazio err WHERE err.konponduta = false", Erreklamazio.class);
+	    erreklamazioList = query.getResultList();
+	    Erreklamazio err = erreklamazioList.get(0);
+	    return err;
+	}
+	
+	public void erreklamazioaKonpondu(String nork, int rideNumber, String email) {
+		List<Erreklamazio> erreklamazioList = new ArrayList<Erreklamazio>();
+		TypedQuery<Erreklamazio> query = db.createQuery("SELECT err FROM Erreklamazio err WHERE err.traveler.email = ?1 AND err.ride.rideNumber = ?2", Erreklamazio.class);
+	    query.setParameter(1, email);
+	    query.setParameter(2, rideNumber);
+	    erreklamazioList = query.getResultList();
+	    Erreklamazio err = erreklamazioList.get(0);
+	    db.getTransaction().begin();
+	    err.setKonponduta(true);
+    	ReserveStatus erreserba = null;
+    	List<ReserveStatus> erreserbak = this.getAllReservesFromRideNumber(rideNumber);
+    	for(ReserveStatus rs:erreserbak) {
+    		if(rs.getTraveler().getEmail().equals(email)) {
+    			erreserba = rs;
+    			break;
+    		}
+    	}
+	    if(nork.equals("g")) {
+	    	this.updateMoneyByEmail(erreserba.getRide().getCar().getDriver().getEmail(), erreserba.getFrozenBalance());
+	    } else if(nork.equals("b")) {
+	    	this.updateMoneyByEmail(erreserba.getTraveler().getEmail(), erreserba.getFrozenBalance());
+	    }
+	}
+	
+	public void addAlertaByEmail(String email, String from, String to, Date date) {
+		Traveler traveler = (Traveler) this.getUserByEmail(email);
+		db.getTransaction().begin();
+		traveler.addAlerta(from, to, date);
+		db.persist(traveler);
+		db.getTransaction().commit();
+		System.out.println("New alerta has been created.");
+	}
+	
+	public boolean alertaSortuDa(String email) {
+		boolean aurkituta = false;
+		Traveler traveler = (Traveler) this.getUserByEmail(email);
+		List<Alerta> alertak = traveler.getAlertak();
+		String from;
+		String to;
+		Date date;
+		for(Alerta a:alertak) {
+			from = a.getFrom();
+			to = a.getTo();
+			date = a.getDate();
+			List<Ride> rideList = new ArrayList<Ride>();
+			TypedQuery<Ride> query = db.createQuery("SELECT r FROM Ride r WHERE r.from = ?1 AND r.to = ?2", Ride.class);
+		    query.setParameter(1, from);
+		    query.setParameter(2, to);
+		    rideList = query.getResultList();
+		    if(!rideList.isEmpty()) {
+			    for(Ride r:rideList) {
+			    	Date data = r.getDate();
+			    	if(data.getYear() == date.getYear() && data.getMonth() == date.getMonth() && data.getDay() == date.getDay()) {
+			    		aurkituta = true;
+			    		break;
+			    	}
+			    }
+		    }
+		}
+		System.out.println("Travaler has alerts: " + aurkituta);
+		return aurkituta;
+	}
+	
+	public List<Alerta> getAlertakByEmail(String email) {
+		Traveler traveler = (Traveler) this.getUserByEmail(email);
+		return traveler.getAlertak();
+	}
+	
+	public void alertaEzabatu(Long id, String email) {
+		db.getTransaction().begin();
+		Traveler bidaiaria = db.find(Traveler.class, email);
+		Alerta alerta = db.find(Alerta.class, id);
+		bidaiaria.getAlertak().remove(alerta);
+		db.merge(bidaiaria);
+		db.getTransaction().commit();
+	}
+	
+	
+	
+	public void open(){
 		
 		String fileName=c.getDbFilename();
 		if (c.isDatabaseLocal()) {
