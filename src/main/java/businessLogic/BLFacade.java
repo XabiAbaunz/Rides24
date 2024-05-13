@@ -141,4 +141,9 @@ public interface BLFacade  {
 	
 	public void alertaEzabatu(Long id, String email);
 	
+	public User getErabiltzailea(String email);
+	
+	public void erabiltzaileaEzabatu (String email);
+
+	
 }
