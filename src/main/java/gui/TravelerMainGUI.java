@@ -6,11 +6,15 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import domain.Alerta;
 import domain.Traveler;
 import domain.User;
 
 import java.awt.GridLayout;
+import java.util.List;
 import java.util.ResourceBundle;
+import java.util.Date;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -40,7 +44,7 @@ public class TravelerMainGUI extends JFrame {
 			public void run() {
 				Traveler t = null;
 				try {
-					TravelerMainGUI frame = new TravelerMainGUI(t, false);
+					TravelerMainGUI frame = new TravelerMainGUI(t, null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -52,7 +56,7 @@ public class TravelerMainGUI extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public TravelerMainGUI(Traveler t, boolean alerta) {
+	public TravelerMainGUI(Traveler t, List<Alerta> alertak) {
 		this.traveler = t;
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -61,7 +65,14 @@ public class TravelerMainGUI extends JFrame {
 		contentPane.setLayout(new GridLayout(6, 1, 0, 0));
 		JlabelAukeratu.setHorizontalAlignment(SwingConstants.CENTER);
 		contentPane.add(JlabelAukeratu);
-		if(alerta) JOptionPane.showMessageDialog(null, "Alerta berria/k duzu/dituzu.");
+		if(!alertak.isEmpty()) {
+			String mezua = "Alerta berria/k duzu/dituzu: ";
+			for(Alerta a:alertak) {
+				Date data = a.getDate();
+				mezua = mezua + a.getFrom() + ", " + a.getTo() + ", " + data.getYear() + "/" + data.getMonth()+1 + "/" + data.getDate()+1;
+			}
+			JOptionPane.showMessageDialog(null, mezua);
+		}
 		rdbtBidaiaBilatu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				FindBookGUI frame = new FindBookGUI(t);

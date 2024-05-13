@@ -575,8 +575,9 @@ public class DataAccess  {
 		System.out.println("New alerta has been created.");
 	}
 	
-	public boolean alertaSortuDa(String email) {
+	public List<Alerta> alertaSortuDa(String email) {
 		boolean aurkituta = false;
+		List<Alerta> itzultzekoAlertak = new ArrayList<Alerta>();
 		Traveler traveler = (Traveler) this.getUserByEmail(email);
 		List<Alerta> alertak = traveler.getAlertak();
 		String from;
@@ -593,16 +594,22 @@ public class DataAccess  {
 		    rideList = query.getResultList();
 		    if(!rideList.isEmpty()) {
 			    for(Ride r:rideList) {
-			    	Date data = r.getDate();
-			    	if(data.getYear() == date.getYear() && data.getMonth() == date.getMonth() && data.getDay() == date.getDay()) {
-			    		aurkituta = true;
-			    		break;
+			    	if(r!=null) {
+				    	Date data = r.getDate();
+				    	if(date.getYear() == data.getYear() && date.getMonth() == data.getMonth() && date.getDate() == data.getDate() && !a.getErakutsitakoBidaiak().contains(r)) {
+				    		itzultzekoAlertak.add(a);
+				    		aurkituta = true;
+				    		db.getTransaction().begin();
+				    		a.addErakutsitakoBidaia(r);
+				    		db.persist(r);
+				    		db.getTransaction().commit();
+				    	}
 			    	}
 			    }
 		    }
 		}
 		System.out.println("Travaler has alerts: " + aurkituta);
-		return aurkituta;
+		return itzultzekoAlertak;
 	}
 	
 	public void open(){

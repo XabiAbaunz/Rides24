@@ -58,7 +58,9 @@ public class Traveler extends User implements Serializable {
 	
 	public void addAlerta(String from, String to, Date date) {
 		Alerta alerta = new Alerta(from, to, date, this);
-		this.alertak.add(alerta);
+		if(!alertak.contains(alerta)) {
+			this.alertak.add(alerta);
+		}
 	}
 	
 	public ArrayList<Alerta> getAlertak() {

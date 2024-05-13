@@ -7,6 +7,7 @@ import java.util.List;
 //import domain.Booking;
 import domain.Ride;
 import domain.User;
+import domain.Alerta;
 import domain.Car;
 import domain.Driver;
 import domain.Erreklamazio;
@@ -132,6 +133,6 @@ public interface BLFacade  {
 	
 	public void addAlertaByEmail(String email, String from, String to, Date date);
 	
-	public boolean alertaSortuDa(String email);
+	public List<Alerta> alertaSortuDa(String email);
 	
 }

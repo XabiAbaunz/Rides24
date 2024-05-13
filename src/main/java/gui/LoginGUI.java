@@ -2,6 +2,7 @@ package gui;
 
 import java.awt.EventQueue;
 import java.util.Date;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import javax.swing.JFrame;
@@ -23,6 +24,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 import domain.Administratzailea;
+import domain.Alerta;
 import domain.Driver;
 import domain.Traveler;
 
@@ -82,7 +84,6 @@ public class LoginGUI extends JFrame {
 		JLabelEnterPass.setBounds(42, 126, 144, 14);
 		contentPane.add(JLabelEnterPass);
 		JButtonLogin.addActionListener(new ActionListener() {
-			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {
 				try {
 					user = textFieldUser.getText();
@@ -94,9 +95,9 @@ public class LoginGUI extends JFrame {
 							JFrame a = new DriverMainGUI(d);
 							a.setVisible(true);
 						} else if(u instanceof Traveler) {
-							Boolean alertaDu = facade.alertaSortuDa(u.getEmail());
+							List<Alerta> alertak = facade.alertaSortuDa(u.getEmail());
 							Traveler t = (Traveler) u;
-							JFrame a = new TravelerMainGUI(t, alertaDu);
+							JFrame a = new TravelerMainGUI(t, alertak);
 							a.setVisible(true);
 						} else if(u instanceof Administratzailea) {
 							Administratzailea ad = (Administratzailea) u;
