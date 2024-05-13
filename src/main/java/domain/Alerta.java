@@ -14,7 +14,7 @@ public class Alerta {
 	public String toString() {
 		return "Alerta [from=" + from + ", to=" + to + ", date=" + date.getYear() + "/" + date.getMonth() + "/" + date.getDay() + "]";
 	}
-	
+	//
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
