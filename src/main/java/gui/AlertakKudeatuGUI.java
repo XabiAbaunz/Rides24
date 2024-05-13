@@ -24,7 +24,7 @@ public class AlertakKudeatuGUI extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	BLFacade facade = MainGUI.getBusinessLogic();
-	private JComboBox<String> comboBoxAlertak;
+	private JComboBox<Alerta> comboBoxAlertak;
 	private JLabel lbl_oharrak;
 	
 	/**
@@ -72,10 +72,11 @@ public class AlertakKudeatuGUI extends JFrame {
 		contentPane.add(lbl_oharrak);
 	}
 	public void alertakErakutsi(Traveler t) {
+		comboBoxAlertak.removeAllItems();
 		List<Alerta> alertak = facade.getAlertakByEmail(t.getEmail());
 		
 		for (Alerta al : alertak) {
-			comboBoxAlertak.addItem(al.toString());
+			comboBoxAlertak.addItem(al);
 		}
 		
 	}
