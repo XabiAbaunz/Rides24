@@ -117,7 +117,7 @@ public class TravelerMainGUI extends JFrame {
 		contentPane.add(jButtonErreklamazioakErantzun);
 		jButtonAlertakKudeatu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				AlertakKudeatuGUI frame = new AlertakKudeatuGUI((User)t);
+				AlertakKudeatuGUI frame = new AlertakKudeatuGUI(t);
 				frame.setVisible(true);
 			}
 		});

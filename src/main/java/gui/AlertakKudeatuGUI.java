@@ -25,6 +25,7 @@ public class AlertakKudeatuGUI extends JFrame {
 	private JPanel contentPane;
 	BLFacade facade = MainGUI.getBusinessLogic();
 	private JComboBox<String> comboBoxAlertak;
+	private JLabel lbl_oharrak;
 	
 	/**
 	 * Create the frame.
@@ -42,10 +43,6 @@ public class AlertakKudeatuGUI extends JFrame {
 		lblNewLabel.setBounds(121, 23, 176, 26);
 		contentPane.add(lblNewLabel);
 		
-		JLabel lbl_ohar = new JLabel();
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(121, 23, 300, 26);
-		contentPane.add(lbl_ohar);
 		
 		comboBoxAlertak = new JComboBox<>();
 		comboBoxAlertak.setBounds(29, 60, 389, 30);
@@ -60,14 +57,19 @@ public class AlertakKudeatuGUI extends JFrame {
 				if(aukeratutakoa != null) {
 					 facade.alertaEzabatu(aukeratutakoa.getId(), t.getEmail());
 					 alertakErakutsi(t);
-					 lbl_ohar.setText("alerta behar bezala ezabatu da");
+					 lbl_oharrak.setText("alerta behar bezala ezabatu da");
 				}else {
-					lbl_ohar.setText("aukeratu alerta bat");
+					lbl_oharrak.setText("aukeratu alerta bat");
 				}
 			}
 		});
-		btnNewButton.setBounds(101, 211, 236, 42);
+		btnNewButton.setBounds(91, 145, 236, 42);
 		contentPane.add(btnNewButton);
+		
+		lbl_oharrak = new JLabel();
+		lbl_oharrak.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl_oharrak.setBounds(91, 217, 247, 36);
+		contentPane.add(lbl_oharrak);
 	}
 	public void alertakErakutsi(Traveler t) {
 		List<Alerta> alertak = facade.getAlertakByEmail(t.getEmail());

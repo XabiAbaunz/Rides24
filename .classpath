@@ -7,7 +7,7 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry exported="true" kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
@@ -30,6 +30,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Xabi/Downloads/objectdb-2.6.9/bin/objectdb.jar"/>
+	<classpathentry kind="lib" path="C:/Users/harit/OneDrive/Escritorio/objectdb-2.6.9/objectdb-2.6.9/bin/objectdb.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
