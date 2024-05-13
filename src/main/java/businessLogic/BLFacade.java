@@ -7,6 +7,7 @@ import java.util.List;
 //import domain.Booking;
 import domain.Ride;
 import domain.User;
+import domain.Alerta;
 import domain.Car;
 import domain.Driver;
 import domain.Erreklamazio;
@@ -108,12 +109,6 @@ public interface BLFacade  {
 	
 	public void bidaiaBaieztatu(String email, int reserveNumber);
 
-	public List<ReserveStatus> getAllReservesFromEmail(String email);
-	
-	public void changeReserveStatus(ReserveStatus erreserba, Boolean erantzun, Boolean onartu);
-	
-	public void bidaiaBaieztatu(String email, int reserveNumber);
-	
 	public List<ReserveStatus> getAllReservesFromRideNumber(int rideNumber);
 	
 	public void addBalorazioByEmail(String email, double balorazioa);
@@ -131,5 +126,19 @@ public interface BLFacade  {
 	public void deskontuaSortu(String kodea, int zenbatekoa, Date iraunData);
 	
 	public int deskontuaEgiaztatu(String kodea, String email);
+	
+	public void deskontuaErabili(String kodea, String email);
+	
+	public Erreklamazio getKonponduGabekoErreklamazioa();
+	
+	public void erreklamazioaKonpondu(String nork, int rideNumber, String tEmail);
+	
+	public void addAlertaByEmail(String email, String from, String to, Date date);
+	
+	public List<Alerta> alertaSortuDa(String email);
+	
+	public List<Alerta> getAlertakByEmail(String email);
+	
+	public void alertaEzabatu(Long id, String email);
 	
 }

@@ -1,4 +1,5 @@
 package businessLogic;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -11,6 +12,7 @@ import dataAccess.DataAccess;
 import domain.Ride;
 import domain.Traveler;
 import domain.User;
+import domain.Alerta;
 import domain.Car;
 import domain.Driver;
 import domain.Erreklamazio;
@@ -247,6 +249,26 @@ public class BLFacadeImplementation  implements BLFacade {
 		dbManager.bidaiaErreklamatu(mezua, email, rideNumber, besteEmail);
 		dbManager.close();
 	}
+
+	public void deskontuaErabili(String kodea, String email) {
+		dbManager.open();
+		dbManager.deskontuaErabili(kodea, email);
+		dbManager.close();
+	}
+	
+	public List<Alerta> getAlertakByEmail(String email){
+		dbManager.open();
+		List<Alerta> alertak = dbManager.getAlertakByEmail(email);
+		dbManager.close();
+		return alertak;
+		
+	}
+	
+	public void alertaEzabatu(Long id, String email) {
+		dbManager.open();
+		dbManager.alertaEzabatu(id, email);
+		dbManager.close();
+	}
 	
 	public double getBalorazioa(String email) {
 		dbManager.open();
@@ -273,6 +295,8 @@ public class BLFacadeImplementation  implements BLFacade {
 		dbManager.open();
 		dbManager.erreklamazioaOnartu(email, rideNumber, onartuta, arrazoia);
 		dbManager.close();
+	}
+	
 	public void deskontuaSortu(String kodea, int zenbatekoa, Date iraunData) {
 		dbManager.open();
 		dbManager.deskontuaSortu(kodea, zenbatekoa, iraunData);
@@ -285,5 +309,31 @@ public class BLFacadeImplementation  implements BLFacade {
 		int kop = dbManager.deskontuaEgiaztatu(kodea, email);
 		dbManager.close();
 		return kop;
+	}
+	
+	public Erreklamazio getKonponduGabekoErreklamazioa() {
+		dbManager.open();
+		Erreklamazio erreklamazioa = dbManager.getKonponduGabekoErreklamazioa();
+		dbManager.close();
+		return erreklamazioa;
+	}
+	
+	public void erreklamazioaKonpondu(String nork, int rideNumber, String tEmail) {
+		dbManager.open();
+		dbManager.erreklamazioaKonpondu(nork, rideNumber, tEmail);
+		dbManager.close();
+	}
+	
+	public void addAlertaByEmail(String email, String from, String to, Date date) {
+		dbManager.open();
+		dbManager.addAlertaByEmail(email, from, to, date);
+		dbManager.close();
+	}
+	
+	public List<Alerta> alertaSortuDa(String email) {
+		dbManager.open();
+		List<Alerta> alertak = dbManager.alertaSortuDa(email);
+		dbManager.close();
+		return alertak;
 	}
 }
