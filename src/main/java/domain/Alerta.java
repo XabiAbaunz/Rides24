@@ -16,7 +16,7 @@ public class Alerta {
 	
 	@Override
 	public String toString() {
-		return "Alerta [from=" + from + ", to=" + to + ", date=" + date.getYear() + "/" + date.getMonth() + "/" + date.getDay() + "]";
+		return "Alerta [from=" + from + ", to=" + to + ", date=" + (date.getYear()+1900) + "/" + (date.getMonth()+1) + "/" + date.getDay() + "]";
 	}
 	//
 	@Id
