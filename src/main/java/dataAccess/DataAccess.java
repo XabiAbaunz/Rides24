@@ -635,6 +635,37 @@ public class DataAccess  {
 		db.getTransaction().commit();
 	}
 	
+	 public User getErabiltzailea(String email) {
+		User u = db.find(User.class, email);
+		return u;
+	 }
+
+	public void erabiltzaileaEzabatu(String email) {
+		db.getTransaction().begin();
+		 User user = this.getErabiltzailea(email);
+		 if(user!=null) {
+			 if(user instanceof Traveler) {
+				 Traveler t = db.find(Traveler.class, email);
+				 List<ReserveStatus> rs = t.getReserves();
+				 for (ReserveStatus reserve : rs) {
+					 rs.remove(rs);
+				 }
+			 }else if(user instanceof Driver) {
+				 Driver d = db.find(Driver.class, email);
+				 for(Car car: d.getCars()) {
+					 List<Ride> rides = car.getRides();
+					 for(Ride ride : rides) {
+						 Integer rideNumber = ride.getRideNumber();
+						 deleteRideByRideNumber(rideNumber);
+						 db.remove(car);
+					 }
+				 }
+				 db.remove(d);
+				 db.getTransaction().commit();
+			 }
+		 }
+	}
+	
 	
 	
 	public void open(){
