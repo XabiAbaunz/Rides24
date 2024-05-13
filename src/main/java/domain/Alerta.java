@@ -3,22 +3,21 @@ package domain;
 import java.util.ArrayList;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+
 import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Alerta {
 	
-	@Override
-	public String toString() {
-		return "Alerta [from=" + from + ", to=" + to + ", date=" + date.getYear() + "/" + date.getMonth() + "/" + date.getDay() + "]";
-	}
-	//
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -28,6 +27,8 @@ public class Alerta {
 	private Date date;
 	private Traveler traveler;
 	private boolean aktibatuta;
+	
+	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
 	private ArrayList<Ride> erakutsitakoBidaiak;
 
 	public Alerta(String from, String to, Date date, Traveler traveler) {
@@ -108,5 +109,10 @@ public class Alerta {
 			}
 		}
 		return b;
+	}
+	
+	@Override
+	public String toString() {
+		return this.from + ", " + this.to + ": "+ (date.getYear()+1900) + "/" + (date.getMonth()+1) + "/" + date.getDate();
 	}
 }
