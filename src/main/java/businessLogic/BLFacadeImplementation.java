@@ -11,6 +11,7 @@ import dataAccess.DataAccess;
 import domain.Ride;
 import domain.Traveler;
 import domain.User;
+import domain.Alerta;
 import domain.Car;
 import domain.Driver;
 import domain.Erreklamazio;
@@ -308,10 +309,10 @@ public class BLFacadeImplementation  implements BLFacade {
 		dbManager.close();
 	}
 	
-	public boolean alertaSortuDa(String email) {
+	public List<Alerta> alertaSortuDa(String email) {
 		dbManager.open();
-		boolean b = dbManager.alertaSortuDa(email);
+		List<Alerta> alertak = dbManager.alertaSortuDa(email);
 		dbManager.close();
-		return b;
+		return alertak;
 	}
 }
