@@ -526,13 +526,43 @@ public class DataAccess  {
 		if(desk.getErabilita().contains(email)) {return -3;}
 		desk.getErabilita().add(email);
 		db.getTransaction().begin();
-		db.merge(desk);
+		db.persist(desk);
 		db.getTransaction().commit();
 		return desk.getZenbatekoa();
 	}
 	
+	public Erreklamazio getKonponduGabekoErreklamazioa() {
+		List<Erreklamazio> erreklamazioList = new ArrayList<Erreklamazio>();
+		TypedQuery<Erreklamazio> query = db.createQuery("SELECT err FROM Erreklamazio err WHERE err.konponduta = false", Erreklamazio.class);
+	    erreklamazioList = query.getResultList();
+	    Erreklamazio err = erreklamazioList.get(0);
+	    return err;
+	}
 	
-
+	public void erreklamazioaKonpondu(String nork, int rideNumber, String email) {
+		List<Erreklamazio> erreklamazioList = new ArrayList<Erreklamazio>();
+		TypedQuery<Erreklamazio> query = db.createQuery("SELECT err FROM Erreklamazio err WHERE err.traveler.email = ?1 AND err.ride.rideNumber = ?2", Erreklamazio.class);
+	    query.setParameter(1, email);
+	    query.setParameter(2, rideNumber);
+	    erreklamazioList = query.getResultList();
+	    Erreklamazio err = erreklamazioList.get(0);
+	    db.getTransaction().begin();
+	    err.setKonponduta(true);
+    	ReserveStatus erreserba = null;
+    	List<ReserveStatus> erreserbak = this.getAllReservesFromRideNumber(rideNumber);
+    	for(ReserveStatus rs:erreserbak) {
+    		if(rs.getTraveler().getEmail().equals(email)) {
+    			erreserba = rs;
+    			break;
+    		}
+    	}
+	    if(nork.equals("g")) {
+	    	this.updateMoneyByEmail(erreserba.getRide().getCar().getDriver().getEmail(), erreserba.getFrozenBalance());
+	    } else if(nork.equals("b")) {
+	    	this.updateMoneyByEmail(erreserba.getTraveler().getEmail(), erreserba.getFrozenBalance());
+	    }
+	}
+	
 public void open(){
 		
 		String fileName=c.getDbFilename();

@@ -12,12 +12,17 @@ import domain.User;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.GridLayout;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 
 public class AdminMainGUI extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JButton DeskontuaSortuBotoi = new JButton("Deskontua sortu");
+	private JLabel lblAukeratu;
+	private JButton btnErreklamazioakKudeatu;
 
 	/**
 	 * Launch the application.
@@ -45,16 +50,27 @@ public class AdminMainGUI extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
-		contentPane.setLayout(null);
 		DeskontuaSortuBotoi.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				DeskontuaSortuGUI frame = new DeskontuaSortuGUI();
 				frame.setVisible(true);
 			}
 		});
+		contentPane.setLayout(new GridLayout(3, 1, 0, 0));
 		
-		DeskontuaSortuBotoi.setBounds(145, 66, 156, 41);
+		lblAukeratu = new JLabel("Aukeratu");
+		lblAukeratu.setHorizontalAlignment(SwingConstants.CENTER);
+		contentPane.add(lblAukeratu);
 		contentPane.add(DeskontuaSortuBotoi);
+		
+		btnErreklamazioakKudeatu = new JButton("Erreklamazioak kudeatu");
+		btnErreklamazioakKudeatu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ErreklamazioakKudeatuGUI frame = new ErreklamazioakKudeatuGUI();
+				frame.setVisible(true);
+			}
+		});
+		contentPane.add(btnErreklamazioakKudeatu);
 	}
 
 }

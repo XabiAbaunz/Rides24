@@ -273,6 +273,8 @@ public class BLFacadeImplementation  implements BLFacade {
 		dbManager.open();
 		dbManager.erreklamazioaOnartu(email, rideNumber, onartuta, arrazoia);
 		dbManager.close();
+	}
+	
 	public void deskontuaSortu(String kodea, int zenbatekoa, Date iraunData) {
 		dbManager.open();
 		dbManager.deskontuaSortu(kodea, zenbatekoa, iraunData);
@@ -285,5 +287,18 @@ public class BLFacadeImplementation  implements BLFacade {
 		int kop = dbManager.deskontuaEgiaztatu(kodea, email);
 		dbManager.close();
 		return kop;
+	}
+	
+	public Erreklamazio getKonponduGabekoErreklamazioa() {
+		dbManager.open();
+		Erreklamazio erreklamazioa = dbManager.getKonponduGabekoErreklamazioa();
+		dbManager.close();
+		return erreklamazioa;
+	}
+	
+	public void erreklamazioaKonpondu(String nork, int rideNumber, String tEmail) {
+		dbManager.open();
+		dbManager.erreklamazioaKonpondu(nork, rideNumber, tEmail);
+		dbManager.close();
 	}
 }
