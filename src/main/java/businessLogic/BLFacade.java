@@ -130,4 +130,8 @@ public interface BLFacade  {
 	
 	public void erreklamazioaKonpondu(String nork, int rideNumber, String tEmail);
 	
+	public void addAlertaByEmail(String email, String from, String to, Date date);
+	
+	public boolean alertaSortuDa(String email);
+	
 }

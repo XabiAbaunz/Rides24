@@ -301,4 +301,17 @@ public class BLFacadeImplementation  implements BLFacade {
 		dbManager.erreklamazioaKonpondu(nork, rideNumber, tEmail);
 		dbManager.close();
 	}
+	
+	public void addAlertaByEmail(String email, String from, String to, Date date) {
+		dbManager.open();
+		dbManager.addAlertaByEmail(email, from, to, date);
+		dbManager.close();
+	}
+	
+	public boolean alertaSortuDa(String email) {
+		dbManager.open();
+		boolean b = dbManager.alertaSortuDa(email);
+		dbManager.close();
+		return b;
+	}
 }
