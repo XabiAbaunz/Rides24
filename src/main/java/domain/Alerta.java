@@ -91,6 +91,10 @@ public class Alerta {
 	public void setErakutsitakoBidaiak(ArrayList<Ride> erakutsitakoBidaiak) {
 		this.erakutsitakoBidaiak = erakutsitakoBidaiak;
 	}
+	
+	public long getId() {
+		return this.id;
+	}
 
 	@Override
 	public boolean equals(Object o) {

@@ -622,9 +622,6 @@ public class DataAccess  {
 		return itzultzekoAlertak;
 	}
 	
-		return aurkituta;
-	}
-	
 	public List<Alerta> getAlertakByEmail(String email) {
 		Traveler traveler = (Traveler) this.getUserByEmail(email);
 		return traveler.getAlertak();
