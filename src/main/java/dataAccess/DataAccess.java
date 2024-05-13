@@ -532,7 +532,6 @@ public class DataAccess  {
 		db.persist(desk);
 		db.getTransaction().commit();
 		return desk.getZenbatekoa();
-		return desk.getZenbatekoa();
 	}
 	
 	public void deskontuaErabili(String kodea, String email) {
