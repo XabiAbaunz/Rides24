@@ -108,12 +108,6 @@ public interface BLFacade  {
 	
 	public void bidaiaBaieztatu(String email, int reserveNumber);
 
-	public List<ReserveStatus> getAllReservesFromEmail(String email);
-	
-	public void changeReserveStatus(ReserveStatus erreserba, Boolean erantzun, Boolean onartu);
-	
-	public void bidaiaBaieztatu(String email, int reserveNumber);
-	
 	public List<ReserveStatus> getAllReservesFromRideNumber(int rideNumber);
 	
 	public void addBalorazioByEmail(String email, double balorazioa);
@@ -131,5 +125,9 @@ public interface BLFacade  {
 	public void deskontuaSortu(String kodea, int zenbatekoa, Date iraunData);
 	
 	public int deskontuaEgiaztatu(String kodea, String email);
+	
+	public Erreklamazio getKonponduGabekoErreklamazioa();
+	
+	public void erreklamazioaKonpondu(String nork, int rideNumber, String tEmail);
 	
 }

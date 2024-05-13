@@ -26,15 +26,12 @@ public class TravelerMainGUI extends JFrame {
 	
 	private Traveler traveler;
 	private JButton jButtonDiruaSartu = new JButton(ResourceBundle.getBundle("Etiquetas").getString("TravelerMainGUI.diruaSartuAtera")); //$NON-NLS-1$ //$NON-NLS-2$
-	private JButton jButtonBidaiaEginda = new JButton("Erreserbak kudeatu");
+	private JButton jButtonErreserbakKudeatu = new JButton("Erreserbak kudeatu");
 	
 	private JButton jButtonMugimenduakIkusi = new JButton(ResourceBundle.getBundle("Etiquetas").getString("TravelerMainGUI.mugimenduakIkusi"));
 	private final JButton jButtonErreklamazioakErantzun = new JButton(ResourceBundle.getBundle("Etiquetas").getString("TravelerMainGUI.btnNewButton.text")); //$NON-NLS-1$ //$NON-NLS-2$
 
 	private JButton jButtonErreserbakKon = new JButton(ResourceBundle.getBundle("Etiquetas").getString("ErreserbakKontsultatuGUI.erreserbakKontsultatu"));
-	private JButton jButtonBidaiaEginda = new JButton("Bidaia egin dela baieztatu");
-	
-	private JButton jButtonMugimenduakIkusi = new JButton(ResourceBundle.getBundle("Etiquetas").getString("TravelerMainGUI.mugimenduakIkusi"));
 
 	/**
 	 * Launch the application.
@@ -88,13 +85,13 @@ public class TravelerMainGUI extends JFrame {
 		
 		contentPane.add(jButtonDiruaSartu);
 		
-		jButtonBidaiaEginda.addActionListener(new ActionListener() {
+		jButtonErreserbakKudeatu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				BidaiakKudeatuGUI frame = new BidaiakKudeatuGUI(t);
 				frame.setVisible(true);
 			}
 		});
-		contentPane.add(jButtonBidaiaEginda);
+		contentPane.add(jButtonErreserbakKudeatu);
 		
 		jButtonMugimenduakIkusi.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
