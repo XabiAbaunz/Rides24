@@ -523,8 +523,11 @@ public class DataAccess  {
 		//Deskontua kadukatuta
 		if(desk.getIraungitzeData().before(new Date())) {return -2;}
 		//Deskontua erabiltzaileak iada erabilita
-		if(desk.getErabilita().contains(email)) {return -3;}
-		desk.getErabilita().add(email);
+		for(Traveler bidaiari : desk.getErabilita()) {
+			if(bidaiari.getEmail().equals(email)) {return -3;}
+		}
+		Traveler bidaiaria = db.find(Traveler.class, email);
+		desk.getErabilita().add(bidaiaria);
 		db.getTransaction().begin();
 		db.persist(desk);
 		db.getTransaction().commit();

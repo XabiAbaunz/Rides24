@@ -20,7 +20,7 @@ public class Deskontua {
 	private Date iraungitzeData;
 	private int zenbatekoa;
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
-	private ArrayList<String> erabilita;
+	private ArrayList<Traveler> erabilita;
 	
 	
 	public Deskontua(String kodea, int zenbatekoa, Date iraunData) {
@@ -33,7 +33,7 @@ public class Deskontua {
 	public Date getIraungitzeData() {
 		return this.iraungitzeData;
 	}
-	public ArrayList<String> getErabilita(){
+	public ArrayList<Traveler> getErabilita(){
 		return this.erabilita;
 	}
 	public int getZenbatekoa() {
