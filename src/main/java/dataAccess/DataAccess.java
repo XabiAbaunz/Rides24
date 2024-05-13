@@ -566,7 +566,46 @@ public class DataAccess  {
 	    }
 	}
 	
-public void open(){
+	public void addAlertaByEmail(String email, String from, String to, Date date) {
+		Traveler traveler = (Traveler) this.getUserByEmail(email);
+		db.getTransaction().begin();
+		traveler.addAlerta(from, to, date);
+		db.persist(traveler);
+		db.getTransaction().commit();
+		System.out.println("New alerta has been created.");
+	}
+	
+	public boolean alertaSortuDa(String email) {
+		boolean aurkituta = false;
+		Traveler traveler = (Traveler) this.getUserByEmail(email);
+		List<Alerta> alertak = traveler.getAlertak();
+		String from;
+		String to;
+		Date date;
+		for(Alerta a:alertak) {
+			from = a.getFrom();
+			to = a.getTo();
+			date = a.getDate();
+			List<Ride> rideList = new ArrayList<Ride>();
+			TypedQuery<Ride> query = db.createQuery("SELECT r FROM Ride r WHERE r.from = ?1 AND r.to = ?2", Ride.class);
+		    query.setParameter(1, from);
+		    query.setParameter(2, to);
+		    rideList = query.getResultList();
+		    if(!rideList.isEmpty()) {
+			    for(Ride r:rideList) {
+			    	Date data = r.getDate();
+			    	if(data.getYear() == date.getYear() && data.getMonth() == date.getMonth() && data.getDay() == date.getDay()) {
+			    		aurkituta = true;
+			    		break;
+			    	}
+			    }
+		    }
+		}
+		System.out.println("Travaler has alerts: " + aurkituta);
+		return aurkituta;
+	}
+	
+	public void open(){
 		
 		String fileName=c.getDbFilename();
 		if (c.isDatabaseLocal()) {

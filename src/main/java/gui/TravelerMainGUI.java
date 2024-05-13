@@ -13,6 +13,7 @@ import java.awt.GridLayout;
 import java.util.ResourceBundle;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -29,9 +30,7 @@ public class TravelerMainGUI extends JFrame {
 	private JButton jButtonErreserbakKudeatu = new JButton("Erreserbak kudeatu");
 	
 	private JButton jButtonMugimenduakIkusi = new JButton(ResourceBundle.getBundle("Etiquetas").getString("TravelerMainGUI.mugimenduakIkusi"));
-	private final JButton jButtonErreklamazioakErantzun = new JButton(ResourceBundle.getBundle("Etiquetas").getString("TravelerMainGUI.btnNewButton.text")); //$NON-NLS-1$ //$NON-NLS-2$
-
-	private JButton jButtonErreserbakKon = new JButton(ResourceBundle.getBundle("Etiquetas").getString("ErreserbakKontsultatuGUI.erreserbakKontsultatu"));
+	private final JButton jButtonErreklamazioakErantzun = new JButton("Erreklamazioak erantzun"); //$NON-NLS-1$ //$NON-NLS-2$
 
 	/**
 	 * Launch the application.
@@ -41,7 +40,7 @@ public class TravelerMainGUI extends JFrame {
 			public void run() {
 				Traveler t = null;
 				try {
-					TravelerMainGUI frame = new TravelerMainGUI(t);
+					TravelerMainGUI frame = new TravelerMainGUI(t, false);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -53,7 +52,7 @@ public class TravelerMainGUI extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public TravelerMainGUI(Traveler t) {
+	public TravelerMainGUI(Traveler t, boolean alerta) {
 		this.traveler = t;
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -62,6 +61,7 @@ public class TravelerMainGUI extends JFrame {
 		contentPane.setLayout(new GridLayout(6, 1, 0, 0));
 		JlabelAukeratu.setHorizontalAlignment(SwingConstants.CENTER);
 		contentPane.add(JlabelAukeratu);
+		if(alerta) JOptionPane.showMessageDialog(null, "Alerta berria/k duzu/dituzu.");
 		rdbtBidaiaBilatu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				FindBookGUI frame = new FindBookGUI(t);

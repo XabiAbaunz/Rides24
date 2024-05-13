@@ -84,7 +84,7 @@ public class LoginGUI extends JFrame {
 		JButtonLogin.addActionListener(new ActionListener() {
 			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {
-				if(textFieldUser.getText() != null && passwordField.getText() != null) {
+				try {
 					user = textFieldUser.getText();
 					password = passwordField.getText();
 					u = facade.isLogged(user, password);
@@ -94,10 +94,11 @@ public class LoginGUI extends JFrame {
 							JFrame a = new DriverMainGUI(d);
 							a.setVisible(true);
 						} else if(u instanceof Traveler) {
+							Boolean alertaDu = facade.alertaSortuDa(u.getEmail());
 							Traveler t = (Traveler) u;
-							JFrame a = new TravelerMainGUI(t);
+							JFrame a = new TravelerMainGUI(t, alertaDu);
 							a.setVisible(true);
-						}else if(u instanceof Administratzailea) {
+						} else if(u instanceof Administratzailea) {
 							Administratzailea ad = (Administratzailea) u;
 							JFrame a = new AdminMainGUI(ad);
 							a.setVisible(true);
@@ -105,8 +106,8 @@ public class LoginGUI extends JFrame {
 					} else {
 						textArea.setText(ResourceBundle.getBundle("Etiquetas").getString("LoginGUI.WrongUserPass"));
 					}
-				} else {
-					textArea.setText(ResourceBundle.getBundle("Etiquetas").getString("LoginGUI.WrongWrited"));
+				} catch(NullPointerException ex) {
+					ex.getMessage();
 				}
 			}				
 		});
