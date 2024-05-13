@@ -1,4 +1,5 @@
 package businessLogic;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -246,6 +247,26 @@ public class BLFacadeImplementation  implements BLFacade {
 	public void bidaiaErreklamatu(String mezua, String email, int rideNumber, String besteEmail) {
 		dbManager.open();
 		dbManager.bidaiaErreklamatu(mezua, email, rideNumber, besteEmail);
+		dbManager.close();
+	}
+
+	public void deskontuaErabili(String kodea, String email) {
+		dbManager.open();
+		dbManager.deskontuaErabili(kodea, email);
+		dbManager.close();
+	}
+	
+	public List<Alerta> getAlertakByEmail(String email){
+		dbManager.open();
+		List<Alerta> alertak = dbManager.getAlertakByEmail(email);
+		dbManager.close();
+		return alertak;
+		
+	}
+	
+	public void alertaEzabatu(Long id, String email) {
+		dbManager.open();
+		dbManager.alertaEzabatu(id, email);
 		dbManager.close();
 	}
 	

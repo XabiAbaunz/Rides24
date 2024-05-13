@@ -35,6 +35,7 @@ public class TravelerMainGUI extends JFrame {
 	
 	private JButton jButtonMugimenduakIkusi = new JButton(ResourceBundle.getBundle("Etiquetas").getString("TravelerMainGUI.mugimenduakIkusi"));
 	private final JButton jButtonErreklamazioakErantzun = new JButton("Erreklamazioak erantzun"); //$NON-NLS-1$ //$NON-NLS-2$
+	private final JButton jButtonAlertakKudeatu = new JButton("Alertak kudeatu"); //$NON-NLS-1$ //$NON-NLS-2$
 
 	/**
 	 * Launch the application.
@@ -73,6 +74,7 @@ public class TravelerMainGUI extends JFrame {
 			}
 			JOptionPane.showMessageDialog(null, mezua);
 		}
+		rdbtBidaiaBilatu.setBounds(218, 116, 213, 42);
 		rdbtBidaiaBilatu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				FindBookGUI frame = new FindBookGUI(t);
@@ -80,12 +82,14 @@ public class TravelerMainGUI extends JFrame {
 			}
 		});
 		contentPane.add(rdbtBidaiaBilatu);
+		jButtonDiruaSartu.setBounds(5, 116, 213, 42);
 		jButtonDiruaSartu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				DiruaSartuGUI frame = new DiruaSartuGUI((User)t);
 				frame.setVisible(true);
 			}
 		});
+		jButtonMugimenduakIkusi.setBounds(218, 162, 213, 42);
 		
 		jButtonMugimenduakIkusi.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -95,6 +99,7 @@ public class TravelerMainGUI extends JFrame {
 		});
 		
 		contentPane.add(jButtonDiruaSartu);
+		jButtonErreserbakKudeatu.setBounds(5, 162, 213, 42);
 		
 		jButtonErreserbakKudeatu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -111,6 +116,7 @@ public class TravelerMainGUI extends JFrame {
 			}
 		});
 		contentPane.add(jButtonMugimenduakIkusi);
+		jButtonErreklamazioakErantzun.setBounds(5, 211, 213, 42);
 		jButtonErreklamazioakErantzun.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ErreklamazioakErantzunGUI frame = new ErreklamazioakErantzunGUI((User)t);
@@ -119,6 +125,14 @@ public class TravelerMainGUI extends JFrame {
 		});
 		
 		contentPane.add(jButtonErreklamazioakErantzun);
+		jButtonAlertakKudeatu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				AlertakKudeatuGUI frame = new AlertakKudeatuGUI(t);
+				frame.setVisible(true);
+			}
+		});
+		jButtonAlertakKudeatu.setBounds(218, 211, 213, 42);
+		contentPane.add(jButtonAlertakKudeatu);
 	}
 
 }

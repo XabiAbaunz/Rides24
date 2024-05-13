@@ -202,6 +202,9 @@ public class FindBookGUI extends JFrame {
 				boolean b = facade.addReserve(rs, ride.getRideNumber());
 				if(!b) {
 					jLabelEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("FindBookGUI.ErreserbakBeteta"));
+				}else {
+					facade.updateMoneyByEmail(traveler.getEmail(), -1 *(ride.getPrice() * (1-berezkoDeskontua)));
+					facade.deskontuaErabili(text_deskontua.getText(), t.getEmail());
 				}
 			}
 		});

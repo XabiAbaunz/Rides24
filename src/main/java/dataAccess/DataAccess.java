@@ -532,6 +532,16 @@ public class DataAccess  {
 		db.persist(desk);
 		db.getTransaction().commit();
 		return desk.getZenbatekoa();
+		return desk.getZenbatekoa();
+	}
+	
+	public void deskontuaErabili(String kodea, String email) {
+		Traveler bidaiaria = db.find(Traveler.class, email);
+		Deskontua desk = db.find(Deskontua.class, kodea);
+		desk.getErabilita().add(bidaiaria);
+		db.getTransaction().begin();
+		db.persist(desk);
+		db.getTransaction().commit();	
 	}
 	
 	public Erreklamazio getKonponduGabekoErreklamazioa() {
@@ -611,6 +621,25 @@ public class DataAccess  {
 		System.out.println("Travaler has alerts: " + aurkituta);
 		return itzultzekoAlertak;
 	}
+	
+		return aurkituta;
+	}
+	
+	public List<Alerta> getAlertakByEmail(String email) {
+		Traveler traveler = (Traveler) this.getUserByEmail(email);
+		return traveler.getAlertak();
+	}
+	
+	public void alertaEzabatu(Long id, String email) {
+		db.getTransaction().begin();
+		Traveler bidaiaria = db.find(Traveler.class, email);
+		Alerta alerta = db.find(Alerta.class, id);
+		bidaiaria.getAlertak().remove(alerta);
+		db.merge(bidaiaria);
+		db.getTransaction().commit();
+	}
+	
+	
 	
 	public void open(){
 		

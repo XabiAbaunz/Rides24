@@ -127,6 +127,8 @@ public interface BLFacade  {
 	
 	public int deskontuaEgiaztatu(String kodea, String email);
 	
+	public void deskontuaErabili(String kodea, String email);
+	
 	public Erreklamazio getKonponduGabekoErreklamazioa();
 	
 	public void erreklamazioaKonpondu(String nork, int rideNumber, String tEmail);
@@ -134,5 +136,9 @@ public interface BLFacade  {
 	public void addAlertaByEmail(String email, String from, String to, Date date);
 	
 	public List<Alerta> alertaSortuDa(String email);
+	
+	public List<Alerta> getAlertakByEmail(String email);
+	
+	public void alertaEzabatu(Long id, String email);
 	
 }

@@ -4,6 +4,12 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class Alerta {
@@ -12,7 +18,11 @@ public class Alerta {
 	public String toString() {
 		return "Alerta [from=" + from + ", to=" + to + ", date=" + date.getYear() + "/" + date.getMonth() + "/" + date.getDay() + "]";
 	}
-
+	//
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+	
 	private String from;
 	private String to;
 	private Date date;
