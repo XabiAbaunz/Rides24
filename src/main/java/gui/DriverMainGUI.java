@@ -33,6 +33,12 @@ public class DriverMainGUI extends JFrame {
 	private final JButton jButtonKotxeaGehitu = new JButton("Kotxea gehitu");
 	
 	private JButton jButtonMugimenduakIkusi = new JButton(ResourceBundle.getBundle("Etiquetas").getString("TravelerMainGUI.mugimenduakIkusi"));
+	private final JButton jButtonBidaiariaErreklamatu = new JButton("Bidaiaria erreklamatu");
+	
+	private JLabel lbl_balorazioa1 = new JLabel("Zure balorazioa");
+	private JLabel lbl_balorazioa2 = new JLabel();
+	private final JButton jButtonErreklamazioakErantzun = new JButton("Erreklamazioak erantzun"); //$NON-NLS-1$ //$NON-NLS-2$
+	
 	/**
 	 * Launch the application.
 	 */
@@ -63,16 +69,28 @@ public class DriverMainGUI extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
-		contentPane.setLayout(new GridLayout(6, 1, 0, 0));
+		contentPane.setLayout(null);
+		jLabelSelectOption.setBounds(5, 5, 213, 42);
 		
 		jLabelSelectOption.setHorizontalAlignment(SwingConstants.CENTER);
 		contentPane.add(jLabelSelectOption);
+		jButtonCreateRide.setBounds(5, 47, 213, 42);
 		jButtonCreateRide.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				CreateRideGUI frame = new CreateRideGUI(driver);
 				frame.setVisible(true);
 			}
 		});
+		jButtonMugimenduakIkusi.setBounds(218, 5, 213, 42);
+		
+		jButtonMugimenduakIkusi.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MugimenduakIkusiGUI frame = new MugimenduakIkusiGUI((User)d);
+				frame.setVisible(true);
+			}
+		});
+
+		contentPane.add(jButtonMugimenduakIkusi);
 		
 		jButtonMugimenduakIkusi.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -84,6 +102,7 @@ public class DriverMainGUI extends JFrame {
 		contentPane.add(jButtonMugimenduakIkusi);
 		
 		contentPane.add(jButtonCreateRide);
+		jButtonAcceptReservation.setBounds(218, 47, 213, 42);
 		jButtonAcceptReservation.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AcceptReservesGUI frame = new AcceptReservesGUI(driver);
@@ -92,6 +111,7 @@ public class DriverMainGUI extends JFrame {
 		});
 		
 		contentPane.add(jButtonAcceptReservation);
+		jButtonDiruaSartu.setBounds(5, 89, 213, 42);
 		jButtonDiruaSartu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				DiruaSartuGUI frame = new DiruaSartuGUI((User)driver);
@@ -100,6 +120,7 @@ public class DriverMainGUI extends JFrame {
 		});
 		
 		contentPane.add(jButtonDiruaSartu);
+		jButtonKotxeaGehitu.setBounds(218, 89, 213, 42);
 		jButtonKotxeaGehitu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				AddCarGUI frame = new AddCarGUI(driver);
@@ -108,6 +129,7 @@ public class DriverMainGUI extends JFrame {
 		});
 		
 		contentPane.add(jButtonKotxeaGehitu);
+		jButtonBidaiaKantzelatu.setBounds(5, 131, 213, 42);
 		jButtonBidaiaKantzelatu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				CancelRideGUI frame = new CancelRideGUI(driver);
@@ -116,6 +138,36 @@ public class DriverMainGUI extends JFrame {
 		});
 		
 		contentPane.add(jButtonBidaiaKantzelatu);
+		jButtonBidaiariaErreklamatu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				BidaiariaErreklamatuGUI frame = new BidaiariaErreklamatuGUI(driver);
+				frame.setVisible(true);
+			}
+		});
+		
+		contentPane.add(jButtonBidaiariaErreklamatu);
+		
+		lbl_balorazioa1.setBounds(37, 218, 90, 35);
+		contentPane.add(lbl_balorazioa1);
+		
+		 double balorazioa = facade.getBalorazioa(d.getEmail());
+			if (balorazioa != -1) {
+				lbl_balorazioa2.setText(String.valueOf(balorazioa));
+			}else {
+				lbl_balorazioa2.setText("Ez duzu baloraziorik");
+			}
+		
+		lbl_balorazioa2.setBounds(173, 217, 213, 36);
+		contentPane.add(lbl_balorazioa2);
+		
+		jButtonErreklamazioakErantzun.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ErreklamazioakErantzunGUI frame = new ErreklamazioakErantzunGUI((User) driver);
+				frame.setVisible(true);
+			}
+		});
+		jButtonErreklamazioakErantzun.setBounds(218, 131, 213, 42);
+		
+		contentPane.add(jButtonErreklamazioakErantzun);
 	}
-
 }

@@ -8,6 +8,7 @@ import javax.swing.*;
 
 import domain.Driver;
 import businessLogic.BLFacade;
+import businessLogic.BLFacadeImplementation;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -32,6 +33,9 @@ public class MainGUI extends JFrame {
     private static BLFacade appFacadeInterface;
 	
 	public static BLFacade getBusinessLogic(){
+		if(appFacadeInterface == null) {
+			appFacadeInterface = new BLFacadeImplementation();
+		}
 		return appFacadeInterface;
 	}
 	 
@@ -54,6 +58,7 @@ public class MainGUI extends JFrame {
 		
 		// this.setSize(271, 295);
 		this.setSize(495, 290);
+		
 		
 		rdbtnNewRadioButton = new JRadioButton("English");
 		rdbtnNewRadioButton.addActionListener(new ActionListener() {

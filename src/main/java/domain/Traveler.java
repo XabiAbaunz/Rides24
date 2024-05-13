@@ -24,8 +24,12 @@ public class Traveler extends User implements Serializable {
 	@XmlIDREF
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
 	private List<ReserveStatus> reserves=new Vector<ReserveStatus>();
+	
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
 	private ArrayList<Erreklamazio> erreklamazioak = new ArrayList<>();
+	
+	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
+	private ArrayList<Alerta> alertak = new ArrayList<>();
 	
 	public Traveler(String email, String name, String password, Double cash) {
 		super(email, name, password, cash);
@@ -38,10 +42,27 @@ public class Traveler extends User implements Serializable {
 	public List<ReserveStatus> getReserves() {
 		return this.reserves;
 	}
+	
+	public ArrayList<Erreklamazio> getErreklamazioak() {
+		return this.erreklamazioak;
+	}
+	
+	public void addErreklamazio(Erreklamazio erreklamazio) {
+		this.erreklamazioak.add(erreklamazio);
+	}
 
 	@Override
 	public String toString() {
 		return "Traveler " + super.toString();
+	}
+	
+	public void addAlerta(String from, String to, Date date) {
+		Alerta alerta = new Alerta(from, to, date, this);
+		this.alertak.add(alerta);
+	}
+	
+	public ArrayList<Alerta> getAlertak() {
+		return this.alertak;
 	}
 	
 	@Override

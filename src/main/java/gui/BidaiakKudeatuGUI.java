@@ -22,6 +22,7 @@ import javax.swing.JRadioButton;
 import javax.swing.ButtonGroup;
 import javax.swing.SwingConstants;
 import domain.*;
+import javax.swing.DropMode;
 
 public class BidaiakKudeatuGUI extends JFrame {
 
@@ -45,6 +46,8 @@ public class BidaiakKudeatuGUI extends JFrame {
 	private JLabel lblAukeratu;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	private Driver gidaria;
+	private Ride ride;
+	private ReserveStatus reserve;
 
     /**
      * Create the frame.
@@ -86,7 +89,7 @@ public class BidaiakKudeatuGUI extends JFrame {
         			double balorazioa = Double.parseDouble(textBalorazio.getText());
         			if(balorazioa>=0.0 || balorazioa<=10.0) {
         				facade.addBalorazioByEmail(gidaria.getEmail(), balorazioa);
-        				facade.bidaiaBaieztatu(traveler.getEmail(), ((ReserveStatus) comboBoxReservas.getSelectedItem()).getReserveNumber());
+        				facade.bidaiaBaieztatu(traveler.getEmail(), reserve.getReserveNumber());
                 		lblArrazoia.setEnabled(false);
                 		textArrazoia.setEnabled(false);
                 		btnErreklamatu.setEnabled(false);
@@ -95,6 +98,7 @@ public class BidaiakKudeatuGUI extends JFrame {
                 		btnBidaiaBaieztatu.setEnabled(false);
                 		buttonGroup.clearSelection();
                 		comboBoxReservas.removeAllItems();
+                		lblEgoera.setText("");
                 		erreserbakKargatu();
         			} else {
         				lblEgoera.setText("0-10 bitarteko zenbaki bat sartu behar duzu.");
@@ -122,7 +126,7 @@ public class BidaiakKudeatuGUI extends JFrame {
         textArrazoia = new JTextField();
         textArrazoia.setBounds(225, 143, 190, 79);
         contentPane.add(textArrazoia);
-        textArrazoia.setColumns(10);
+        textArrazoia.setColumns(4);
         textArrazoia.setEnabled(false);
         
         btnErreklamatu = new JButton("Bidaia erreklamatu");
@@ -130,8 +134,8 @@ public class BidaiakKudeatuGUI extends JFrame {
         	public void actionPerformed(ActionEvent e) {
         		try {
         			String arrazoia = textArrazoia.getText();
-        			if(arrazoia.length()>10) {
-        				facade.bidaiaErreklamatu(arrazoia, traveler.getEmail(), ((ReserveStatus) comboBoxReservas.getSelectedItem()).getReserveNumber());
+        			if(arrazoia.length()>=10) {
+        				facade.bidaiaErreklamatu(arrazoia, traveler.getEmail(), ride.getRideNumber(), "");
                 		lblArrazoia.setEnabled(false);
                 		textArrazoia.setEnabled(false);
                 		btnErreklamatu.setEnabled(false);
@@ -140,12 +144,13 @@ public class BidaiakKudeatuGUI extends JFrame {
                 		btnBidaiaBaieztatu.setEnabled(false);
                 		buttonGroup.clearSelection();
                 		comboBoxReservas.removeAllItems();
+                		lblEgoera.setText("");
                 		erreserbakKargatu();
         			} else {
         				lblEgoera.setText("Sartu duzun arrazoia motzegia da.");
         			}
         		} catch(NullPointerException e1) {
-        			lblEgoera.setText("Sartu bidaia erreklamatzearen arrrazoia.");
+        			lblEgoera.setText("Sartu bidaia erreklamatzearen arrazoia.");
         		}
         	}
         });
@@ -206,14 +211,15 @@ public class BidaiakKudeatuGUI extends JFrame {
         btnAukeratu = new JButton("Aukeratu");
         btnAukeratu.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
-        		ReserveStatus aukeratutakoEgoera = (ReserveStatus) comboBoxReservas.getSelectedItem();
-                if (aukeratutakoEgoera != null) {
-                    String egoera = aukeratutakoEgoera.getStatus();
+        		reserve = (ReserveStatus) comboBoxReservas.getSelectedItem();
+                if (reserve != null) {
+                    String egoera = reserve.getStatus();
                     lblEgoera.setText("Erreserbaren egoera: " + egoera);
                     if(egoera.equals("Onartua")) {
                         rdbtnErreklamatu.setEnabled(true);
                         rdbtnBaieztatu.setEnabled(true);
-                        gidaria = aukeratutakoEgoera.getRide().getCar().getDriver();
+                        gidaria = reserve.getRide().getCar().getDriver();
+                        ride = reserve.getRide();
                     }
                 }
         	}
