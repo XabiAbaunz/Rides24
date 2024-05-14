@@ -703,15 +703,16 @@ public class DataAccess  {
 	 }
 
 	public void erabiltzaileaEzabatu(String email) {
-		db.getTransaction().begin();
 		 User user = this.getErabiltzailea(email);
 		 if(user!=null) {
 			 if(user instanceof Traveler) {
 				 Traveler t = db.find(Traveler.class, email);
+				 db.getTransaction().begin();
 				 List<ReserveStatus> rs = t.getReserves();
-				 for (ReserveStatus reserve : rs) {
-					 rs.remove(rs);
+				 for (ReserveStatus reserve: rs) {
+					 db.remove(reserve);
 				 }
+				 db.getTransaction().commit();
 			 }else if(user instanceof Driver) {
 				 Driver d = db.find(Driver.class, email);
 				 for(Car car: d.getCars()) {
@@ -719,9 +720,12 @@ public class DataAccess  {
 					 for(Ride ride : rides) {
 						 Integer rideNumber = ride.getRideNumber();
 						 deleteRideByRideNumber(rideNumber);
-						 db.remove(car);
 					 }
+					 db.getTransaction().begin();
+					 db.remove(car);
+					 db.getTransaction().commit();
 				 }
+				 db.getTransaction().begin();
 				 db.remove(d);
 				 db.getTransaction().commit();
 			 }
