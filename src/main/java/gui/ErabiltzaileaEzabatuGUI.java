@@ -33,6 +33,7 @@ public class ErabiltzaileaEzabatuGUI extends JFrame {
 	private JLabel lbl_izenburu = new JLabel("Sartu erabiltzailearen emaila");
 	private JTextField textFieldEmail;
 	private final JLabel lbl_errorea = new JLabel();
+	private JButton btnEzabatu;
 	
 
 	/**
@@ -68,7 +69,7 @@ public class ErabiltzaileaEzabatuGUI extends JFrame {
 		lbl_izenburu.setBounds(101, 11, 247, 40);
 		contentPane.add(lbl_izenburu);
 		
-		JButton btnEzabatu = new JButton("Ezabatu");
+		btnEzabatu = new JButton("Ezabatu");
 		btnEzabatu.setBounds(159, 103, 129, 23);
 		contentPane.add(btnEzabatu);
 		btnEzabatu.addActionListener(new ActionListener() {
