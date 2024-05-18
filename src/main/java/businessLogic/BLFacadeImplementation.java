@@ -249,6 +249,26 @@ public class BLFacadeImplementation  implements BLFacade {
 		dbManager.bidaiaErreklamatu(mezua, email, rideNumber, besteEmail);
 		dbManager.close();
 	}
+
+	public void deskontuaErabili(String kodea, String email) {
+		dbManager.open();
+		dbManager.deskontuaErabili(kodea, email);
+		dbManager.close();
+	}
+	
+	public List<Alerta> getAlertakByEmail(String email){
+		dbManager.open();
+		List<Alerta> alertak = dbManager.getAlertakByEmail(email);
+		dbManager.close();
+		return alertak;
+		
+	}
+	
+	public void alertaEzabatu(Long id, String email) {
+		dbManager.open();
+		dbManager.alertaEzabatu(id, email);
+		dbManager.close();
+	}
 	
 	public double getBalorazioa(String email) {
 		dbManager.open();
@@ -291,12 +311,6 @@ public class BLFacadeImplementation  implements BLFacade {
 		return kop;
 	}
 	
-	public void deskontuaErabili(String kodea, String email) {
-		dbManager.open();
-		dbManager.deskontuaErabili(kodea, email);
-		dbManager.close();
-	}
-	
 	public Erreklamazio getKonponduGabekoErreklamazioa() {
 		dbManager.open();
 		Erreklamazio erreklamazioa = dbManager.getKonponduGabekoErreklamazioa();
@@ -316,24 +330,23 @@ public class BLFacadeImplementation  implements BLFacade {
 		dbManager.close();
 	}
 	
-	public boolean alertaSortuDa(String email) {
+	public List<Alerta> alertaSortuDa(String email) {
 		dbManager.open();
-		boolean b = dbManager.alertaSortuDa(email);
-		dbManager.close();
-		return b;
-	}
-	
-	public List<Alerta> getAlertakByEmail(String email){
-		dbManager.open();
-		List<Alerta> alertak = dbManager.getAlertakByEmail(email);
+		List<Alerta> alertak = dbManager.alertaSortuDa(email);
 		dbManager.close();
 		return alertak;
-		
 	}
 	
-	public void alertaEzabatu(Long id, String email) {
+	public User getErabiltzailea (String email) {
 		dbManager.open();
-		dbManager.alertaEzabatu(id, email);
+		User user = dbManager.getErabiltzailea(email);
+		dbManager.close();
+		return user;
+	}
+	
+	public void erabiltzaileaEzabatu(String email) {
+		dbManager.open();
+		dbManager.erabiltzaileaEzabatu(email);
 		dbManager.close();
 	}
 }
