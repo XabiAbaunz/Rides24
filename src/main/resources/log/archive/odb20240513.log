@@ -1,0 +1,677 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-05-13 12:24:54 #1 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' has been recovered (tr. 42-42)
+
+[2024-05-13 12:24:54 #2 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' is opened by 6988@DESKTOP-PNFEN4V
+
+[2024-05-13 12:24:54 #3 type] 
+Type domain.User is not enhanced.
+
+[2024-05-13 12:24:54 #4 type] 
+Type domain.Movement is not enhanced.
+
+[2024-05-13 12:24:55 #5 type] 
+Type domain.Driver is not enhanced.
+
+[2024-05-13 12:24:55 #6 type] 
+Type domain.Car is not enhanced.
+
+[2024-05-13 12:24:55 #7 type] 
+Type domain.Ride is not enhanced.
+
+[2024-05-13 12:24:55 #8 type] 
+Type domain.Erreklamazio is not enhanced.
+
+[2024-05-13 12:24:55 #9 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-05-13 12:24:55 #10 type] 
+Type domain.Traveler is not enhanced.
+
+[2024-05-13 12:24:55 #11 type] 
+Type domain.Administratzailea is not enhanced.
+
+[2024-05-13 12:24:55 #12 type] 
+Type domain.Deskontua is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-05-13 12:26:01 #1 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' has been recovered (tr. 43-43)
+
+[2024-05-13 12:26:01 #2 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' is opened by 11348@DESKTOP-PNFEN4V
+
+[2024-05-13 12:26:01 #3 type] 
+Type domain.User is not enhanced.
+
+[2024-05-13 12:26:01 #4 type] 
+Type domain.Movement is not enhanced.
+
+[2024-05-13 12:26:02 #5 type] 
+Type domain.Driver is not enhanced.
+
+[2024-05-13 12:26:02 #6 type] 
+Type domain.Car is not enhanced.
+
+[2024-05-13 12:26:02 #7 type] 
+Type domain.Ride is not enhanced.
+
+[2024-05-13 12:26:02 #8 type] 
+Type domain.Erreklamazio is not enhanced.
+
+[2024-05-13 12:26:02 #9 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-05-13 12:26:02 #10 type] 
+Type domain.Traveler is not enhanced.
+
+[2024-05-13 12:26:02 #11 type] 
+Type domain.Administratzailea is not enhanced.
+
+[2024-05-13 12:26:02 #12 type] 
+Type domain.Deskontua is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-05-13 12:56:48 #1 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' is opened by 3500@DESKTOP-PNFEN4V
+
+[2024-05-13 12:56:49 #2 type] 
+Type domain.User is not enhanced.
+
+[2024-05-13 12:56:49 #3 type] 
+Type domain.Movement is not enhanced.
+
+[2024-05-13 12:56:49 #4 type] 
+Type domain.Driver is not enhanced.
+
+[2024-05-13 12:56:49 #5 type] 
+Type domain.Car is not enhanced.
+
+[2024-05-13 12:56:49 #6 type] 
+Type domain.Ride is not enhanced.
+
+[2024-05-13 12:56:49 #7 type] 
+Type domain.Erreklamazio is not enhanced.
+
+[2024-05-13 12:56:49 #8 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-05-13 12:56:49 #9 type] 
+Type domain.Traveler is not enhanced.
+
+[2024-05-13 12:56:49 #10 type.registry] 
+New type domain.Alerta
+
+[2024-05-13 12:56:49 #11 type.registry] 
+New type java.util.ArrayList<domain.Alerta>
+
+[2024-05-13 12:56:49 #12 type] 
+Type domain.Administratzailea is not enhanced.
+
+[2024-05-13 12:56:49 #13 type] 
+Type domain.Deskontua is not enhanced.
+
+[2024-05-13 12:56:49 #14 type] 
+Type domain.Alerta is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-05-13 12:56:57 #1 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' is opened by 1544@DESKTOP-PNFEN4V
+
+[2024-05-13 12:56:58 #2 type] 
+Type domain.User is not enhanced.
+
+[2024-05-13 12:56:58 #3 type] 
+Type domain.Movement is not enhanced.
+
+[2024-05-13 12:56:58 #4 type] 
+Type domain.Driver is not enhanced.
+
+[2024-05-13 12:56:58 #5 type] 
+Type domain.Car is not enhanced.
+
+[2024-05-13 12:56:58 #6 type] 
+Type domain.Ride is not enhanced.
+
+[2024-05-13 12:56:58 #7 type] 
+Type domain.Erreklamazio is not enhanced.
+
+[2024-05-13 12:56:58 #8 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-05-13 12:56:58 #9 type] 
+Type domain.Traveler is not enhanced.
+
+[2024-05-13 12:56:58 #10 type.registry] 
+New type domain.Alerta
+
+[2024-05-13 12:56:58 #11 type.registry] 
+New type java.util.ArrayList<domain.Alerta>
+
+[2024-05-13 12:56:58 #12 type] 
+Type domain.Administratzailea is not enhanced.
+
+[2024-05-13 12:56:58 #13 type] 
+Type domain.Deskontua is not enhanced.
+
+[2024-05-13 12:56:58 #14 type] 
+Type domain.Alerta is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-05-13 21:02:23 #1 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' is opened by 19592@DESKTOP-PNFEN4V
+
+[2024-05-13 21:02:24 #2 type.registry] 
+New type domain.User
+
+[2024-05-13 21:02:24 #3 type.registry] 
+New type domain.Administratzailea
+
+[2024-05-13 21:02:24 #4 type] 
+Type domain.User is not enhanced.
+
+[2024-05-13 21:02:24 #5 type.registry] 
+New type domain.Movement
+
+[2024-05-13 21:02:24 #6 type.registry] 
+New type java.util.ArrayList<domain.Movement>
+
+[2024-05-13 21:02:24 #7 type] 
+Type domain.Administratzailea is not enhanced.
+
+[2024-05-13 21:02:24 #8 type] 
+Type domain.Movement is not enhanced.
+
+[2024-05-13 21:02:24 #9 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2024-05-13 21:05:21 #10 type.registry] 
+New type domain.Traveler
+
+[2024-05-13 21:05:21 #11 type] 
+Type domain.Traveler is not enhanced.
+
+[2024-05-13 21:05:21 #12 type.registry] 
+New type domain.Alerta
+
+[2024-05-13 21:05:21 #13 type.registry] 
+New type java.util.ArrayList<domain.Alerta>
+
+[2024-05-13 21:05:21 #14 type.registry] 
+New type domain.Erreklamazio
+
+[2024-05-13 21:05:21 #15 type.registry] 
+New type java.util.ArrayList<domain.Erreklamazio>
+
+[2024-05-13 21:05:21 #16 type.registry] 
+New type domain.ReserveStatus
+
+[2024-05-13 21:05:21 #17 type] 
+Type domain.Alerta is not enhanced.
+
+[2024-05-13 21:05:21 #18 type.registry] 
+New type domain.Ride
+
+[2024-05-13 21:05:21 #19 type.registry] 
+New type java.util.ArrayList<domain.Ride>
+
+[2024-05-13 21:05:21 #20 type] 
+Type domain.Erreklamazio is not enhanced.
+
+[2024-05-13 21:05:21 #21 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-05-13 21:05:21 #22 type] 
+Type domain.Ride is not enhanced.
+
+[2024-05-13 21:05:21 #23 type.registry] 
+New type domain.Car
+
+[2024-05-13 21:05:21 #24 type.registry] 
+New type domain.ReserveStatus[]
+
+[2024-05-13 21:05:21 #25 type] 
+Type domain.Car is not enhanced.
+
+[2024-05-13 21:05:21 #26 type.registry] 
+New type domain.Driver
+
+[2024-05-13 21:05:21 #27 type] 
+Type domain.Driver is not enhanced.
+
+[2024-05-13 21:05:21 #28 type.registry] 
+New type java.util.ArrayList<java.lang.Double>
+
+[2024-05-13 21:05:21 #29 type.registry] 
+New type java.util.ArrayList<domain.Car>
+
+[2024-05-13 21:05:21 #30 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+[2024-05-13 21:05:21 #31 type.registry] 
+New type java.util.Vector<domain.ReserveStatus>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-05-13 22:05:54 #1 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' is opened by 19880@DESKTOP-PNFEN4V
+
+[2024-05-13 22:05:54 #2 type.registry] 
+New type domain.User
+
+[2024-05-13 22:05:54 #3 type.registry] 
+New type domain.Administratzailea
+
+[2024-05-13 22:05:54 #4 type] 
+Type domain.User is not enhanced.
+
+[2024-05-13 22:05:54 #5 type.registry] 
+New type domain.Movement
+
+[2024-05-13 22:05:54 #6 type.registry] 
+New type java.util.ArrayList<domain.Movement>
+
+[2024-05-13 22:05:54 #7 type] 
+Type domain.Administratzailea is not enhanced.
+
+[2024-05-13 22:05:54 #8 type] 
+Type domain.Movement is not enhanced.
+
+[2024-05-13 22:05:54 #9 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2024-05-13 22:06:04 #10 type.registry] 
+New type domain.Driver
+
+[2024-05-13 22:06:04 #11 type] 
+Type domain.Driver is not enhanced.
+
+[2024-05-13 22:06:04 #12 type.registry] 
+New type java.util.ArrayList<java.lang.Double>
+
+[2024-05-13 22:06:04 #13 type.registry] 
+New type domain.Car
+
+[2024-05-13 22:06:04 #14 type.registry] 
+New type java.util.ArrayList<domain.Car>
+
+[2024-05-13 22:06:04 #15 type] 
+Type domain.Car is not enhanced.
+
+[2024-05-13 22:06:04 #16 type.registry] 
+New type domain.Ride
+
+[2024-05-13 22:06:04 #17 type.registry] 
+New type java.util.ArrayList<domain.Ride>
+
+[2024-05-13 22:06:04 #18 type] 
+Type domain.Ride is not enhanced.
+
+[2024-05-13 22:06:04 #19 type.registry] 
+New type domain.Erreklamazio
+
+[2024-05-13 22:06:04 #20 type.registry] 
+New type java.util.ArrayList<domain.Erreklamazio>
+
+[2024-05-13 22:06:04 #21 type.registry] 
+New type domain.ReserveStatus
+
+[2024-05-13 22:06:04 #22 type.registry] 
+New type domain.ReserveStatus[]
+
+[2024-05-13 22:06:04 #23 type] 
+Type domain.Erreklamazio is not enhanced.
+
+[2024-05-13 22:06:04 #24 type.registry] 
+New type domain.Traveler
+
+[2024-05-13 22:06:04 #25 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-05-13 22:06:04 #26 type] 
+Type domain.Traveler is not enhanced.
+
+[2024-05-13 22:06:04 #27 type.registry] 
+New type domain.Alerta
+
+[2024-05-13 22:06:04 #28 type.registry] 
+New type java.util.ArrayList<domain.Alerta>
+
+[2024-05-13 22:06:04 #29 type] 
+Type domain.Alerta is not enhanced.
+
+[2024-05-13 22:06:12 #30 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+[2024-05-13 22:06:12 #31 type.registry] 
+New type java.util.Vector<domain.ReserveStatus>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-05-13 22:58:02 #1 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' is opened by 22296@DESKTOP-PNFEN4V
+
+[2024-05-13 22:58:02 #2 type.registry] 
+New type domain.User
+
+[2024-05-13 22:58:02 #3 type.registry] 
+New type domain.Administratzailea
+
+[2024-05-13 22:58:02 #4 type] 
+Type domain.User is not enhanced.
+
+[2024-05-13 22:58:02 #5 type.registry] 
+New type domain.Movement
+
+[2024-05-13 22:58:02 #6 type.registry] 
+New type java.util.ArrayList<domain.Movement>
+
+[2024-05-13 22:58:02 #7 type] 
+Type domain.Administratzailea is not enhanced.
+
+[2024-05-13 22:58:02 #8 type] 
+Type domain.Movement is not enhanced.
+
+[2024-05-13 22:58:02 #9 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2024-05-13 22:58:12 #10 type.registry] 
+New type domain.Driver
+
+[2024-05-13 22:58:12 #11 type] 
+Type domain.Driver is not enhanced.
+
+[2024-05-13 22:58:12 #12 type.registry] 
+New type java.util.ArrayList<java.lang.Double>
+
+[2024-05-13 22:58:12 #13 type.registry] 
+New type domain.Car
+
+[2024-05-13 22:58:12 #14 type.registry] 
+New type java.util.ArrayList<domain.Car>
+
+[2024-05-13 22:58:12 #15 type] 
+Type domain.Car is not enhanced.
+
+[2024-05-13 22:58:12 #16 type.registry] 
+New type domain.Ride
+
+[2024-05-13 22:58:12 #17 type.registry] 
+New type java.util.ArrayList<domain.Ride>
+
+[2024-05-13 22:58:12 #18 type] 
+Type domain.Ride is not enhanced.
+
+[2024-05-13 22:58:12 #19 type.registry] 
+New type domain.Erreklamazio
+
+[2024-05-13 22:58:12 #20 type.registry] 
+New type java.util.ArrayList<domain.Erreklamazio>
+
+[2024-05-13 22:58:12 #21 type.registry] 
+New type domain.ReserveStatus
+
+[2024-05-13 22:58:12 #22 type.registry] 
+New type domain.ReserveStatus[]
+
+[2024-05-13 22:58:12 #23 type] 
+Type domain.Erreklamazio is not enhanced.
+
+[2024-05-13 22:58:12 #24 type.registry] 
+New type domain.Traveler
+
+[2024-05-13 22:58:12 #25 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-05-13 22:58:12 #26 type] 
+Type domain.Traveler is not enhanced.
+
+[2024-05-13 22:58:12 #27 type.registry] 
+New type domain.Alerta
+
+[2024-05-13 22:58:12 #28 type.registry] 
+New type java.util.ArrayList<domain.Alerta>
+
+[2024-05-13 22:58:12 #29 type] 
+Type domain.Alerta is not enhanced.
+
+[2024-05-13 22:58:17 #30 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+[2024-05-13 22:58:17 #31 type.registry] 
+New type java.util.Vector<domain.ReserveStatus>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-05-13 23:01:41 #1 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' is opened by 17352@DESKTOP-PNFEN4V
+
+[2024-05-13 23:01:41 #2 type.registry] 
+New type domain.User
+
+[2024-05-13 23:01:41 #3 type.registry] 
+New type domain.Administratzailea
+
+[2024-05-13 23:01:41 #4 type] 
+Type domain.User is not enhanced.
+
+[2024-05-13 23:01:41 #5 type.registry] 
+New type domain.Movement
+
+[2024-05-13 23:01:41 #6 type.registry] 
+New type java.util.ArrayList<domain.Movement>
+
+[2024-05-13 23:01:41 #7 type] 
+Type domain.Administratzailea is not enhanced.
+
+[2024-05-13 23:01:41 #8 type] 
+Type domain.Movement is not enhanced.
+
+[2024-05-13 23:01:41 #9 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2024-05-13 23:01:51 #10 type.registry] 
+New type domain.Driver
+
+[2024-05-13 23:01:51 #11 type] 
+Type domain.Driver is not enhanced.
+
+[2024-05-13 23:01:51 #12 type.registry] 
+New type java.util.ArrayList<java.lang.Double>
+
+[2024-05-13 23:01:51 #13 type.registry] 
+New type domain.Car
+
+[2024-05-13 23:01:51 #14 type.registry] 
+New type java.util.ArrayList<domain.Car>
+
+[2024-05-13 23:01:51 #15 type] 
+Type domain.Car is not enhanced.
+
+[2024-05-13 23:01:51 #16 type.registry] 
+New type domain.Ride
+
+[2024-05-13 23:01:51 #17 type.registry] 
+New type java.util.ArrayList<domain.Ride>
+
+[2024-05-13 23:01:51 #18 type] 
+Type domain.Ride is not enhanced.
+
+[2024-05-13 23:01:51 #19 type.registry] 
+New type domain.Erreklamazio
+
+[2024-05-13 23:01:51 #20 type.registry] 
+New type java.util.ArrayList<domain.Erreklamazio>
+
+[2024-05-13 23:01:51 #21 type.registry] 
+New type domain.ReserveStatus
+
+[2024-05-13 23:01:51 #22 type.registry] 
+New type domain.ReserveStatus[]
+
+[2024-05-13 23:01:51 #23 type] 
+Type domain.Erreklamazio is not enhanced.
+
+[2024-05-13 23:01:51 #24 type.registry] 
+New type domain.Traveler
+
+[2024-05-13 23:01:51 #25 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-05-13 23:01:51 #26 type] 
+Type domain.Traveler is not enhanced.
+
+[2024-05-13 23:01:51 #27 type.registry] 
+New type domain.Alerta
+
+[2024-05-13 23:01:51 #28 type.registry] 
+New type java.util.ArrayList<domain.Alerta>
+
+[2024-05-13 23:01:51 #29 type] 
+Type domain.Alerta is not enhanced.
+
+[2024-05-13 23:01:57 #30 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+[2024-05-13 23:01:57 #31 type.registry] 
+New type java.util.Vector<domain.ReserveStatus>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-05-13 23:03:27 #1 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' is opened by 17148@DESKTOP-PNFEN4V
+
+[2024-05-13 23:03:28 #2 type.registry] 
+New type domain.User
+
+[2024-05-13 23:03:28 #3 type.registry] 
+New type domain.Administratzailea
+
+[2024-05-13 23:03:28 #4 type] 
+Type domain.User is not enhanced.
+
+[2024-05-13 23:03:28 #5 type.registry] 
+New type domain.Movement
+
+[2024-05-13 23:03:28 #6 type.registry] 
+New type java.util.ArrayList<domain.Movement>
+
+[2024-05-13 23:03:28 #7 type] 
+Type domain.Administratzailea is not enhanced.
+
+[2024-05-13 23:03:28 #8 type] 
+Type domain.Movement is not enhanced.
+
+[2024-05-13 23:03:28 #9 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2024-05-13 23:03:36 #10 type.registry] 
+New type domain.Driver
+
+[2024-05-13 23:03:36 #11 type] 
+Type domain.Driver is not enhanced.
+
+[2024-05-13 23:03:36 #12 type.registry] 
+New type java.util.ArrayList<java.lang.Double>
+
+[2024-05-13 23:03:36 #13 type.registry] 
+New type domain.Car
+
+[2024-05-13 23:03:36 #14 type.registry] 
+New type java.util.ArrayList<domain.Car>
+
+[2024-05-13 23:03:36 #15 type] 
+Type domain.Car is not enhanced.
+
+[2024-05-13 23:03:36 #16 type.registry] 
+New type domain.Ride
+
+[2024-05-13 23:03:36 #17 type.registry] 
+New type java.util.ArrayList<domain.Ride>
+
+[2024-05-13 23:03:36 #18 type] 
+Type domain.Ride is not enhanced.
+
+[2024-05-13 23:03:36 #19 type.registry] 
+New type domain.Erreklamazio
+
+[2024-05-13 23:03:36 #20 type.registry] 
+New type java.util.ArrayList<domain.Erreklamazio>
+
+[2024-05-13 23:03:36 #21 type.registry] 
+New type domain.ReserveStatus
+
+[2024-05-13 23:03:36 #22 type.registry] 
+New type domain.ReserveStatus[]
+
+[2024-05-13 23:03:36 #23 type] 
+Type domain.Erreklamazio is not enhanced.
+
+[2024-05-13 23:03:36 #24 type.registry] 
+New type domain.Traveler
+
+[2024-05-13 23:03:36 #25 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-05-13 23:03:36 #26 type] 
+Type domain.Traveler is not enhanced.
+
+[2024-05-13 23:03:36 #27 type.registry] 
+New type domain.Alerta
+
+[2024-05-13 23:03:36 #28 type.registry] 
+New type java.util.ArrayList<domain.Alerta>
+
+[2024-05-13 23:03:36 #29 type] 
+Type domain.Alerta is not enhanced.
+
+[2024-05-13 23:03:42 #30 type.registry] 
+New type java.util.Vector<java.lang.Object>
+
+[2024-05-13 23:03:42 #31 type.registry] 
+New type java.util.Vector<domain.ReserveStatus>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2024-05-13 23:07:17 #1 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' has been recovered (tr. 1-14)
+
+[2024-05-13 23:07:17 #2 store] 
+Database 'C:\Users\Xabi\git\Rides24\src\main\resources\rides.temp' is opened by 4912@DESKTOP-PNFEN4V
+
+[2024-05-13 23:07:17 #3 type] 
+Type domain.User is not enhanced.
+
+[2024-05-13 23:07:17 #4 type] 
+Type domain.Administratzailea is not enhanced.
+
+[2024-05-13 23:07:17 #5 type] 
+Type domain.Movement is not enhanced.
+
+[2024-05-13 23:07:17 #6 type] 
+Type domain.Driver is not enhanced.
+
+[2024-05-13 23:07:17 #7 type] 
+Type domain.Car is not enhanced.
+
+[2024-05-13 23:07:17 #8 type] 
+Type domain.Ride is not enhanced.
+
+[2024-05-13 23:07:17 #9 type] 
+Type domain.Erreklamazio is not enhanced.
+
+[2024-05-13 23:07:17 #10 type] 
+Type domain.ReserveStatus is not enhanced.
+
+[2024-05-13 23:07:17 #11 type] 
+Type domain.Traveler is not enhanced.
+
+[2024-05-13 23:07:17 #12 type] 
+Type domain.Alerta is not enhanced.
+

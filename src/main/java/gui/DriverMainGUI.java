@@ -70,7 +70,7 @@ public class DriverMainGUI extends JFrame {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		jLabelSelectOption.setBounds(5, 5, 213, 42);
+		jLabelSelectOption.setBounds(5, 5, 421, 42);
 		
 		jLabelSelectOption.setHorizontalAlignment(SwingConstants.CENTER);
 		contentPane.add(jLabelSelectOption);
@@ -81,7 +81,7 @@ public class DriverMainGUI extends JFrame {
 				frame.setVisible(true);
 			}
 		});
-		jButtonMugimenduakIkusi.setBounds(218, 5, 213, 42);
+		jButtonMugimenduakIkusi.setBounds(5, 89, 213, 42);
 		
 		jButtonMugimenduakIkusi.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -111,7 +111,7 @@ public class DriverMainGUI extends JFrame {
 		});
 		
 		contentPane.add(jButtonAcceptReservation);
-		jButtonDiruaSartu.setBounds(5, 89, 213, 42);
+		jButtonDiruaSartu.setBounds(109, 176, 213, 42);
 		jButtonDiruaSartu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				DiruaSartuGUI frame = new DiruaSartuGUI((User)driver);

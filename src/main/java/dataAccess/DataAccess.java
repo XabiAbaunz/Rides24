@@ -80,7 +80,6 @@ public class DataAccess  {
 		   int year=today.get(Calendar.YEAR);
 		   if (month==12) { month=1; year+=1;}  
 	    
-		   
 		   //Gidariak
 		   Driver driver1 =new Driver("a","a","a", 100.00);
 		   Driver driver2=new Driver("b","b","b", 100.00);
@@ -119,6 +118,31 @@ public class DataAccess  {
 		   db.persist(bidaia3);		   
 		   db.persist(bidaia4);
 		   
+		   //Erreserba bat bidaiabakoitzeko
+		   ReserveStatus erreserba1= new ReserveStatus(8, traveler1, bidaia1);
+		   ReserveStatus erreserba2= new ReserveStatus(20, traveler1, bidaia2);
+		   ReserveStatus erreserba3= new ReserveStatus(5, traveler2, bidaia3);
+		   ReserveStatus erreserba4 = new ReserveStatus(100, traveler2, bidaia4);
+		   
+		   //erreserba1 onartua
+		   erreserba1.setAnswered(true);
+		   erreserba1.setAccepted(true);
+		   
+		   //erreserba2 baztertua
+		   erreserba2.setAnswered(true);
+		   erreserba2.setAccepted(false);
+		   
+		   //erreserba3 itxaroten
+		   
+		   //erreserba4 onartua
+		   erreserba4.setAnswered(true);
+		   erreserba4.setAccepted(true);
+		   
+		   
+		   db.persist(erreserba1);
+		   db.persist(erreserba2);
+		   db.persist(erreserba3);
+		   db.persist(erreserba4);
 		   
 		    /*Create drivers 
 			Driver driver1=new Driver("driver1@gmail.com","Aitor Fernandez");
@@ -680,15 +704,16 @@ public class DataAccess  {
 	 }
 
 	public void erabiltzaileaEzabatu(String email) {
-		db.getTransaction().begin();
 		 User user = this.getErabiltzailea(email);
 		 if(user!=null) {
 			 if(user instanceof Traveler) {
 				 Traveler t = db.find(Traveler.class, email);
+				 db.getTransaction().begin();
 				 List<ReserveStatus> rs = t.getReserves();
-				 for (ReserveStatus reserve : rs) {
-					 rs.remove(rs);
+				 for (ReserveStatus reserve: rs) {
+					 db.remove(reserve);
 				 }
+				 db.getTransaction().commit();
 			 }else if(user instanceof Driver) {
 				 Driver d = db.find(Driver.class, email);
 				 for(Car car: d.getCars()) {
@@ -696,9 +721,12 @@ public class DataAccess  {
 					 for(Ride ride : rides) {
 						 Integer rideNumber = ride.getRideNumber();
 						 deleteRideByRideNumber(rideNumber);
-						 db.remove(car);
 					 }
+					 db.getTransaction().begin();
+					 db.remove(car);
+					 db.getTransaction().commit();
 				 }
+				 db.getTransaction().begin();
 				 db.remove(d);
 				 db.getTransaction().commit();
 			 }

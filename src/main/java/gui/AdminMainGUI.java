@@ -71,6 +71,16 @@ public class AdminMainGUI extends JFrame {
 			}
 		});
 		contentPane.add(btnErreklamazioakKudeatu);
+		
+		JButton ErabiltzaileaEzabatuBotoi = new JButton("Erabiltzailea ezabatu");
+		ErabiltzaileaEzabatuBotoi.setBounds(145, 118, 156, 41);
+		contentPane.add(ErabiltzaileaEzabatuBotoi);
+		ErabiltzaileaEzabatuBotoi.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ErabiltzaileaEzabatuGUI frame = new ErabiltzaileaEzabatuGUI();
+				frame.setVisible(true);
+			}
+		});
 	}
 
 }
