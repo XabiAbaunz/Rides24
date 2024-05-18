@@ -336,4 +336,17 @@ public class BLFacadeImplementation  implements BLFacade {
 		dbManager.close();
 		return alertak;
 	}
+	
+	public User getErabiltzailea (String email) {
+		dbManager.open();
+		User user = dbManager.getErabiltzailea(email);
+		dbManager.close();
+		return user;
+	}
+	
+	public void erabiltzaileaEzabatu(String email) {
+		dbManager.open();
+		dbManager.erabiltzaileaEzabatu(email);
+		dbManager.close();
+	}
 }

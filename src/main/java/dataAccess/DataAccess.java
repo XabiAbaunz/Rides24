@@ -51,7 +51,8 @@ public class DataAccess  {
 		if  (c.isDatabaseInitialized())initializeDB();
 		
 		System.out.println("DataAccess created => isDatabaseLocal: "+c.isDatabaseLocal()+" isDatabaseInitialized: "+c.isDatabaseInitialized());
-
+		
+		
 		close();
 
 	}
@@ -79,8 +80,46 @@ public class DataAccess  {
 		   int year=today.get(Calendar.YEAR);
 		   if (month==12) { month=1; year+=1;}  
 	    
-		   Administratzailea admin = new Administratzailea("c","c","c",10.0);
-		   db.persist(admin);
+		   
+		   //Gidariak
+		   Driver driver1 =new Driver("a","a","a", 100.00);
+		   Driver driver2=new Driver("b","b","b", 100.00);
+		   db.persist(driver1);
+		   db.persist(driver2);
+		   
+		   //Bidaiariak
+		   Traveler traveler1 = new Traveler("d","d","d", 100.00);
+		   Traveler traveler2 = new Traveler("e","e","e", 100.00);
+		   db.persist(traveler1);
+		   db.persist(traveler2);
+		   
+		   //Administratzaileak
+		   Administratzailea admin1 = new Administratzailea("c","c","c",10.0);
+		   Administratzailea admin2 = new Administratzailea("f","f","f",10.0);
+		   db.persist(admin1);
+		   db.persist(admin2);
+		   
+		   
+		   
+		   
+		   //Kotxe bat gidari bakoitzari
+		   Car kotxe1 = new Car(driver1, "opel", "corsa", 4);
+		   Car kotxe2 = new Car(driver2, "citroen", "xantia", 3);
+		   db.persist(kotxe1);
+		   db.persist(kotxe2);
+		   
+		   
+		   //Bi bidaia kotxe bakoitzak
+		   Ride bidaia1 = new Ride("Azpeitia", "Donostia", UtilDate.newDate(year,month,15) , 4, 8, kotxe1);
+		   Ride bidaia2 = new Ride("Malaga", "Cadiz", UtilDate.newDate(year,month,28) , 4, 20, kotxe1);
+		   Ride bidaia3 = new Ride("Hernani", "Tolosa", UtilDate.newDate(year,month,06) , 3, 5, kotxe2);
+		   Ride bidaia4 = new Ride("Lisboa", "Paris", UtilDate.newDate(year,month,20) , 3, 100, kotxe2);
+		   db.persist(bidaia1);
+		   db.persist(bidaia2);		   
+		   db.persist(bidaia3);		   
+		   db.persist(bidaia4);
+		   
+		   
 		    /*Create drivers 
 			Driver driver1=new Driver("driver1@gmail.com","Aitor Fernandez");
 			Driver driver2=new Driver("driver2@gmail.com","Ane Gaztañaga");
@@ -532,7 +571,6 @@ public class DataAccess  {
 		db.persist(desk);
 		db.getTransaction().commit();
 		return desk.getZenbatekoa();
-		return desk.getZenbatekoa();
 	}
 	
 	public void deskontuaErabili(String kodea, String email) {
@@ -634,6 +672,37 @@ public class DataAccess  {
 		bidaiaria.getAlertak().remove(alerta);
 		db.merge(bidaiaria);
 		db.getTransaction().commit();
+	}
+	
+	 public User getErabiltzailea(String email) {
+		User u = db.find(User.class, email);
+		return u;
+	 }
+
+	public void erabiltzaileaEzabatu(String email) {
+		db.getTransaction().begin();
+		 User user = this.getErabiltzailea(email);
+		 if(user!=null) {
+			 if(user instanceof Traveler) {
+				 Traveler t = db.find(Traveler.class, email);
+				 List<ReserveStatus> rs = t.getReserves();
+				 for (ReserveStatus reserve : rs) {
+					 rs.remove(rs);
+				 }
+			 }else if(user instanceof Driver) {
+				 Driver d = db.find(Driver.class, email);
+				 for(Car car: d.getCars()) {
+					 List<Ride> rides = car.getRides();
+					 for(Ride ride : rides) {
+						 Integer rideNumber = ride.getRideNumber();
+						 deleteRideByRideNumber(rideNumber);
+						 db.remove(car);
+					 }
+				 }
+				 db.remove(d);
+				 db.getTransaction().commit();
+			 }
+		 }
 	}
 	
 	
