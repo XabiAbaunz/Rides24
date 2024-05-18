@@ -101,9 +101,9 @@ public class Alerta {
 	public boolean equals(Object o) {
 		Date data1 = this.getDate();
 		boolean b = false;
-		Alerta a = (Alerta) o;
-		Date data2 = a.getDate();
 		if(o != null) {
+			Alerta a = (Alerta) o;
+			Date data2 = a.getDate();
 			if(a.from==this.from && a.to == this.to && data1.getYear() == data2.getYear() && data1.getMonth() == data2.getMonth() && data1.getDay() == data2.getDay()) {
 				b = true;
 			}
