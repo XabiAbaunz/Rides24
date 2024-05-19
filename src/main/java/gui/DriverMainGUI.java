@@ -33,11 +33,11 @@ public class DriverMainGUI extends JFrame {
 	private final JButton jButtonKotxeaGehitu = new JButton("Kotxea gehitu");
 	
 	private JButton jButtonMugimenduakIkusi = new JButton(ResourceBundle.getBundle("Etiquetas").getString("TravelerMainGUI.mugimenduakIkusi"));
-	private final JButton jButtonBidaiariaErreklamatu = new JButton("Bidaiaria erreklamatu");
 	
 	private JLabel lbl_balorazioa1 = new JLabel("Zure balorazioa");
 	private JLabel lbl_balorazioa2 = new JLabel();
 	private final JButton jButtonErreklamazioakErantzun = new JButton("Erreklamazioak erantzun"); //$NON-NLS-1$ //$NON-NLS-2$
+	private JButton btnBidaiariaErreklamatu;
 	
 	/**
 	 * Launch the application.
@@ -111,7 +111,7 @@ public class DriverMainGUI extends JFrame {
 		});
 		
 		contentPane.add(jButtonAcceptReservation);
-		jButtonDiruaSartu.setBounds(109, 176, 213, 42);
+		jButtonDiruaSartu.setBounds(5, 176, 213, 42);
 		jButtonDiruaSartu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				DiruaSartuGUI frame = new DiruaSartuGUI((User)driver);
@@ -138,14 +138,6 @@ public class DriverMainGUI extends JFrame {
 		});
 		
 		contentPane.add(jButtonBidaiaKantzelatu);
-		jButtonBidaiariaErreklamatu.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				BidaiariaErreklamatuGUI frame = new BidaiariaErreklamatuGUI(driver);
-				frame.setVisible(true);
-			}
-		});
-		
-		contentPane.add(jButtonBidaiariaErreklamatu);
 		
 		lbl_balorazioa1.setBounds(37, 218, 90, 35);
 		contentPane.add(lbl_balorazioa1);
@@ -169,5 +161,15 @@ public class DriverMainGUI extends JFrame {
 		jButtonErreklamazioakErantzun.setBounds(218, 131, 213, 42);
 		
 		contentPane.add(jButtonErreklamazioakErantzun);
+		
+		btnBidaiariaErreklamatu = new JButton("Bidaiaria erreklamatu");
+		btnBidaiariaErreklamatu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				BidaiariaErreklamatuGUI frame = new BidaiariaErreklamatuGUI(driver);
+				frame.setVisible(true);
+			}
+		});
+		btnBidaiariaErreklamatu.setBounds(218, 176, 213, 42);
+		contentPane.add(btnBidaiariaErreklamatu);
 	}
 }
